@@ -1,4 +1,4 @@
-# Projeto_ADSAMA2_Pousada
+# Pousada
 Pousada é um software com objetivo de ajudar no gerenciamento de Pousadas. Pousada permite criar reservas, pacotes de serviços e muito mais.
 
 ## Tecnologias Usadas
