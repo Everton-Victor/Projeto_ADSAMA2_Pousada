@@ -11,3 +11,4 @@ C:\Users\Aluno\Desktop\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\obj\Debug\prj_
 C:\Users\Aluno\Desktop\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\obj\Debug\prj_adsma2_pousada.exe
 C:\Users\Aluno\Desktop\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\obj\Debug\prj_adsma2_pousada.xml
 C:\Users\Aluno\Desktop\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\obj\Debug\prj_adsma2_pousada.pdb
+C:\Users\Aluno\Desktop\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\obj\Debug\prj_adsma2_pousada.frm_cadastro.resources
