@@ -1,0 +1,13 @@
+C:\Users\Aluno\Desktop\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\bin\Debug\prj_adsma2_pousada.exe.config
+C:\Users\Aluno\Desktop\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\bin\Debug\prj_adsma2_pousada.exe
+C:\Users\Aluno\Desktop\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\bin\Debug\prj_adsma2_pousada.pdb
+C:\Users\Aluno\Desktop\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\bin\Debug\prj_adsma2_pousada.xml
+C:\Users\Aluno\Desktop\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\obj\Debug\prj_adsma2_pousada.vbproj.AssemblyReference.cache
+C:\Users\Aluno\Desktop\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\obj\Debug\prj_adsma2_pousada.vbproj.SuggestedBindingRedirects.cache
+C:\Users\Aluno\Desktop\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\obj\Debug\prj_adsma2_pousada.Form1.resources
+C:\Users\Aluno\Desktop\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\obj\Debug\prj_adsma2_pousada.Resources.resources
+C:\Users\Aluno\Desktop\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\obj\Debug\prj_adsma2_pousada.vbproj.GenerateResource.cache
+C:\Users\Aluno\Desktop\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\obj\Debug\prj_adsma2_pousada.vbproj.CoreCompileInputs.cache
+C:\Users\Aluno\Desktop\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\obj\Debug\prj_adsma2_pousada.exe
+C:\Users\Aluno\Desktop\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\obj\Debug\prj_adsma2_pousada.xml
+C:\Users\Aluno\Desktop\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\obj\Debug\prj_adsma2_pousada.pdb
