@@ -25,3 +25,4 @@ C:\Users\Home\OneDrive - Fatec Centro Paula Souza\Desktop\Projeto_ADSAMA2_Pousad
 C:\Users\Home\OneDrive - Fatec Centro Paula Souza\Desktop\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\obj\Debug\prj_adsma2_pousada.Resources.resources
 C:\Users\Home\OneDrive - Fatec Centro Paula Souza\Desktop\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\obj\Debug\prj_adsma2_pousada.vbproj.GenerateResource.cache
 C:\Users\Home\OneDrive - Fatec Centro Paula Souza\Desktop\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\obj\Debug\prj_adsma2_pousada.vbproj.CoreCompileInputs.cache
+C:\Users\Home\OneDrive - Fatec Centro Paula Souza\Desktop\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\obj\Debug\prj_adsma2_pousada.frm_funcionarios.resources
