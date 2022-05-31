@@ -22,8 +22,8 @@ Partial Class frm_funcionarios
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_funcionarios))
         Dim CheckoutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_funcionarios))
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripDropDownButton1 = New System.Windows.Forms.ToolStripDropDownButton()
         Me.ReservaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -49,6 +49,13 @@ Partial Class frm_funcionarios
         Me.tab_lista.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'CheckoutToolStripMenuItem
+        '
+        CheckoutToolStripMenuItem.Image = CType(resources.GetObject("CheckoutToolStripMenuItem.Image"), System.Drawing.Image)
+        CheckoutToolStripMenuItem.Name = "CheckoutToolStripMenuItem"
+        CheckoutToolStripMenuItem.Size = New System.Drawing.Size(151, 26)
+        CheckoutToolStripMenuItem.Text = "Check-out"
         '
         'ToolStrip1
         '
@@ -86,13 +93,6 @@ Partial Class frm_funcionarios
         Me.CheckinToolStripMenuItem.Name = "CheckinToolStripMenuItem"
         Me.CheckinToolStripMenuItem.Size = New System.Drawing.Size(151, 26)
         Me.CheckinToolStripMenuItem.Text = "Check-in"
-        '
-        'CheckoutToolStripMenuItem
-        '
-        CheckoutToolStripMenuItem.Image = CType(resources.GetObject("CheckoutToolStripMenuItem.Image"), System.Drawing.Image)
-        CheckoutToolStripMenuItem.Name = "CheckoutToolStripMenuItem"
-        CheckoutToolStripMenuItem.Size = New System.Drawing.Size(151, 26)
-        CheckoutToolStripMenuItem.Text = "Check-out"
         '
         'PacoteDeServiçosToolStripMenuItem
         '

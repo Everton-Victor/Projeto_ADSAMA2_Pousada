@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form1
+Partial Class frm_login
     Inherits System.Windows.Forms.Form
 
     'Descartar substituições de formulário para limpar a lista de componentes.
@@ -33,30 +33,30 @@ Partial Class Form1
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Cambria", 22.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(12, 103)
+        Me.Label2.Location = New System.Drawing.Point(43, 129)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(102, 36)
-        Me.Label2.TabIndex = 11
+        Me.Label2.TabIndex = 16
         Me.Label2.Text = "Senha:"
         '
         'txt_senha
         '
         Me.txt_senha.Font = New System.Drawing.Font("Cambria", 18.0!)
-        Me.txt_senha.Location = New System.Drawing.Point(18, 141)
+        Me.txt_senha.Location = New System.Drawing.Point(49, 167)
         Me.txt_senha.Name = "txt_senha"
         Me.txt_senha.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txt_senha.Size = New System.Drawing.Size(480, 36)
-        Me.txt_senha.TabIndex = 10
+        Me.txt_senha.TabIndex = 15
         '
         'btn_entrar
         '
         Me.btn_entrar.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
         Me.btn_entrar.Font = New System.Drawing.Font("Cambria", 20.0!, System.Drawing.FontStyle.Bold)
         Me.btn_entrar.ForeColor = System.Drawing.Color.White
-        Me.btn_entrar.Location = New System.Drawing.Point(360, 229)
+        Me.btn_entrar.Location = New System.Drawing.Point(391, 255)
         Me.btn_entrar.Name = "btn_entrar"
         Me.btn_entrar.Size = New System.Drawing.Size(138, 50)
-        Me.btn_entrar.TabIndex = 9
+        Me.btn_entrar.TabIndex = 14
         Me.btn_entrar.Text = "Entrar"
         Me.btn_entrar.UseVisualStyleBackColor = False
         '
@@ -64,36 +64,33 @@ Partial Class Form1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Cambria", 22.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(12, 9)
+        Me.Label1.Location = New System.Drawing.Point(43, 35)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(106, 36)
-        Me.Label1.TabIndex = 8
+        Me.Label1.TabIndex = 13
         Me.Label1.Text = "E-mail:"
         '
         'txt_email
         '
         Me.txt_email.Font = New System.Drawing.Font("Cambria", 18.0!)
-        Me.txt_email.Location = New System.Drawing.Point(18, 47)
+        Me.txt_email.Location = New System.Drawing.Point(49, 73)
         Me.txt_email.Name = "txt_email"
         Me.txt_email.Size = New System.Drawing.Size(480, 36)
-        Me.txt_email.TabIndex = 7
+        Me.txt_email.TabIndex = 12
         '
-        'Form1
+        'frm_login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(187, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(530, 311)
+        Me.ClientSize = New System.Drawing.Size(602, 358)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.txt_senha)
         Me.Controls.Add(Me.btn_entrar)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txt_email)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.MaximizeBox = False
-        Me.Name = "Form1"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Login"
+        Me.Name = "frm_login"
+        Me.Text = "frm_login"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
