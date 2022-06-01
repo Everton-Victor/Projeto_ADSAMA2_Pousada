@@ -53,9 +53,9 @@ Partial Class frm_login
         Me.btn_entrar.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
         Me.btn_entrar.Font = New System.Drawing.Font("Cambria", 20.0!, System.Drawing.FontStyle.Bold)
         Me.btn_entrar.ForeColor = System.Drawing.Color.White
-        Me.btn_entrar.Location = New System.Drawing.Point(410, 255)
+        Me.btn_entrar.Location = New System.Drawing.Point(435, 244)
         Me.btn_entrar.Name = "btn_entrar"
-        Me.btn_entrar.Size = New System.Drawing.Size(138, 50)
+        Me.btn_entrar.Size = New System.Drawing.Size(113, 53)
         Me.btn_entrar.TabIndex = 14
         Me.btn_entrar.Text = "Entrar"
         Me.btn_entrar.UseVisualStyleBackColor = False
@@ -83,7 +83,7 @@ Partial Class frm_login
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(187, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(648, 385)
+        Me.ClientSize = New System.Drawing.Size(618, 325)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.txt_senha)
         Me.Controls.Add(Me.btn_entrar)

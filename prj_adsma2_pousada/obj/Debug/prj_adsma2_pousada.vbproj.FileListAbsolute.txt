@@ -26,3 +26,17 @@ C:\Users\Home\OneDrive - Fatec Centro Paula Souza\Desktop\teste\Projeto_ADSAMA2_
 C:\Users\Home\OneDrive - Fatec Centro Paula Souza\Desktop\teste\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\obj\Debug\prj_adsma2_pousada.exe
 C:\Users\Home\OneDrive - Fatec Centro Paula Souza\Desktop\teste\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\obj\Debug\prj_adsma2_pousada.xml
 C:\Users\Home\OneDrive - Fatec Centro Paula Souza\Desktop\teste\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\obj\Debug\prj_adsma2_pousada.pdb
+C:\Users\Home\OneDrive - Fatec Centro Paula Souza\Desktop\Projeto_ADS\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\bin\Debug\prj_adsma2_pousada.exe.config
+C:\Users\Home\OneDrive - Fatec Centro Paula Souza\Desktop\Projeto_ADS\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\bin\Debug\prj_adsma2_pousada.exe
+C:\Users\Home\OneDrive - Fatec Centro Paula Souza\Desktop\Projeto_ADS\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\bin\Debug\prj_adsma2_pousada.pdb
+C:\Users\Home\OneDrive - Fatec Centro Paula Souza\Desktop\Projeto_ADS\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\bin\Debug\prj_adsma2_pousada.xml
+C:\Users\Home\OneDrive - Fatec Centro Paula Souza\Desktop\Projeto_ADS\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\obj\Debug\prj_adsma2_pousada.vbproj.AssemblyReference.cache
+C:\Users\Home\OneDrive - Fatec Centro Paula Souza\Desktop\Projeto_ADS\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\obj\Debug\prj_adsma2_pousada.vbproj.SuggestedBindingRedirects.cache
+C:\Users\Home\OneDrive - Fatec Centro Paula Souza\Desktop\Projeto_ADS\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\obj\Debug\prj_adsma2_pousada.frm_funcionarios.resources
+C:\Users\Home\OneDrive - Fatec Centro Paula Souza\Desktop\Projeto_ADS\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\obj\Debug\prj_adsma2_pousada.frm_login.resources
+C:\Users\Home\OneDrive - Fatec Centro Paula Souza\Desktop\Projeto_ADS\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\obj\Debug\prj_adsma2_pousada.Resources.resources
+C:\Users\Home\OneDrive - Fatec Centro Paula Souza\Desktop\Projeto_ADS\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\obj\Debug\prj_adsma2_pousada.vbproj.GenerateResource.cache
+C:\Users\Home\OneDrive - Fatec Centro Paula Souza\Desktop\Projeto_ADS\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\obj\Debug\prj_adsma2_pousada.vbproj.CoreCompileInputs.cache
+C:\Users\Home\OneDrive - Fatec Centro Paula Souza\Desktop\Projeto_ADS\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\obj\Debug\prj_adsma2_pousada.exe
+C:\Users\Home\OneDrive - Fatec Centro Paula Souza\Desktop\Projeto_ADS\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\obj\Debug\prj_adsma2_pousada.xml
+C:\Users\Home\OneDrive - Fatec Centro Paula Souza\Desktop\Projeto_ADS\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\obj\Debug\prj_adsma2_pousada.pdb
