@@ -27,12 +27,15 @@ Partial Class frm_funcionarios
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripDropDownButton1 = New System.Windows.Forms.ToolStripDropDownButton()
         Me.ReservaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReservaToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CheckinToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PacoteDeServiçosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.QuartosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EncerrarSessToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.tab_cadastro = New System.Windows.Forms.TabPage()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txt_senha = New System.Windows.Forms.TextBox()
@@ -53,8 +56,6 @@ Partial Class frm_funcionarios
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         CheckoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStrip1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -76,7 +77,8 @@ Partial Class frm_funcionarios
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripDropDownButton1})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(850, 42)
+        Me.ToolStrip1.Padding = New System.Windows.Forms.Padding(0, 0, 2, 0)
+        Me.ToolStrip1.Size = New System.Drawing.Size(817, 42)
         Me.ToolStrip1.TabIndex = 3
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -92,12 +94,19 @@ Partial Class frm_funcionarios
         '
         'ReservaToolStripMenuItem
         '
-        Me.ReservaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CheckinToolStripMenuItem, CheckoutToolStripMenuItem})
+        Me.ReservaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReservaToolStripMenuItem1, Me.CheckinToolStripMenuItem, CheckoutToolStripMenuItem})
         Me.ReservaToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ReservaToolStripMenuItem.Image = CType(resources.GetObject("ReservaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ReservaToolStripMenuItem.Name = "ReservaToolStripMenuItem"
         Me.ReservaToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
-        Me.ReservaToolStripMenuItem.Text = "Reserva"
+        Me.ReservaToolStripMenuItem.Text = "Cliente"
+        '
+        'ReservaToolStripMenuItem1
+        '
+        Me.ReservaToolStripMenuItem1.Image = CType(resources.GetObject("ReservaToolStripMenuItem1.Image"), System.Drawing.Image)
+        Me.ReservaToolStripMenuItem1.Name = "ReservaToolStripMenuItem1"
+        Me.ReservaToolStripMenuItem1.Size = New System.Drawing.Size(151, 26)
+        Me.ReservaToolStripMenuItem1.Text = "Reserva"
         '
         'CheckinToolStripMenuItem
         '
@@ -139,7 +148,8 @@ Partial Class frm_funcionarios
         Me.TabControl1.Location = New System.Drawing.Point(12, 45)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(791, 443)
+        Me.TabControl1.Size = New System.Drawing.Size(791, 464)
+        Me.TabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
         Me.TabControl1.TabIndex = 2
         '
         'tab_cadastro
@@ -163,10 +173,29 @@ Partial Class frm_funcionarios
         Me.tab_cadastro.Location = New System.Drawing.Point(4, 34)
         Me.tab_cadastro.Name = "tab_cadastro"
         Me.tab_cadastro.Padding = New System.Windows.Forms.Padding(3)
-        Me.tab_cadastro.Size = New System.Drawing.Size(783, 405)
+        Me.tab_cadastro.Size = New System.Drawing.Size(783, 426)
         Me.tab_cadastro.TabIndex = 0
         Me.tab_cadastro.Text = "Cadastro"
         Me.tab_cadastro.UseVisualStyleBackColor = True
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.Font = New System.Drawing.Font("Segoe UI", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(564, 234)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(193, 36)
+        Me.ComboBox1.TabIndex = 30
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(187, Byte), Integer))
+        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
+        Me.Button1.Location = New System.Drawing.Point(465, 329)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(42, 36)
+        Me.Button1.TabIndex = 29
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Button2
         '
@@ -212,7 +241,7 @@ Partial Class frm_funcionarios
         '
         Me.ComboBox2.Font = New System.Drawing.Font("Segoe UI", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(564, 140)
+        Me.ComboBox2.Location = New System.Drawing.Point(564, 153)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(193, 36)
         Me.ComboBox2.TabIndex = 23
@@ -221,7 +250,7 @@ Partial Class frm_funcionarios
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Cambria", 22.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(558, 102)
+        Me.Label6.Location = New System.Drawing.Point(558, 115)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(203, 36)
         Me.Label6.TabIndex = 22
@@ -231,7 +260,7 @@ Partial Class frm_funcionarios
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Cambria", 22.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(558, 189)
+        Me.Label5.Location = New System.Drawing.Point(558, 195)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(98, 36)
         Me.Label5.TabIndex = 20
@@ -252,7 +281,7 @@ Partial Class frm_funcionarios
         Me.TextBox3.Font = New System.Drawing.Font("Cambria", 18.0!)
         Me.TextBox3.Location = New System.Drawing.Point(25, 64)
         Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(482, 36)
+        Me.TextBox3.Size = New System.Drawing.Size(732, 36)
         Me.TextBox3.TabIndex = 18
         '
         'Label3
@@ -298,7 +327,7 @@ Partial Class frm_funcionarios
         Me.tab_lista.Location = New System.Drawing.Point(4, 34)
         Me.tab_lista.Name = "tab_lista"
         Me.tab_lista.Padding = New System.Windows.Forms.Padding(3)
-        Me.tab_lista.Size = New System.Drawing.Size(783, 405)
+        Me.tab_lista.Size = New System.Drawing.Size(783, 426)
         Me.tab_lista.TabIndex = 1
         Me.tab_lista.Text = "Lista"
         Me.tab_lista.UseVisualStyleBackColor = True
@@ -316,12 +345,14 @@ Partial Class frm_funcionarios
         Me.DataGridView1.Location = New System.Drawing.Point(5, 4)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.RowHeadersWidth = 62
         Me.DataGridView1.Size = New System.Drawing.Size(777, 400)
         Me.DataGridView1.TabIndex = 0
         '
         'Column1
         '
         Me.Column1.HeaderText = "Nome"
+        Me.Column1.MinimumWidth = 8
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
         Me.Column1.Width = 68
@@ -329,6 +360,7 @@ Partial Class frm_funcionarios
         'Column2
         '
         Me.Column2.HeaderText = "E-mail"
+        Me.Column2.MinimumWidth = 8
         Me.Column2.Name = "Column2"
         Me.Column2.ReadOnly = True
         Me.Column2.Width = 72
@@ -336,6 +368,7 @@ Partial Class frm_funcionarios
         'Column3
         '
         Me.Column3.HeaderText = "Cargo"
+        Me.Column3.MinimumWidth = 8
         Me.Column3.Name = "Column3"
         Me.Column3.ReadOnly = True
         Me.Column3.Width = 67
@@ -344,6 +377,7 @@ Partial Class frm_funcionarios
         '
         Me.Column4.HeaderText = "Editar"
         Me.Column4.Image = CType(resources.GetObject("Column4.Image"), System.Drawing.Image)
+        Me.Column4.MinimumWidth = 8
         Me.Column4.Name = "Column4"
         Me.Column4.ReadOnly = True
         Me.Column4.Width = 51
@@ -352,39 +386,24 @@ Partial Class frm_funcionarios
         '
         Me.Column5.HeaderText = "Excluir"
         Me.Column5.Image = CType(resources.GetObject("Column5.Image"), System.Drawing.Image)
+        Me.Column5.MinimumWidth = 8
         Me.Column5.Name = "Column5"
         Me.Column5.ReadOnly = True
         Me.Column5.Width = 56
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(187, Byte), Integer))
-        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.Location = New System.Drawing.Point(465, 329)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(42, 36)
-        Me.Button1.TabIndex = 29
-        Me.Button1.UseVisualStyleBackColor = False
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.Font = New System.Drawing.Font("Segoe UI", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(564, 228)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(193, 36)
-        Me.ComboBox1.TabIndex = 30
         '
         'frm_funcionarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(187, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(850, 517)
+        Me.ClientSize = New System.Drawing.Size(817, 534)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.TabControl1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
         Me.Name = "frm_funcionarios"
-        Me.Text = "frm_funcionarios"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Funcionários"
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         Me.TabControl1.ResumeLayout(False)
@@ -428,4 +447,5 @@ Partial Class frm_funcionarios
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents ReservaToolStripMenuItem1 As ToolStripMenuItem
 End Class

@@ -8,17 +8,17 @@ Imports System.Runtime.InteropServices
 
 ' Revise os valores dos atributos do assembly
 
-<Assembly: AssemblyTitle("prj_adsma2_pousada")>
+<Assembly: AssemblyTitle("prj_si_adsma2")>
 <Assembly: AssemblyDescription("")>
 <Assembly: AssemblyCompany("")>
-<Assembly: AssemblyProduct("prj_adsma2_pousada")>
+<Assembly: AssemblyProduct("prj_si_adsma2")>
 <Assembly: AssemblyCopyright("Copyright ©  2022")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
 
 'O GUID a seguir será destinado à ID de typelib se este projeto for exposto para COM
-<Assembly: Guid("7398867a-36e9-42ba-b9bf-ce3d599240b2")>
+<Assembly: Guid("b97c19d0-4afe-4ab4-b68c-e92ce4acba93")>
 
 ' As informações da versão de um assembly consistem nos quatro valores a seguir:
 '

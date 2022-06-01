@@ -63,7 +63,7 @@ Namespace My
      Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute()> _
     Friend Module MySettingsProperty
 
-        <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")> _
+        <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")>
         Friend ReadOnly Property Settings() As Global.prj_adsma2_pousada.My.MySettings
             Get
                 Return Global.prj_adsma2_pousada.My.MySettings.Default
