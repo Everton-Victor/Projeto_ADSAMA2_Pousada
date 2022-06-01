@@ -13,3 +13,5 @@ C:\Users\Home\OneDrive - Fatec Centro Paula Souza\Desktop\Projeto_ADSAMA2_Pousad
 C:\Users\Home\OneDrive - Fatec Centro Paula Souza\Desktop\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\obj\Debug\prj_adsma2_pousada.exe
 C:\Users\Home\OneDrive - Fatec Centro Paula Souza\Desktop\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\obj\Debug\prj_adsma2_pousada.xml
 C:\Users\Home\OneDrive - Fatec Centro Paula Souza\Desktop\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\obj\Debug\prj_adsma2_pousada.pdb
+C:\Users\Home\OneDrive - Fatec Centro Paula Souza\Desktop\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\obj\Debug\Interop.ADODB.dll
+C:\Users\Home\OneDrive - Fatec Centro Paula Souza\Desktop\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\obj\Debug\prj_adsma2_pousada.vbproj.ResolveComReference.cache

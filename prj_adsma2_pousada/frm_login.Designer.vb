@@ -28,7 +28,7 @@ Partial Class frm_login
         Me.btn_entrar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txt_email = New System.Windows.Forms.TextBox()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btn_ver_senha = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label2
@@ -80,15 +80,15 @@ Partial Class frm_login
         Me.txt_email.Size = New System.Drawing.Size(480, 36)
         Me.txt_email.TabIndex = 12
         '
-        'Button2
+        'btn_ver_senha
         '
-        Me.Button2.BackColor = System.Drawing.Color.White
-        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
-        Me.Button2.Location = New System.Drawing.Point(466, 152)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(42, 36)
-        Me.Button2.TabIndex = 29
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.btn_ver_senha.BackColor = System.Drawing.Color.White
+        Me.btn_ver_senha.Image = CType(resources.GetObject("btn_ver_senha.Image"), System.Drawing.Image)
+        Me.btn_ver_senha.Location = New System.Drawing.Point(466, 152)
+        Me.btn_ver_senha.Name = "btn_ver_senha"
+        Me.btn_ver_senha.Size = New System.Drawing.Size(42, 36)
+        Me.btn_ver_senha.TabIndex = 29
+        Me.btn_ver_senha.UseVisualStyleBackColor = False
         '
         'frm_login
         '
@@ -96,7 +96,7 @@ Partial Class frm_login
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(187, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(547, 317)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.btn_ver_senha)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.txt_senha)
         Me.Controls.Add(Me.btn_entrar)
@@ -117,5 +117,5 @@ Partial Class frm_login
     Friend WithEvents btn_entrar As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents txt_email As TextBox
-    Friend WithEvents Button2 As Button
+    Friend WithEvents btn_ver_senha As Button
 End Class

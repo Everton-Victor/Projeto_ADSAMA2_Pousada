@@ -34,21 +34,23 @@ Partial Class frm_funcionarios
         Me.EncerrarSessToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.tab_cadastro = New System.Windows.Forms.TabPage()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.cmb_status_conta = New System.Windows.Forms.ComboBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.cmb_cargo = New System.Windows.Forms.ComboBox()
+        Me.btn_ver_confirmar_senha = New System.Windows.Forms.Button()
+        Me.btn_ver_senha = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.txt_senha = New System.Windows.Forms.TextBox()
+        Me.txt_nome = New System.Windows.Forms.TextBox()
         Me.btn_entrar = New System.Windows.Forms.Button()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.cmb_tipo_conta = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.txt_email = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.txt_confirmar_senha = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txt_senha = New System.Windows.Forms.TextBox()
         Me.tab_lista = New System.Windows.Forms.TabPage()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -154,21 +156,23 @@ Partial Class frm_funcionarios
         '
         'tab_cadastro
         '
-        Me.tab_cadastro.Controls.Add(Me.ComboBox1)
-        Me.tab_cadastro.Controls.Add(Me.Button1)
-        Me.tab_cadastro.Controls.Add(Me.Button2)
+        Me.tab_cadastro.Controls.Add(Me.cmb_status_conta)
+        Me.tab_cadastro.Controls.Add(Me.Label7)
+        Me.tab_cadastro.Controls.Add(Me.cmb_cargo)
+        Me.tab_cadastro.Controls.Add(Me.btn_ver_confirmar_senha)
+        Me.tab_cadastro.Controls.Add(Me.btn_ver_senha)
         Me.tab_cadastro.Controls.Add(Me.Label2)
-        Me.tab_cadastro.Controls.Add(Me.txt_senha)
+        Me.tab_cadastro.Controls.Add(Me.txt_nome)
         Me.tab_cadastro.Controls.Add(Me.btn_entrar)
-        Me.tab_cadastro.Controls.Add(Me.ComboBox2)
+        Me.tab_cadastro.Controls.Add(Me.cmb_tipo_conta)
         Me.tab_cadastro.Controls.Add(Me.Label6)
         Me.tab_cadastro.Controls.Add(Me.Label5)
         Me.tab_cadastro.Controls.Add(Me.Label4)
-        Me.tab_cadastro.Controls.Add(Me.TextBox3)
+        Me.tab_cadastro.Controls.Add(Me.txt_email)
         Me.tab_cadastro.Controls.Add(Me.Label3)
-        Me.tab_cadastro.Controls.Add(Me.TextBox2)
+        Me.tab_cadastro.Controls.Add(Me.txt_confirmar_senha)
         Me.tab_cadastro.Controls.Add(Me.Label1)
-        Me.tab_cadastro.Controls.Add(Me.TextBox1)
+        Me.tab_cadastro.Controls.Add(Me.txt_senha)
         Me.tab_cadastro.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tab_cadastro.Location = New System.Drawing.Point(4, 34)
         Me.tab_cadastro.Name = "tab_cadastro"
@@ -178,34 +182,53 @@ Partial Class frm_funcionarios
         Me.tab_cadastro.Text = "Cadastro"
         Me.tab_cadastro.UseVisualStyleBackColor = True
         '
-        'ComboBox1
+        'cmb_status_conta
         '
-        Me.ComboBox1.Font = New System.Drawing.Font("Segoe UI", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(564, 234)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(193, 36)
-        Me.ComboBox1.TabIndex = 30
+        Me.cmb_status_conta.Font = New System.Drawing.Font("Segoe UI", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmb_status_conta.FormattingEnabled = True
+        Me.cmb_status_conta.Location = New System.Drawing.Point(564, 65)
+        Me.cmb_status_conta.Name = "cmb_status_conta"
+        Me.cmb_status_conta.Size = New System.Drawing.Size(193, 36)
+        Me.cmb_status_conta.TabIndex = 33
         '
-        'Button1
+        'Label7
         '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(187, Byte), Integer))
-        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.Location = New System.Drawing.Point(465, 329)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(42, 36)
-        Me.Button1.TabIndex = 29
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Cambria", 22.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(554, 26)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(203, 36)
+        Me.Label7.TabIndex = 32
+        Me.Label7.Text = "Tipo de Conta:"
         '
-        'Button2
+        'cmb_cargo
         '
-        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(187, Byte), Integer))
-        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
-        Me.Button2.Location = New System.Drawing.Point(465, 235)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(42, 36)
-        Me.Button2.TabIndex = 28
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.cmb_cargo.Font = New System.Drawing.Font("Segoe UI", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmb_cargo.FormattingEnabled = True
+        Me.cmb_cargo.Location = New System.Drawing.Point(564, 234)
+        Me.cmb_cargo.Name = "cmb_cargo"
+        Me.cmb_cargo.Size = New System.Drawing.Size(193, 36)
+        Me.cmb_cargo.TabIndex = 30
+        '
+        'btn_ver_confirmar_senha
+        '
+        Me.btn_ver_confirmar_senha.BackColor = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(187, Byte), Integer))
+        Me.btn_ver_confirmar_senha.Image = CType(resources.GetObject("btn_ver_confirmar_senha.Image"), System.Drawing.Image)
+        Me.btn_ver_confirmar_senha.Location = New System.Drawing.Point(465, 329)
+        Me.btn_ver_confirmar_senha.Name = "btn_ver_confirmar_senha"
+        Me.btn_ver_confirmar_senha.Size = New System.Drawing.Size(42, 36)
+        Me.btn_ver_confirmar_senha.TabIndex = 29
+        Me.btn_ver_confirmar_senha.UseVisualStyleBackColor = False
+        '
+        'btn_ver_senha
+        '
+        Me.btn_ver_senha.BackColor = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(187, Byte), Integer))
+        Me.btn_ver_senha.Image = CType(resources.GetObject("btn_ver_senha.Image"), System.Drawing.Image)
+        Me.btn_ver_senha.Location = New System.Drawing.Point(465, 235)
+        Me.btn_ver_senha.Name = "btn_ver_senha"
+        Me.btn_ver_senha.Size = New System.Drawing.Size(42, 36)
+        Me.btn_ver_senha.TabIndex = 28
+        Me.btn_ver_senha.UseVisualStyleBackColor = False
         '
         'Label2
         '
@@ -217,13 +240,13 @@ Partial Class frm_funcionarios
         Me.Label2.TabIndex = 26
         Me.Label2.Text = "Nome:"
         '
-        'txt_senha
+        'txt_nome
         '
-        Me.txt_senha.Font = New System.Drawing.Font("Cambria", 18.0!)
-        Me.txt_senha.Location = New System.Drawing.Point(25, 152)
-        Me.txt_senha.Name = "txt_senha"
-        Me.txt_senha.Size = New System.Drawing.Size(482, 36)
-        Me.txt_senha.TabIndex = 25
+        Me.txt_nome.Font = New System.Drawing.Font("Cambria", 18.0!)
+        Me.txt_nome.Location = New System.Drawing.Point(25, 152)
+        Me.txt_nome.Name = "txt_nome"
+        Me.txt_nome.Size = New System.Drawing.Size(482, 36)
+        Me.txt_nome.TabIndex = 25
         '
         'btn_entrar
         '
@@ -237,14 +260,14 @@ Partial Class frm_funcionarios
         Me.btn_entrar.Text = "Entrar"
         Me.btn_entrar.UseVisualStyleBackColor = False
         '
-        'ComboBox2
+        'cmb_tipo_conta
         '
-        Me.ComboBox2.Font = New System.Drawing.Font("Segoe UI", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(564, 153)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(193, 36)
-        Me.ComboBox2.TabIndex = 23
+        Me.cmb_tipo_conta.Font = New System.Drawing.Font("Segoe UI", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmb_tipo_conta.FormattingEnabled = True
+        Me.cmb_tipo_conta.Location = New System.Drawing.Point(564, 153)
+        Me.cmb_tipo_conta.Name = "cmb_tipo_conta"
+        Me.cmb_tipo_conta.Size = New System.Drawing.Size(193, 36)
+        Me.cmb_tipo_conta.TabIndex = 23
         '
         'Label6
         '
@@ -276,13 +299,13 @@ Partial Class frm_funcionarios
         Me.Label4.TabIndex = 19
         Me.Label4.Text = "E-mail:"
         '
-        'TextBox3
+        'txt_email
         '
-        Me.TextBox3.Font = New System.Drawing.Font("Cambria", 18.0!)
-        Me.TextBox3.Location = New System.Drawing.Point(25, 64)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(732, 36)
-        Me.TextBox3.TabIndex = 18
+        Me.txt_email.Font = New System.Drawing.Font("Cambria", 18.0!)
+        Me.txt_email.Location = New System.Drawing.Point(25, 64)
+        Me.txt_email.Name = "txt_email"
+        Me.txt_email.Size = New System.Drawing.Size(482, 36)
+        Me.txt_email.TabIndex = 18
         '
         'Label3
         '
@@ -294,13 +317,14 @@ Partial Class frm_funcionarios
         Me.Label3.TabIndex = 17
         Me.Label3.Text = "Confirmar Senha:"
         '
-        'TextBox2
+        'txt_confirmar_senha
         '
-        Me.TextBox2.Font = New System.Drawing.Font("Cambria", 18.0!)
-        Me.TextBox2.Location = New System.Drawing.Point(25, 329)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(434, 36)
-        Me.TextBox2.TabIndex = 16
+        Me.txt_confirmar_senha.Font = New System.Drawing.Font("Cambria", 18.0!)
+        Me.txt_confirmar_senha.Location = New System.Drawing.Point(25, 329)
+        Me.txt_confirmar_senha.Name = "txt_confirmar_senha"
+        Me.txt_confirmar_senha.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txt_confirmar_senha.Size = New System.Drawing.Size(434, 36)
+        Me.txt_confirmar_senha.TabIndex = 16
         '
         'Label1
         '
@@ -312,13 +336,14 @@ Partial Class frm_funcionarios
         Me.Label1.TabIndex = 15
         Me.Label1.Text = "Senha:"
         '
-        'TextBox1
+        'txt_senha
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Cambria", 18.0!)
-        Me.TextBox1.Location = New System.Drawing.Point(25, 235)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(434, 36)
-        Me.TextBox1.TabIndex = 14
+        Me.txt_senha.Font = New System.Drawing.Font("Cambria", 18.0!)
+        Me.txt_senha.Location = New System.Drawing.Point(25, 235)
+        Me.txt_senha.Name = "txt_senha"
+        Me.txt_senha.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txt_senha.Size = New System.Drawing.Size(434, 36)
+        Me.txt_senha.TabIndex = 14
         '
         'tab_lista
         '
@@ -432,20 +457,22 @@ Partial Class frm_funcionarios
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewImageColumn
     Friend WithEvents Column5 As DataGridViewImageColumn
-    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents cmb_tipo_conta As ComboBox
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents txt_email As TextBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents txt_confirmar_senha As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Label2 As Label
     Friend WithEvents txt_senha As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents txt_nome As TextBox
     Friend WithEvents btn_entrar As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents btn_ver_senha As Button
+    Friend WithEvents btn_ver_confirmar_senha As Button
+    Friend WithEvents cmb_cargo As ComboBox
     Friend WithEvents ReservaToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents cmb_status_conta As ComboBox
+    Friend WithEvents Label7 As Label
 End Class
