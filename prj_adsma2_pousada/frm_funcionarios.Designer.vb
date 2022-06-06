@@ -22,7 +22,6 @@ Partial Class frm_funcionarios
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim CheckoutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_funcionarios))
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripDropDownButton1 = New System.Windows.Forms.ToolStripDropDownButton()
@@ -58,20 +57,12 @@ Partial Class frm_funcionarios
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewImageColumn()
-        CheckoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStrip1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.tab_cadastro.SuspendLayout()
         Me.tab_lista.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'CheckoutToolStripMenuItem
-        '
-        CheckoutToolStripMenuItem.Image = CType(resources.GetObject("CheckoutToolStripMenuItem.Image"), System.Drawing.Image)
-        CheckoutToolStripMenuItem.Name = "CheckoutToolStripMenuItem"
-        CheckoutToolStripMenuItem.Size = New System.Drawing.Size(151, 26)
-        CheckoutToolStripMenuItem.Text = "Check-out"
         '
         'ToolStrip1
         '
@@ -96,18 +87,18 @@ Partial Class frm_funcionarios
         '
         'ReservaToolStripMenuItem
         '
-        Me.ReservaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReservaToolStripMenuItem1, Me.CheckinToolStripMenuItem, CheckoutToolStripMenuItem})
+        Me.ReservaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReservaToolStripMenuItem1, Me.CheckinToolStripMenuItem})
         Me.ReservaToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ReservaToolStripMenuItem.Image = CType(resources.GetObject("ReservaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ReservaToolStripMenuItem.Name = "ReservaToolStripMenuItem"
-        Me.ReservaToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
+        Me.ReservaToolStripMenuItem.Size = New System.Drawing.Size(222, 42)
         Me.ReservaToolStripMenuItem.Text = "Cliente"
         '
         'ReservaToolStripMenuItem1
         '
         Me.ReservaToolStripMenuItem1.Image = CType(resources.GetObject("ReservaToolStripMenuItem1.Image"), System.Drawing.Image)
         Me.ReservaToolStripMenuItem1.Name = "ReservaToolStripMenuItem1"
-        Me.ReservaToolStripMenuItem1.Size = New System.Drawing.Size(151, 26)
+        Me.ReservaToolStripMenuItem1.Size = New System.Drawing.Size(222, 26)
         Me.ReservaToolStripMenuItem1.Text = "Reserva"
         '
         'CheckinToolStripMenuItem
@@ -115,15 +106,15 @@ Partial Class frm_funcionarios
         Me.CheckinToolStripMenuItem.Image = CType(resources.GetObject("CheckinToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CheckinToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.CheckinToolStripMenuItem.Name = "CheckinToolStripMenuItem"
-        Me.CheckinToolStripMenuItem.Size = New System.Drawing.Size(151, 26)
-        Me.CheckinToolStripMenuItem.Text = "Check-in"
+        Me.CheckinToolStripMenuItem.Size = New System.Drawing.Size(222, 26)
+        Me.CheckinToolStripMenuItem.Text = "Check-in/ Check-out"
         '
         'PacoteDeServiçosToolStripMenuItem
         '
         Me.PacoteDeServiçosToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PacoteDeServiçosToolStripMenuItem.Image = CType(resources.GetObject("PacoteDeServiçosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.PacoteDeServiçosToolStripMenuItem.Name = "PacoteDeServiçosToolStripMenuItem"
-        Me.PacoteDeServiçosToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
+        Me.PacoteDeServiçosToolStripMenuItem.Size = New System.Drawing.Size(222, 42)
         Me.PacoteDeServiçosToolStripMenuItem.Text = "Pacote de serviços"
         '
         'QuartosToolStripMenuItem
@@ -131,7 +122,7 @@ Partial Class frm_funcionarios
         Me.QuartosToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.QuartosToolStripMenuItem.Image = CType(resources.GetObject("QuartosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.QuartosToolStripMenuItem.Name = "QuartosToolStripMenuItem"
-        Me.QuartosToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
+        Me.QuartosToolStripMenuItem.Size = New System.Drawing.Size(222, 42)
         Me.QuartosToolStripMenuItem.Text = "Quartos"
         '
         'EncerrarSessToolStripMenuItem
@@ -139,7 +130,7 @@ Partial Class frm_funcionarios
         Me.EncerrarSessToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.EncerrarSessToolStripMenuItem.Image = CType(resources.GetObject("EncerrarSessToolStripMenuItem.Image"), System.Drawing.Image)
         Me.EncerrarSessToolStripMenuItem.Name = "EncerrarSessToolStripMenuItem"
-        Me.EncerrarSessToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
+        Me.EncerrarSessToolStripMenuItem.Size = New System.Drawing.Size(222, 42)
         Me.EncerrarSessToolStripMenuItem.Text = "Encerrar sessão"
         '
         'TabControl1
@@ -253,11 +244,11 @@ Partial Class frm_funcionarios
         Me.btn_entrar.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
         Me.btn_entrar.Font = New System.Drawing.Font("Cambria", 20.0!, System.Drawing.FontStyle.Bold)
         Me.btn_entrar.ForeColor = System.Drawing.Color.White
-        Me.btn_entrar.Location = New System.Drawing.Point(588, 314)
+        Me.btn_entrar.Location = New System.Drawing.Point(577, 316)
         Me.btn_entrar.Name = "btn_entrar"
-        Me.btn_entrar.Size = New System.Drawing.Size(114, 59)
+        Me.btn_entrar.Size = New System.Drawing.Size(169, 59)
         Me.btn_entrar.TabIndex = 24
-        Me.btn_entrar.Text = "Entrar"
+        Me.btn_entrar.Text = "Confirmar"
         Me.btn_entrar.UseVisualStyleBackColor = False
         '
         'cmb_tipo_conta
@@ -371,7 +362,7 @@ Partial Class frm_funcionarios
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersWidth = 62
-        Me.DataGridView1.Size = New System.Drawing.Size(777, 400)
+        Me.DataGridView1.Size = New System.Drawing.Size(777, 422)
         Me.DataGridView1.TabIndex = 0
         '
         'Column1

@@ -18,5 +18,7 @@
             txt_confirmar_senha.PasswordChar = "*"
         End If
     End Sub
+
+
 End Class
 

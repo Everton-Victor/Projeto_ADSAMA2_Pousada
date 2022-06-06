@@ -73,6 +73,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frm_checkin_checkout.Designer.vb">
+      <DependentUpon>frm_checkin_checkout.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_checkin_checkout.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frm_funcionarios.Designer.vb">
       <DependentUpon>frm_funcionarios.vb</DependentUpon>
     </Compile>
@@ -110,6 +116,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frm_checkin_checkout.resx">
+      <DependentUpon>frm_checkin_checkout.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_funcionarios.resx">
       <DependentUpon>frm_funcionarios.vb</DependentUpon>
     </EmbeddedResource>
