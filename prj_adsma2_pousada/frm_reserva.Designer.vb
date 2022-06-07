@@ -108,7 +108,7 @@ Partial Class frm_reserva
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Padding = New System.Windows.Forms.Padding(0, 0, 2, 0)
-        Me.ToolStrip1.Size = New System.Drawing.Size(993, 42)
+        Me.ToolStrip1.Size = New System.Drawing.Size(814, 42)
         Me.ToolStrip1.TabIndex = 22
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -242,7 +242,7 @@ Partial Class frm_reserva
         Me.GroupBox2.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Padding = New System.Windows.Forms.Padding(2)
-        Me.GroupBox2.Size = New System.Drawing.Size(413, 194)
+        Me.GroupBox2.Size = New System.Drawing.Size(413, 203)
         Me.GroupBox2.TabIndex = 26
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Acompanhante"
@@ -254,7 +254,7 @@ Partial Class frm_reserva
         Me.GroupBox3.Controls.Add(Me.Label5)
         Me.GroupBox3.Controls.Add(Me.Label7)
         Me.GroupBox3.Controls.Add(Me.TextBox5)
-        Me.GroupBox3.Location = New System.Drawing.Point(15, 83)
+        Me.GroupBox3.Location = New System.Drawing.Point(16, 92)
         Me.GroupBox3.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Padding = New System.Windows.Forms.Padding(2)
@@ -650,7 +650,7 @@ Partial Class frm_reserva
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(187, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(993, 610)
+        Me.ClientSize = New System.Drawing.Size(814, 610)
         Me.Controls.Add(Me.TextBox9)
         Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.ComboBox4)

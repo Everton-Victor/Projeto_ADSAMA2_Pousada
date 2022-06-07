@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "prj_adsma2_pousada", "prj_adsma2_pousada.vbproj", "{E99C8AAD-08ED-4C7F-9306-11E60A4C6C7B}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "prj_adsma2_pousada", "prj_adsma2_pousada.vbproj", "{AAD1680E-7E74-4B80-8A1A-BA676D1A33AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E99C8AAD-08ED-4C7F-9306-11E60A4C6C7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E99C8AAD-08ED-4C7F-9306-11E60A4C6C7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E99C8AAD-08ED-4C7F-9306-11E60A4C6C7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E99C8AAD-08ED-4C7F-9306-11E60A4C6C7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAD1680E-7E74-4B80-8A1A-BA676D1A33AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAD1680E-7E74-4B80-8A1A-BA676D1A33AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAD1680E-7E74-4B80-8A1A-BA676D1A33AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAD1680E-7E74-4B80-8A1A-BA676D1A33AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {AEC1CD5B-BB3A-43E5-8FBF-2F994CB00020}
+		SolutionGuid = {83F9FC90-47F6-4818-BFA2-A88D6BBDA8BD}
 	EndGlobalSection
 EndGlobal
