@@ -1,7 +1,6 @@
-﻿Public Class frm_pacote_servico
+﻿Public Class frm_checkout
 
-
-    Private Sub frm_pacote_servico_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub frm_checkout_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If type_login = "admin" Then
             FuncionáriosToolStripMenuItem.Visible = True
         Else

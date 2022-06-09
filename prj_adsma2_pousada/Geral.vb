@@ -1,6 +1,6 @@
 ﻿Module Geral
     Public usuario, senha, status As String
-    Public diretorio, sql, resp As String
+    Public diretorio, sql, resp, type_login As String
     Public db As New ADODB.Connection
     Public rs As New ADODB.Recordset
     Public dirbanco = Application.StartupPath & "\banco\adsma2_banco_pousada.mdb"
@@ -23,5 +23,44 @@
             .txt_senha.Text = ""
             .txt_email.Focus()
         End With
+    End Sub
+
+    Sub carregar_tipo_conta()
+        Try
+            With frm_funcionarios.cmb_tipo_conta.Items
+                .Add("user")
+                .Add("admin")
+            End With
+            frm_funcionarios.cmb_tipo_conta.SelectedIndex = 0
+        Catch ex As Exception
+            MsgBox("Erro ao processar", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ATENÇÃO")
+        End Try
+    End Sub
+
+    Sub carregar_status_conta()
+        Try
+            With frm_funcionarios.cmb_status_conta.Items
+                .Add("Ativa")
+                .Add("Bloqueada")
+            End With
+            frm_funcionarios.cmb_status_conta.SelectedIndex = 0
+        Catch ex As Exception
+            MsgBox("Erro ao processar", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ATENÇÃO")
+        End Try
+    End Sub
+
+    Sub carregar_cargo()
+        Try
+            With frm_funcionarios.cmb_cargo.Items
+                .Add("Gerente")
+                .Add("Atendente")
+                .Add("Caixa")
+                .Add("Ajudante Geral")
+                .Add("Supervisor")
+            End With
+            frm_funcionarios.cmb_cargo.SelectedIndex = 0
+        Catch ex As Exception
+            MsgBox("Erro ao processar", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ATENÇÃO")
+        End Try
     End Sub
 End Module

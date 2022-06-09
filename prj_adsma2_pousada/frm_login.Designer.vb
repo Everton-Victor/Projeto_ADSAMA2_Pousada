@@ -77,7 +77,7 @@ Partial Class frm_login
         Me.txt_email.Font = New System.Drawing.Font("Cambria", 18.0!)
         Me.txt_email.Location = New System.Drawing.Point(28, 58)
         Me.txt_email.Name = "txt_email"
-        Me.txt_email.Size = New System.Drawing.Size(480, 36)
+        Me.txt_email.Size = New System.Drawing.Size(421, 36)
         Me.txt_email.TabIndex = 12
         '
         'btn_ver_senha

@@ -22,15 +22,8 @@ Partial Class frm_funcionarios
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim CheckoutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_funcionarios))
-        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.ToolStripDropDownButton1 = New System.Windows.Forms.ToolStripDropDownButton()
-        Me.ReservaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ReservaToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CheckinToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PacoteDeServiçosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.QuartosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EncerrarSessToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.tab_cadastro = New System.Windows.Forms.TabPage()
         Me.cmb_status_conta = New System.Windows.Forms.ComboBox()
@@ -51,87 +44,34 @@ Partial Class frm_funcionarios
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txt_senha = New System.Windows.Forms.TextBox()
         Me.tab_lista = New System.Windows.Forms.TabPage()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dgv_fun = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.ToolStrip1.SuspendLayout()
+        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.ToolStripDropDownButton1 = New System.Windows.Forms.ToolStripDropDownButton()
+        Me.ReservaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CheckinToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CheckoutToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PacoteDeServiçosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.QuartosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EncerrarSessToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        CheckoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TabControl1.SuspendLayout()
         Me.tab_cadastro.SuspendLayout()
         Me.tab_lista.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgv_fun, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'ToolStrip1
+        'CheckoutToolStripMenuItem
         '
-        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(35, 35)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripDropDownButton1})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Padding = New System.Windows.Forms.Padding(0, 0, 2, 0)
-        Me.ToolStrip1.Size = New System.Drawing.Size(817, 42)
-        Me.ToolStrip1.TabIndex = 3
-        Me.ToolStrip1.Text = "ToolStrip1"
-        '
-        'ToolStripDropDownButton1
-        '
-        Me.ToolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.ToolStripDropDownButton1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReservaToolStripMenuItem, Me.PacoteDeServiçosToolStripMenuItem, Me.QuartosToolStripMenuItem, Me.EncerrarSessToolStripMenuItem})
-        Me.ToolStripDropDownButton1.Image = CType(resources.GetObject("ToolStripDropDownButton1.Image"), System.Drawing.Image)
-        Me.ToolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripDropDownButton1.Name = "ToolStripDropDownButton1"
-        Me.ToolStripDropDownButton1.Size = New System.Drawing.Size(48, 39)
-        Me.ToolStripDropDownButton1.Text = "ToolStripDropDownButton1"
-        '
-        'ReservaToolStripMenuItem
-        '
-        Me.ReservaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReservaToolStripMenuItem1, Me.CheckinToolStripMenuItem})
-        Me.ReservaToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ReservaToolStripMenuItem.Image = CType(resources.GetObject("ReservaToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.ReservaToolStripMenuItem.Name = "ReservaToolStripMenuItem"
-        Me.ReservaToolStripMenuItem.Size = New System.Drawing.Size(222, 42)
-        Me.ReservaToolStripMenuItem.Text = "Cliente"
-        '
-        'ReservaToolStripMenuItem1
-        '
-        Me.ReservaToolStripMenuItem1.Image = CType(resources.GetObject("ReservaToolStripMenuItem1.Image"), System.Drawing.Image)
-        Me.ReservaToolStripMenuItem1.Name = "ReservaToolStripMenuItem1"
-        Me.ReservaToolStripMenuItem1.Size = New System.Drawing.Size(222, 26)
-        Me.ReservaToolStripMenuItem1.Text = "Reserva"
-        '
-        'CheckinToolStripMenuItem
-        '
-        Me.CheckinToolStripMenuItem.Image = CType(resources.GetObject("CheckinToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.CheckinToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.CheckinToolStripMenuItem.Name = "CheckinToolStripMenuItem"
-        Me.CheckinToolStripMenuItem.Size = New System.Drawing.Size(222, 26)
-        Me.CheckinToolStripMenuItem.Text = "Check-in/ Check-out"
-        '
-        'PacoteDeServiçosToolStripMenuItem
-        '
-        Me.PacoteDeServiçosToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PacoteDeServiçosToolStripMenuItem.Image = CType(resources.GetObject("PacoteDeServiçosToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.PacoteDeServiçosToolStripMenuItem.Name = "PacoteDeServiçosToolStripMenuItem"
-        Me.PacoteDeServiçosToolStripMenuItem.Size = New System.Drawing.Size(222, 42)
-        Me.PacoteDeServiçosToolStripMenuItem.Text = "Pacote de serviços"
-        '
-        'QuartosToolStripMenuItem
-        '
-        Me.QuartosToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.QuartosToolStripMenuItem.Image = CType(resources.GetObject("QuartosToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.QuartosToolStripMenuItem.Name = "QuartosToolStripMenuItem"
-        Me.QuartosToolStripMenuItem.Size = New System.Drawing.Size(222, 42)
-        Me.QuartosToolStripMenuItem.Text = "Quartos"
-        '
-        'EncerrarSessToolStripMenuItem
-        '
-        Me.EncerrarSessToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.EncerrarSessToolStripMenuItem.Image = CType(resources.GetObject("EncerrarSessToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.EncerrarSessToolStripMenuItem.Name = "EncerrarSessToolStripMenuItem"
-        Me.EncerrarSessToolStripMenuItem.Size = New System.Drawing.Size(222, 42)
-        Me.EncerrarSessToolStripMenuItem.Text = "Encerrar sessão"
+        CheckoutToolStripMenuItem.Image = CType(resources.GetObject("CheckoutToolStripMenuItem.Image"), System.Drawing.Image)
+        CheckoutToolStripMenuItem.Name = "CheckoutToolStripMenuItem"
+        CheckoutToolStripMenuItem.Size = New System.Drawing.Size(151, 26)
+        CheckoutToolStripMenuItem.Text = "Reserva"
         '
         'TabControl1
         '
@@ -338,7 +278,7 @@ Partial Class frm_funcionarios
         '
         'tab_lista
         '
-        Me.tab_lista.Controls.Add(Me.DataGridView1)
+        Me.tab_lista.Controls.Add(Me.dgv_fun)
         Me.tab_lista.Font = New System.Drawing.Font("Cambria", 10.0!)
         Me.tab_lista.Location = New System.Drawing.Point(4, 34)
         Me.tab_lista.Name = "tab_lista"
@@ -348,22 +288,21 @@ Partial Class frm_funcionarios
         Me.tab_lista.Text = "Lista"
         Me.tab_lista.UseVisualStyleBackColor = True
         '
-        'DataGridView1
+        'dgv_fun
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
-        Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5})
-        Me.DataGridView1.GridColor = System.Drawing.Color.White
-        Me.DataGridView1.Location = New System.Drawing.Point(5, 4)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.RowHeadersWidth = 62
-        Me.DataGridView1.Size = New System.Drawing.Size(777, 422)
-        Me.DataGridView1.TabIndex = 0
+        Me.dgv_fun.AllowUserToAddRows = False
+        Me.dgv_fun.AllowUserToDeleteRows = False
+        Me.dgv_fun.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.dgv_fun.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.dgv_fun.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_fun.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5})
+        Me.dgv_fun.GridColor = System.Drawing.Color.White
+        Me.dgv_fun.Location = New System.Drawing.Point(5, 4)
+        Me.dgv_fun.Name = "dgv_fun"
+        Me.dgv_fun.ReadOnly = True
+        Me.dgv_fun.RowHeadersWidth = 62
+        Me.dgv_fun.Size = New System.Drawing.Size(772, 422)
+        Me.dgv_fun.TabIndex = 0
         '
         'Column1
         '
@@ -407,6 +346,72 @@ Partial Class frm_funcionarios
         Me.Column5.ReadOnly = True
         Me.Column5.Width = 56
         '
+        'ToolStrip1
+        '
+        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(35, 35)
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripDropDownButton1})
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.ToolStrip1.Name = "ToolStrip1"
+        Me.ToolStrip1.Padding = New System.Windows.Forms.Padding(0, 0, 2, 0)
+        Me.ToolStrip1.Size = New System.Drawing.Size(817, 42)
+        Me.ToolStrip1.TabIndex = 77
+        Me.ToolStrip1.Text = "ToolStrip1"
+        '
+        'ToolStripDropDownButton1
+        '
+        Me.ToolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ToolStripDropDownButton1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReservaToolStripMenuItem, Me.PacoteDeServiçosToolStripMenuItem, Me.QuartosToolStripMenuItem, Me.EncerrarSessToolStripMenuItem})
+        Me.ToolStripDropDownButton1.Image = CType(resources.GetObject("ToolStripDropDownButton1.Image"), System.Drawing.Image)
+        Me.ToolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripDropDownButton1.Name = "ToolStripDropDownButton1"
+        Me.ToolStripDropDownButton1.Size = New System.Drawing.Size(48, 39)
+        Me.ToolStripDropDownButton1.Text = "ToolStripDropDownButton1"
+        '
+        'ReservaToolStripMenuItem
+        '
+        Me.ReservaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {CheckoutToolStripMenuItem, Me.CheckinToolStripMenuItem, Me.CheckoutToolStripMenuItem1})
+        Me.ReservaToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ReservaToolStripMenuItem.Image = CType(resources.GetObject("ReservaToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.ReservaToolStripMenuItem.Name = "ReservaToolStripMenuItem"
+        Me.ReservaToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
+        Me.ReservaToolStripMenuItem.Text = "Cliente"
+        '
+        'CheckinToolStripMenuItem
+        '
+        Me.CheckinToolStripMenuItem.Name = "CheckinToolStripMenuItem"
+        Me.CheckinToolStripMenuItem.Size = New System.Drawing.Size(151, 26)
+        Me.CheckinToolStripMenuItem.Text = "Check-in"
+        '
+        'CheckoutToolStripMenuItem1
+        '
+        Me.CheckoutToolStripMenuItem1.Name = "CheckoutToolStripMenuItem1"
+        Me.CheckoutToolStripMenuItem1.Size = New System.Drawing.Size(151, 26)
+        Me.CheckoutToolStripMenuItem1.Text = "Check-out"
+        '
+        'PacoteDeServiçosToolStripMenuItem
+        '
+        Me.PacoteDeServiçosToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PacoteDeServiçosToolStripMenuItem.Image = CType(resources.GetObject("PacoteDeServiçosToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.PacoteDeServiçosToolStripMenuItem.Name = "PacoteDeServiçosToolStripMenuItem"
+        Me.PacoteDeServiçosToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
+        Me.PacoteDeServiçosToolStripMenuItem.Text = "Pacote de serviços"
+        '
+        'QuartosToolStripMenuItem
+        '
+        Me.QuartosToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.QuartosToolStripMenuItem.Image = CType(resources.GetObject("QuartosToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.QuartosToolStripMenuItem.Name = "QuartosToolStripMenuItem"
+        Me.QuartosToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
+        Me.QuartosToolStripMenuItem.Text = "Quartos"
+        '
+        'EncerrarSessToolStripMenuItem
+        '
+        Me.EncerrarSessToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.EncerrarSessToolStripMenuItem.Image = CType(resources.GetObject("EncerrarSessToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.EncerrarSessToolStripMenuItem.Name = "EncerrarSessToolStripMenuItem"
+        Me.EncerrarSessToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
+        Me.EncerrarSessToolStripMenuItem.Text = "Encerrar sessão"
+        '
         'frm_funcionarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -420,29 +425,21 @@ Partial Class frm_funcionarios
         Me.Name = "frm_funcionarios"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Funcionários"
-        Me.ToolStrip1.ResumeLayout(False)
-        Me.ToolStrip1.PerformLayout()
         Me.TabControl1.ResumeLayout(False)
         Me.tab_cadastro.ResumeLayout(False)
         Me.tab_cadastro.PerformLayout()
         Me.tab_lista.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgv_fun, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ToolStrip1.ResumeLayout(False)
+        Me.ToolStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents ToolStrip1 As ToolStrip
-    Friend WithEvents ToolStripDropDownButton1 As ToolStripDropDownButton
-    Friend WithEvents ReservaToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents CheckinToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents PacoteDeServiçosToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents QuartosToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents EncerrarSessToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents tab_cadastro As TabPage
     Friend WithEvents tab_lista As TabPage
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dgv_fun As DataGridView
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
@@ -463,7 +460,14 @@ Partial Class frm_funcionarios
     Friend WithEvents btn_ver_senha As Button
     Friend WithEvents btn_ver_confirmar_senha As Button
     Friend WithEvents cmb_cargo As ComboBox
-    Friend WithEvents ReservaToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents cmb_status_conta As ComboBox
     Friend WithEvents Label7 As Label
+    Friend WithEvents ToolStrip1 As ToolStrip
+    Friend WithEvents ToolStripDropDownButton1 As ToolStripDropDownButton
+    Friend WithEvents ReservaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CheckinToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CheckoutToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents PacoteDeServiçosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents QuartosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EncerrarSessToolStripMenuItem As ToolStripMenuItem
 End Class

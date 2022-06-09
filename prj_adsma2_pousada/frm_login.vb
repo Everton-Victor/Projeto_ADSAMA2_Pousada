@@ -22,10 +22,9 @@
                 rs = db.Execute(sql)
 
                 If rs.EOF = False Then
-                    sql = "select * from tb_funcionario where (email_func='" & txt_email.Text & "' and senha_func='" & txt_senha.Text & "' and" &
-                        " status_conta_func='Ativo')"
-                    rs = db.Execute(sql)
-                    If rs.EOF = False Then
+
+                    If rs.Fields(5).Value = "Ativa" Then
+                        type_login = rs.Fields(4).Value
                         Me.Hide()
                         frm_reserva.ShowDialog()
                     Else

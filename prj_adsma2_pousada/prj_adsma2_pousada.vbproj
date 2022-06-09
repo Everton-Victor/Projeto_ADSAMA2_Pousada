@@ -73,10 +73,16 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frm_checkin_checkout.Designer.vb">
-      <DependentUpon>frm_checkin_checkout.vb</DependentUpon>
+    <Compile Include="frm_checkin.Designer.vb">
+      <DependentUpon>frm_checkin.vb</DependentUpon>
     </Compile>
-    <Compile Include="frm_checkin_checkout.vb">
+    <Compile Include="frm_checkin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_checkout.Designer.vb">
+      <DependentUpon>frm_checkout.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_checkout.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_funcionarios.Designer.vb">
@@ -95,6 +101,12 @@
       <DependentUpon>frm_pacote_servico.vb</DependentUpon>
     </Compile>
     <Compile Include="frm_pacote_servico.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_quartos.Designer.vb">
+      <DependentUpon>frm_quartos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_quartos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_reserva.Designer.vb">
@@ -122,8 +134,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frm_checkin_checkout.resx">
-      <DependentUpon>frm_checkin_checkout.vb</DependentUpon>
+    <EmbeddedResource Include="frm_checkin.resx">
+      <DependentUpon>frm_checkin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_checkout.resx">
+      <DependentUpon>frm_checkout.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_funcionarios.resx">
       <DependentUpon>frm_funcionarios.vb</DependentUpon>
@@ -133,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_pacote_servico.resx">
       <DependentUpon>frm_pacote_servico.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_quartos.resx">
+      <DependentUpon>frm_quartos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_reserva.resx">
       <DependentUpon>frm_reserva.vb</DependentUpon>
