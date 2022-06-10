@@ -45,11 +45,6 @@ Partial Class frm_funcionarios
         Me.txt_senha = New System.Windows.Forms.TextBox()
         Me.tab_lista = New System.Windows.Forms.TabPage()
         Me.dgv_fun = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripDropDownButton1 = New System.Windows.Forms.ToolStripDropDownButton()
         Me.ReservaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -58,6 +53,14 @@ Partial Class frm_funcionarios
         Me.PacoteDeServiçosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.QuartosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EncerrarSessToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewImageColumn()
         CheckoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TabControl1.SuspendLayout()
         Me.tab_cadastro.SuspendLayout()
@@ -295,7 +298,7 @@ Partial Class frm_funcionarios
         Me.dgv_fun.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgv_fun.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgv_fun.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_fun.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5})
+        Me.dgv_fun.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column6, Me.Column2, Me.Column1, Me.Column3, Me.Column7, Me.Column8, Me.Column4, Me.Column5})
         Me.dgv_fun.GridColor = System.Drawing.Color.White
         Me.dgv_fun.Location = New System.Drawing.Point(5, 4)
         Me.dgv_fun.Name = "dgv_fun"
@@ -303,48 +306,6 @@ Partial Class frm_funcionarios
         Me.dgv_fun.RowHeadersWidth = 62
         Me.dgv_fun.Size = New System.Drawing.Size(772, 422)
         Me.dgv_fun.TabIndex = 0
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "Nome"
-        Me.Column1.MinimumWidth = 8
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Width = 68
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "E-mail"
-        Me.Column2.MinimumWidth = 8
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        Me.Column2.Width = 72
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Cargo"
-        Me.Column3.MinimumWidth = 8
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        Me.Column3.Width = 67
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "Editar"
-        Me.Column4.Image = CType(resources.GetObject("Column4.Image"), System.Drawing.Image)
-        Me.Column4.MinimumWidth = 8
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        Me.Column4.Width = 51
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "Excluir"
-        Me.Column5.Image = CType(resources.GetObject("Column5.Image"), System.Drawing.Image)
-        Me.Column5.MinimumWidth = 8
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        Me.Column5.Width = 56
         '
         'ToolStrip1
         '
@@ -412,6 +373,69 @@ Partial Class frm_funcionarios
         Me.EncerrarSessToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
         Me.EncerrarSessToolStripMenuItem.Text = "Encerrar sessão"
         '
+        'Column6
+        '
+        Me.Column6.HeaderText = "Nº"
+        Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
+        Me.Column6.Width = 48
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "E-mail"
+        Me.Column2.MinimumWidth = 8
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        Me.Column2.Width = 72
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "Nome"
+        Me.Column1.MinimumWidth = 8
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Width = 68
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "Cargo"
+        Me.Column3.MinimumWidth = 8
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        Me.Column3.Width = 67
+        '
+        'Column7
+        '
+        Me.Column7.HeaderText = "Conta"
+        Me.Column7.Name = "Column7"
+        Me.Column7.ReadOnly = True
+        Me.Column7.Width = 67
+        '
+        'Column8
+        '
+        Me.Column8.HeaderText = "Status"
+        Me.Column8.Name = "Column8"
+        Me.Column8.ReadOnly = True
+        Me.Column8.Width = 70
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "Editar"
+        Me.Column4.Image = CType(resources.GetObject("Column4.Image"), System.Drawing.Image)
+        Me.Column4.MinimumWidth = 8
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        Me.Column4.Width = 51
+        '
+        'Column5
+        '
+        Me.Column5.HeaderText = "Excluir"
+        Me.Column5.Image = CType(resources.GetObject("Column5.Image"), System.Drawing.Image)
+        Me.Column5.MinimumWidth = 8
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        Me.Column5.Width = 56
+        '
         'frm_funcionarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -440,11 +464,6 @@ Partial Class frm_funcionarios
     Friend WithEvents tab_cadastro As TabPage
     Friend WithEvents tab_lista As TabPage
     Friend WithEvents dgv_fun As DataGridView
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As DataGridViewImageColumn
-    Friend WithEvents Column5 As DataGridViewImageColumn
     Friend WithEvents cmb_tipo_conta As ComboBox
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
@@ -470,4 +489,12 @@ Partial Class frm_funcionarios
     Friend WithEvents PacoteDeServiçosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents QuartosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EncerrarSessToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Column6 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column7 As DataGridViewTextBoxColumn
+    Friend WithEvents Column8 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewImageColumn
+    Friend WithEvents Column5 As DataGridViewImageColumn
 End Class

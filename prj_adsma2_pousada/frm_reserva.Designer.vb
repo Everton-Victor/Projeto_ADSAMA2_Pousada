@@ -50,8 +50,6 @@ Partial Class frm_reserva
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.num_reserva = New System.Windows.Forms.TextBox()
-        Me.txt_pag_realizado = New System.Windows.Forms.TextBox()
-        Me.Label18 = New System.Windows.Forms.Label()
         Me.cmb_parcela = New System.Windows.Forms.ComboBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.txt_total_pagar = New System.Windows.Forms.TextBox()
@@ -79,11 +77,13 @@ Partial Class frm_reserva
         Me.txt_nome_acomp = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txt_cpf_acomp = New System.Windows.Forms.TextBox()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
+        Me.GroupBox5.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label4
@@ -164,7 +164,7 @@ Partial Class frm_reserva
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Cambria", 15.0!)
-        Me.Label8.Location = New System.Drawing.Point(337, 32)
+        Me.Label8.Location = New System.Drawing.Point(350, 32)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(166, 23)
         Me.Label8.TabIndex = 31
@@ -175,7 +175,7 @@ Partial Class frm_reserva
         Me.Label12.AutoSize = True
         Me.Label12.BackColor = System.Drawing.Color.White
         Me.Label12.Font = New System.Drawing.Font("Cambria", 15.0!)
-        Me.Label12.Location = New System.Drawing.Point(53, 254)
+        Me.Label12.Location = New System.Drawing.Point(43, 250)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(130, 23)
         Me.Label12.TabIndex = 33
@@ -186,7 +186,7 @@ Partial Class frm_reserva
         Me.Label9.AutoSize = True
         Me.Label9.BackColor = System.Drawing.Color.White
         Me.Label9.Font = New System.Drawing.Font("Cambria", 15.0!)
-        Me.Label9.Location = New System.Drawing.Point(22, 170)
+        Me.Label9.Location = New System.Drawing.Point(22, 186)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(151, 23)
         Me.Label9.TabIndex = 29
@@ -196,7 +196,7 @@ Partial Class frm_reserva
         '
         Me.cmb_quartos.Font = New System.Drawing.Font("Cambria", 13.0!)
         Me.cmb_quartos.FormattingEnabled = True
-        Me.cmb_quartos.Location = New System.Drawing.Point(102, 81)
+        Me.cmb_quartos.Location = New System.Drawing.Point(138, 81)
         Me.cmb_quartos.Margin = New System.Windows.Forms.Padding(2)
         Me.cmb_quartos.Name = "cmb_quartos"
         Me.cmb_quartos.Size = New System.Drawing.Size(183, 28)
@@ -206,7 +206,7 @@ Partial Class frm_reserva
         '
         Me.cmb_pac_serv.Font = New System.Drawing.Font("Cambria", 13.0!)
         Me.cmb_pac_serv.FormattingEnabled = True
-        Me.cmb_pac_serv.Location = New System.Drawing.Point(508, 32)
+        Me.cmb_pac_serv.Location = New System.Drawing.Point(521, 32)
         Me.cmb_pac_serv.Margin = New System.Windows.Forms.Padding(2)
         Me.cmb_pac_serv.Name = "cmb_pac_serv"
         Me.cmb_pac_serv.Size = New System.Drawing.Size(223, 28)
@@ -216,17 +216,17 @@ Partial Class frm_reserva
         '
         Me.dtp_data_entrada.Font = New System.Drawing.Font("Cambria", 13.0!)
         Me.dtp_data_entrada.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtp_data_entrada.Location = New System.Drawing.Point(178, 170)
+        Me.dtp_data_entrada.Location = New System.Drawing.Point(178, 183)
         Me.dtp_data_entrada.Margin = New System.Windows.Forms.Padding(2)
         Me.dtp_data_entrada.Name = "dtp_data_entrada"
-        Me.dtp_data_entrada.Size = New System.Drawing.Size(140, 28)
+        Me.dtp_data_entrada.Size = New System.Drawing.Size(143, 28)
         Me.dtp_data_entrada.TabIndex = 36
         '
         'cmb_forma
         '
         Me.cmb_forma.Font = New System.Drawing.Font("Cambria", 13.0!)
         Me.cmb_forma.FormattingEnabled = True
-        Me.cmb_forma.Location = New System.Drawing.Point(431, 176)
+        Me.cmb_forma.Location = New System.Drawing.Point(96, 77)
         Me.cmb_forma.Margin = New System.Windows.Forms.Padding(2)
         Me.cmb_forma.Name = "cmb_forma"
         Me.cmb_forma.Size = New System.Drawing.Size(137, 28)
@@ -237,7 +237,7 @@ Partial Class frm_reserva
         Me.Label10.AutoSize = True
         Me.Label10.BackColor = System.Drawing.Color.White
         Me.Label10.Font = New System.Drawing.Font("Cambria", 15.0!)
-        Me.Label10.Location = New System.Drawing.Point(22, 81)
+        Me.Label10.Location = New System.Drawing.Point(58, 81)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(75, 23)
         Me.Label10.TabIndex = 27
@@ -247,7 +247,7 @@ Partial Class frm_reserva
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Cambria", 15.0!)
-        Me.Label11.Location = New System.Drawing.Point(355, 176)
+        Me.Label11.Location = New System.Drawing.Point(20, 77)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(71, 23)
         Me.Label11.TabIndex = 38
@@ -257,7 +257,7 @@ Partial Class frm_reserva
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Cambria", 15.0!)
-        Me.Label13.Location = New System.Drawing.Point(112, 210)
+        Me.Label13.Location = New System.Drawing.Point(115, 218)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(58, 23)
         Me.Label13.TabIndex = 39
@@ -267,7 +267,7 @@ Partial Class frm_reserva
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Cambria", 15.0!)
-        Me.Label14.Location = New System.Drawing.Point(124, 294)
+        Me.Label14.Location = New System.Drawing.Point(115, 282)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(58, 23)
         Me.Label14.TabIndex = 40
@@ -278,7 +278,7 @@ Partial Class frm_reserva
         Me.Label15.AutoSize = True
         Me.Label15.BackColor = System.Drawing.Color.White
         Me.Label15.Font = New System.Drawing.Font("Cambria", 15.0!)
-        Me.Label15.Location = New System.Drawing.Point(32, 121)
+        Me.Label15.Location = New System.Drawing.Point(68, 121)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(64, 23)
         Me.Label15.TabIndex = 42
@@ -288,7 +288,7 @@ Partial Class frm_reserva
         '
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Cambria", 15.0!)
-        Me.Label16.Location = New System.Drawing.Point(435, 69)
+        Me.Label16.Location = New System.Drawing.Point(447, 69)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(68, 23)
         Me.Label16.TabIndex = 43
@@ -299,7 +299,7 @@ Partial Class frm_reserva
         '
         Me.txt_preco_pac_serv.Enabled = False
         Me.txt_preco_pac_serv.Font = New System.Drawing.Font("Cambria", 13.0!)
-        Me.txt_preco_pac_serv.Location = New System.Drawing.Point(508, 69)
+        Me.txt_preco_pac_serv.Location = New System.Drawing.Point(521, 69)
         Me.txt_preco_pac_serv.Name = "txt_preco_pac_serv"
         Me.txt_preco_pac_serv.Size = New System.Drawing.Size(223, 28)
         Me.txt_preco_pac_serv.TabIndex = 44
@@ -308,7 +308,7 @@ Partial Class frm_reserva
         '
         Me.txt_preco_quarto.Enabled = False
         Me.txt_preco_quarto.Font = New System.Drawing.Font("Cambria", 13.0!)
-        Me.txt_preco_quarto.Location = New System.Drawing.Point(102, 118)
+        Me.txt_preco_quarto.Location = New System.Drawing.Point(138, 121)
         Me.txt_preco_quarto.Name = "txt_preco_quarto"
         Me.txt_preco_quarto.Size = New System.Drawing.Size(183, 28)
         Me.txt_preco_quarto.TabIndex = 45
@@ -318,7 +318,7 @@ Partial Class frm_reserva
         Me.btn_cadastrar.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
         Me.btn_cadastrar.Font = New System.Drawing.Font("Cambria", 20.0!, System.Drawing.FontStyle.Bold)
         Me.btn_cadastrar.ForeColor = System.Drawing.Color.White
-        Me.btn_cadastrar.Location = New System.Drawing.Point(601, 281)
+        Me.btn_cadastrar.Location = New System.Drawing.Point(583, 266)
         Me.btn_cadastrar.Name = "btn_cadastrar"
         Me.btn_cadastrar.Size = New System.Drawing.Size(143, 59)
         Me.btn_cadastrar.TabIndex = 48
@@ -329,25 +329,19 @@ Partial Class frm_reserva
         '
         Me.dtp_data_saida.Font = New System.Drawing.Font("Cambria", 13.0!)
         Me.dtp_data_saida.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtp_data_saida.Location = New System.Drawing.Point(188, 254)
+        Me.dtp_data_saida.Location = New System.Drawing.Point(178, 247)
         Me.dtp_data_saida.Margin = New System.Windows.Forms.Padding(2)
         Me.dtp_data_saida.Name = "dtp_data_saida"
-        Me.dtp_data_saida.Size = New System.Drawing.Size(131, 28)
+        Me.dtp_data_saida.Size = New System.Drawing.Size(143, 28)
         Me.dtp_data_saida.TabIndex = 49
         '
         'GroupBox4
         '
         Me.GroupBox4.BackColor = System.Drawing.Color.White
+        Me.GroupBox4.Controls.Add(Me.GroupBox5)
         Me.GroupBox4.Controls.Add(Me.Label19)
         Me.GroupBox4.Controls.Add(Me.num_reserva)
-        Me.GroupBox4.Controls.Add(Me.txt_pag_realizado)
-        Me.GroupBox4.Controls.Add(Me.Label18)
-        Me.GroupBox4.Controls.Add(Me.cmb_parcela)
-        Me.GroupBox4.Controls.Add(Me.Label17)
-        Me.GroupBox4.Controls.Add(Me.txt_total_pagar)
-        Me.GroupBox4.Controls.Add(Me.cmb_forma)
         Me.GroupBox4.Controls.Add(Me.txt_preco_pac_serv)
-        Me.GroupBox4.Controls.Add(Me.Label20)
         Me.GroupBox4.Controls.Add(Me.Label15)
         Me.GroupBox4.Controls.Add(Me.cmb_pac_serv)
         Me.GroupBox4.Controls.Add(Me.btn_cadastrar)
@@ -361,7 +355,6 @@ Partial Class frm_reserva
         Me.GroupBox4.Controls.Add(Me.Label16)
         Me.GroupBox4.Controls.Add(Me.Label14)
         Me.GroupBox4.Controls.Add(Me.Label13)
-        Me.GroupBox4.Controls.Add(Me.Label11)
         Me.GroupBox4.Controls.Add(Me.dtp_data_entrada)
         Me.GroupBox4.Controls.Add(Me.cmb_quartos)
         Me.GroupBox4.Controls.Add(Me.Label8)
@@ -378,7 +371,7 @@ Partial Class frm_reserva
         Me.Label19.AutoSize = True
         Me.Label19.BackColor = System.Drawing.Color.White
         Me.Label19.Font = New System.Drawing.Font("Cambria", 15.0!)
-        Me.Label19.Location = New System.Drawing.Point(22, 37)
+        Me.Label19.Location = New System.Drawing.Point(22, 42)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(110, 23)
         Me.Label19.TabIndex = 59
@@ -388,36 +381,16 @@ Partial Class frm_reserva
         '
         Me.num_reserva.Enabled = False
         Me.num_reserva.Font = New System.Drawing.Font("Cambria", 13.0!)
-        Me.num_reserva.Location = New System.Drawing.Point(135, 37)
+        Me.num_reserva.Location = New System.Drawing.Point(138, 42)
         Me.num_reserva.Name = "num_reserva"
-        Me.num_reserva.Size = New System.Drawing.Size(150, 28)
+        Me.num_reserva.Size = New System.Drawing.Size(183, 28)
         Me.num_reserva.TabIndex = 60
-        '
-        'txt_pag_realizado
-        '
-        Me.txt_pag_realizado.Enabled = False
-        Me.txt_pag_realizado.Font = New System.Drawing.Font("Cambria", 13.0!)
-        Me.txt_pag_realizado.Location = New System.Drawing.Point(562, 222)
-        Me.txt_pag_realizado.Name = "txt_pag_realizado"
-        Me.txt_pag_realizado.Size = New System.Drawing.Size(182, 28)
-        Me.txt_pag_realizado.TabIndex = 58
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Font = New System.Drawing.Font("Cambria", 15.0!)
-        Me.Label18.Location = New System.Drawing.Point(355, 225)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(200, 23)
-        Me.Label18.TabIndex = 57
-        Me.Label18.Text = "Pagamento Realizado:"
-        Me.Label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'cmb_parcela
         '
         Me.cmb_parcela.Font = New System.Drawing.Font("Cambria", 13.0!)
         Me.cmb_parcela.FormattingEnabled = True
-        Me.cmb_parcela.Location = New System.Drawing.Point(662, 176)
+        Me.cmb_parcela.Location = New System.Drawing.Point(322, 77)
         Me.cmb_parcela.Margin = New System.Windows.Forms.Padding(2)
         Me.cmb_parcela.Name = "cmb_parcela"
         Me.cmb_parcela.Size = New System.Drawing.Size(68, 28)
@@ -427,7 +400,7 @@ Partial Class frm_reserva
         '
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Cambria", 15.0!)
-        Me.Label17.Location = New System.Drawing.Point(579, 176)
+        Me.Label17.Location = New System.Drawing.Point(239, 77)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(78, 23)
         Me.Label17.TabIndex = 55
@@ -437,9 +410,9 @@ Partial Class frm_reserva
         '
         Me.txt_total_pagar.Enabled = False
         Me.txt_total_pagar.Font = New System.Drawing.Font("Cambria", 13.0!)
-        Me.txt_total_pagar.Location = New System.Drawing.Point(487, 136)
+        Me.txt_total_pagar.Location = New System.Drawing.Point(84, 34)
         Me.txt_total_pagar.Name = "txt_total_pagar"
-        Me.txt_total_pagar.Size = New System.Drawing.Size(182, 28)
+        Me.txt_total_pagar.Size = New System.Drawing.Size(149, 28)
         Me.txt_total_pagar.TabIndex = 54
         '
         'Label20
@@ -447,27 +420,27 @@ Partial Class frm_reserva
         Me.Label20.AutoSize = True
         Me.Label20.BackColor = System.Drawing.Color.White
         Me.Label20.Font = New System.Drawing.Font("Cambria", 15.0!)
-        Me.Label20.Location = New System.Drawing.Point(355, 138)
+        Me.Label20.Location = New System.Drawing.Point(20, 34)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(125, 23)
+        Me.Label20.Size = New System.Drawing.Size(58, 23)
         Me.Label20.TabIndex = 53
-        Me.Label20.Text = "Total a Pagar:"
+        Me.Label20.Text = "Total:"
         '
         'dtp_hora_saida
         '
         Me.dtp_hora_saida.Font = New System.Drawing.Font("Cambria", 13.0!)
         Me.dtp_hora_saida.Format = System.Windows.Forms.DateTimePickerFormat.Time
-        Me.dtp_hora_saida.Location = New System.Drawing.Point(188, 291)
+        Me.dtp_hora_saida.Location = New System.Drawing.Point(178, 279)
         Me.dtp_hora_saida.Margin = New System.Windows.Forms.Padding(2)
         Me.dtp_hora_saida.Name = "dtp_hora_saida"
-        Me.dtp_hora_saida.Size = New System.Drawing.Size(131, 28)
+        Me.dtp_hora_saida.Size = New System.Drawing.Size(143, 28)
         Me.dtp_hora_saida.TabIndex = 53
         '
         'dtp_hora_entrada
         '
         Me.dtp_hora_entrada.Font = New System.Drawing.Font("Cambria", 13.0!)
         Me.dtp_hora_entrada.Format = System.Windows.Forms.DateTimePickerFormat.Time
-        Me.dtp_hora_entrada.Location = New System.Drawing.Point(175, 207)
+        Me.dtp_hora_entrada.Location = New System.Drawing.Point(178, 215)
         Me.dtp_hora_entrada.Margin = New System.Windows.Forms.Padding(2)
         Me.dtp_hora_entrada.Name = "dtp_hora_entrada"
         Me.dtp_hora_entrada.Size = New System.Drawing.Size(143, 28)
@@ -679,6 +652,21 @@ Partial Class frm_reserva
         Me.txt_cpf_acomp.Size = New System.Drawing.Size(209, 28)
         Me.txt_cpf_acomp.TabIndex = 20
         '
+        'GroupBox5
+        '
+        Me.GroupBox5.Controls.Add(Me.cmb_parcela)
+        Me.GroupBox5.Controls.Add(Me.Label17)
+        Me.GroupBox5.Controls.Add(Me.txt_total_pagar)
+        Me.GroupBox5.Controls.Add(Me.cmb_forma)
+        Me.GroupBox5.Controls.Add(Me.Label20)
+        Me.GroupBox5.Controls.Add(Me.Label11)
+        Me.GroupBox5.Location = New System.Drawing.Point(354, 121)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(399, 120)
+        Me.GroupBox5.TabIndex = 61
+        Me.GroupBox5.TabStop = False
+        Me.GroupBox5.Text = "Pagamento"
+        '
         'frm_reserva
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -706,6 +694,8 @@ Partial Class frm_reserva
         Me.GroupBox2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
+        Me.GroupBox5.ResumeLayout(False)
+        Me.GroupBox5.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -749,8 +739,6 @@ Partial Class frm_reserva
     Friend WithEvents QuartosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents FuncionáriosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EncerrarSessToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents txt_pag_realizado As TextBox
-    Friend WithEvents Label18 As Label
     Friend WithEvents cmb_parcela As ComboBox
     Friend WithEvents Label17 As Label
     Friend WithEvents Label19 As Label
@@ -767,4 +755,5 @@ Partial Class frm_reserva
     Friend WithEvents txt_nome_acomp As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents txt_cpf_acomp As TextBox
+    Friend WithEvents GroupBox5 As GroupBox
 End Class

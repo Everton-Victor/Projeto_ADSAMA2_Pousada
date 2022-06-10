@@ -38,14 +38,10 @@ Partial Class frm_checkin
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.DateTimePicker3 = New System.Windows.Forms.DateTimePicker()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
         Me.TextBox7 = New System.Windows.Forms.TextBox()
         Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.Label17 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -151,7 +147,7 @@ Partial Class frm_checkin
         Me.btn_cadastrar.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
         Me.btn_cadastrar.Font = New System.Drawing.Font("Cambria", 20.0!, System.Drawing.FontStyle.Bold)
         Me.btn_cadastrar.ForeColor = System.Drawing.Color.White
-        Me.btn_cadastrar.Location = New System.Drawing.Point(620, 363)
+        Me.btn_cadastrar.Location = New System.Drawing.Point(620, 339)
         Me.btn_cadastrar.Name = "btn_cadastrar"
         Me.btn_cadastrar.Size = New System.Drawing.Size(157, 59)
         Me.btn_cadastrar.TabIndex = 75
@@ -180,14 +176,10 @@ Partial Class frm_checkin
         '
         Me.GroupBox2.Controls.Add(Me.ComboBox2)
         Me.GroupBox2.Controls.Add(Me.Label11)
-        Me.GroupBox2.Controls.Add(Me.TextBox8)
-        Me.GroupBox2.Controls.Add(Me.Label6)
         Me.GroupBox2.Controls.Add(Me.DateTimePicker3)
         Me.GroupBox2.Controls.Add(Me.DateTimePicker1)
-        Me.GroupBox2.Controls.Add(Me.TextBox9)
         Me.GroupBox2.Controls.Add(Me.TextBox7)
         Me.GroupBox2.Controls.Add(Me.TextBox6)
-        Me.GroupBox2.Controls.Add(Me.Label17)
         Me.GroupBox2.Controls.Add(Me.Label8)
         Me.GroupBox2.Controls.Add(Me.Label13)
         Me.GroupBox2.Controls.Add(Me.Label9)
@@ -195,7 +187,7 @@ Partial Class frm_checkin
         Me.GroupBox2.Font = New System.Drawing.Font("Cambria", 12.0!)
         Me.GroupBox2.Location = New System.Drawing.Point(396, 87)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(379, 270)
+        Me.GroupBox2.Size = New System.Drawing.Size(379, 227)
         Me.GroupBox2.TabIndex = 86
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Dados da Reserva"
@@ -220,25 +212,6 @@ Partial Class frm_checkin
         Me.Label11.TabIndex = 84
         Me.Label11.Text = "Nª Rerserva:"
         '
-        'TextBox8
-        '
-        Me.TextBox8.Font = New System.Drawing.Font("Cambria", 13.0!)
-        Me.TextBox8.Location = New System.Drawing.Point(76, 217)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(87, 28)
-        Me.TextBox8.TabIndex = 76
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.Font = New System.Drawing.Font("Cambria", 15.0!)
-        Me.Label6.Location = New System.Drawing.Point(16, 217)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(57, 23)
-        Me.Label6.TabIndex = 75
-        Me.Label6.Text = "Pago:"
-        '
         'DateTimePicker3
         '
         Me.DateTimePicker3.Font = New System.Drawing.Font("Cambria", 13.0!)
@@ -259,14 +232,6 @@ Partial Class frm_checkin
         Me.DateTimePicker1.Size = New System.Drawing.Size(112, 28)
         Me.DateTimePicker1.TabIndex = 73
         '
-        'TextBox9
-        '
-        Me.TextBox9.Font = New System.Drawing.Font("Cambria", 13.0!)
-        Me.TextBox9.Location = New System.Drawing.Point(245, 217)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(114, 28)
-        Me.TextBox9.TabIndex = 72
-        '
         'TextBox7
         '
         Me.TextBox7.Font = New System.Drawing.Font("Cambria", 13.0!)
@@ -282,17 +247,6 @@ Partial Class frm_checkin
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.Size = New System.Drawing.Size(185, 28)
         Me.TextBox6.TabIndex = 32
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.BackColor = System.Drawing.Color.Transparent
-        Me.Label17.Font = New System.Drawing.Font("Cambria", 15.0!)
-        Me.Label17.Location = New System.Drawing.Point(179, 216)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(60, 23)
-        Me.Label17.TabIndex = 69
-        Me.Label17.Text = "Valor:"
         '
         'Label8
         '
@@ -352,7 +306,7 @@ Partial Class frm_checkin
         Me.GroupBox1.Controls.Add(Me.GroupBox3)
         Me.GroupBox1.Location = New System.Drawing.Point(10, 87)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(379, 335)
+        Me.GroupBox1.Size = New System.Drawing.Size(379, 311)
         Me.GroupBox1.TabIndex = 85
         Me.GroupBox1.TabStop = False
         '
@@ -363,7 +317,7 @@ Partial Class frm_checkin
         Me.GroupBox4.Controls.Add(Me.Label7)
         Me.GroupBox4.Controls.Add(Me.TextBox5)
         Me.GroupBox4.Font = New System.Drawing.Font("Cambria", 12.0!)
-        Me.GroupBox4.Location = New System.Drawing.Point(6, 172)
+        Me.GroupBox4.Location = New System.Drawing.Point(6, 157)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(367, 133)
         Me.GroupBox4.TabIndex = 26
@@ -473,7 +427,7 @@ Partial Class frm_checkin
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(187, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(789, 436)
+        Me.ClientSize = New System.Drawing.Size(789, 417)
         Me.Controls.Add(Me.TextBox4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.GroupBox2)
@@ -515,14 +469,10 @@ Partial Class frm_checkin
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents ComboBox2 As ComboBox
     Friend WithEvents Label11 As Label
-    Friend WithEvents TextBox8 As TextBox
-    Friend WithEvents Label6 As Label
     Friend WithEvents DateTimePicker3 As DateTimePicker
     Friend WithEvents DateTimePicker1 As DateTimePicker
-    Friend WithEvents TextBox9 As TextBox
     Friend WithEvents TextBox7 As TextBox
     Friend WithEvents TextBox6 As TextBox
-    Friend WithEvents Label17 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents Label9 As Label

@@ -121,6 +121,15 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ToolStripDropDownButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACxSURBVHhe7dtBEYBAAAOxc440pIGBGoBNZvZTDz0AAAAA
+        AAAAAAD8yaV051G6OarTHNVpjuo0R3WaozrNUZ3mqE5zVKdzKx0AAAAAAAAAAAAAAAAAAF+yLsPqNEd1
+        mqM6zVGd5qhOc1SnOarTHNVpjuo0R3UCAAAAAAAAAAAAAAAAAOBLbqWbl2F1mqM6zVGd5qhOc1SnOarT
+        HNVpjuo0R3U6l9IBAAAAAAAAAADwB+e8Xtgw4i+B1MUAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="ReservaToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAB
@@ -248,15 +257,6 @@
         Y5c0alTD3rxJvXtD6FilTRrV8WnscrQhIZV0DW3YuAIda25x6cmb36Tpcx8/QT9ZtsBlg5uULq76nyDe
         qGJz9VL6ux5j95cxam3KzpSt8TBchTZeOl11k1Tdi/Q1f+b/APi7IyMjIyPDsrDwL//YDOi8eRrVAAAA
         AElFTkSuQmCC
-</value>
-  </data>
-  <data name="ToolStripDropDownButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACxSURBVHhe7dtBEYBAAAOxc440pIGBGoBNZvZTDz0AAAAA
-        AAAAAAD8yaV051G6OarTHNVpjuo0R3WaozrNUZ3mqE5zVKdzKx0AAAAAAAAAAAAAAAAAAF+yLsPqNEd1
-        mqM6zVGd5qhOc1SnOarTHNVpjuo0R3UCAAAAAAAAAAAAAAAAAOBLbqWbl2F1mqM6zVGd5qhOc1SnOarT
-        HNVpjuo0R3U6l9IBAAAAAAAAAADwB+e8Xtgw4i+B1MUAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="btn_remove.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
