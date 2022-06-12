@@ -45,6 +45,15 @@ Partial Class frm_funcionarios
         Me.txt_senha = New System.Windows.Forms.TextBox()
         Me.tab_lista = New System.Windows.Forms.TabPage()
         Me.dgv_fun = New System.Windows.Forms.DataGridView()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripDropDownButton1 = New System.Windows.Forms.ToolStripDropDownButton()
         Me.ReservaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -53,14 +62,6 @@ Partial Class frm_funcionarios
         Me.PacoteDeServiçosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.QuartosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EncerrarSessToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewImageColumn()
         CheckoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TabControl1.SuspendLayout()
         Me.tab_cadastro.SuspendLayout()
@@ -81,10 +82,10 @@ Partial Class frm_funcionarios
         Me.TabControl1.Controls.Add(Me.tab_cadastro)
         Me.TabControl1.Controls.Add(Me.tab_lista)
         Me.TabControl1.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TabControl1.Location = New System.Drawing.Point(12, 45)
+        Me.TabControl1.Location = New System.Drawing.Point(12, 58)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(791, 464)
+        Me.TabControl1.Size = New System.Drawing.Size(988, 464)
         Me.TabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
         Me.TabControl1.TabIndex = 2
         '
@@ -111,7 +112,7 @@ Partial Class frm_funcionarios
         Me.tab_cadastro.Location = New System.Drawing.Point(4, 34)
         Me.tab_cadastro.Name = "tab_cadastro"
         Me.tab_cadastro.Padding = New System.Windows.Forms.Padding(3)
-        Me.tab_cadastro.Size = New System.Drawing.Size(783, 426)
+        Me.tab_cadastro.Size = New System.Drawing.Size(980, 426)
         Me.tab_cadastro.TabIndex = 0
         Me.tab_cadastro.Text = "Cadastro"
         Me.tab_cadastro.UseVisualStyleBackColor = True
@@ -120,7 +121,7 @@ Partial Class frm_funcionarios
         '
         Me.cmb_status_conta.Font = New System.Drawing.Font("Segoe UI", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmb_status_conta.FormattingEnabled = True
-        Me.cmb_status_conta.Location = New System.Drawing.Point(564, 65)
+        Me.cmb_status_conta.Location = New System.Drawing.Point(697, 64)
         Me.cmb_status_conta.Name = "cmb_status_conta"
         Me.cmb_status_conta.Size = New System.Drawing.Size(193, 36)
         Me.cmb_status_conta.TabIndex = 33
@@ -129,7 +130,7 @@ Partial Class frm_funcionarios
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Cambria", 22.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(554, 26)
+        Me.Label7.Location = New System.Drawing.Point(687, 25)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(203, 36)
         Me.Label7.TabIndex = 32
@@ -139,7 +140,7 @@ Partial Class frm_funcionarios
         '
         Me.cmb_cargo.Font = New System.Drawing.Font("Segoe UI", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmb_cargo.FormattingEnabled = True
-        Me.cmb_cargo.Location = New System.Drawing.Point(564, 234)
+        Me.cmb_cargo.Location = New System.Drawing.Point(697, 233)
         Me.cmb_cargo.Name = "cmb_cargo"
         Me.cmb_cargo.Size = New System.Drawing.Size(193, 36)
         Me.cmb_cargo.TabIndex = 30
@@ -148,7 +149,7 @@ Partial Class frm_funcionarios
         '
         Me.btn_ver_confirmar_senha.BackColor = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(187, Byte), Integer))
         Me.btn_ver_confirmar_senha.Image = CType(resources.GetObject("btn_ver_confirmar_senha.Image"), System.Drawing.Image)
-        Me.btn_ver_confirmar_senha.Location = New System.Drawing.Point(465, 329)
+        Me.btn_ver_confirmar_senha.Location = New System.Drawing.Point(469, 291)
         Me.btn_ver_confirmar_senha.Name = "btn_ver_confirmar_senha"
         Me.btn_ver_confirmar_senha.Size = New System.Drawing.Size(42, 36)
         Me.btn_ver_confirmar_senha.TabIndex = 29
@@ -158,7 +159,7 @@ Partial Class frm_funcionarios
         '
         Me.btn_ver_senha.BackColor = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(187, Byte), Integer))
         Me.btn_ver_senha.Image = CType(resources.GetObject("btn_ver_senha.Image"), System.Drawing.Image)
-        Me.btn_ver_senha.Location = New System.Drawing.Point(465, 235)
+        Me.btn_ver_senha.Location = New System.Drawing.Point(571, 183)
         Me.btn_ver_senha.Name = "btn_ver_senha"
         Me.btn_ver_senha.Size = New System.Drawing.Size(42, 36)
         Me.btn_ver_senha.TabIndex = 28
@@ -168,7 +169,7 @@ Partial Class frm_funcionarios
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Cambria", 22.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(19, 114)
+        Me.Label2.Location = New System.Drawing.Point(26, 116)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(99, 36)
         Me.Label2.TabIndex = 26
@@ -177,7 +178,7 @@ Partial Class frm_funcionarios
         'txt_nome
         '
         Me.txt_nome.Font = New System.Drawing.Font("Cambria", 18.0!)
-        Me.txt_nome.Location = New System.Drawing.Point(25, 152)
+        Me.txt_nome.Location = New System.Drawing.Point(131, 116)
         Me.txt_nome.Name = "txt_nome"
         Me.txt_nome.Size = New System.Drawing.Size(482, 36)
         Me.txt_nome.TabIndex = 25
@@ -187,7 +188,7 @@ Partial Class frm_funcionarios
         Me.btn_entrar.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
         Me.btn_entrar.Font = New System.Drawing.Font("Cambria", 20.0!, System.Drawing.FontStyle.Bold)
         Me.btn_entrar.ForeColor = System.Drawing.Color.White
-        Me.btn_entrar.Location = New System.Drawing.Point(577, 316)
+        Me.btn_entrar.Location = New System.Drawing.Point(721, 315)
         Me.btn_entrar.Name = "btn_entrar"
         Me.btn_entrar.Size = New System.Drawing.Size(169, 59)
         Me.btn_entrar.TabIndex = 24
@@ -198,7 +199,7 @@ Partial Class frm_funcionarios
         '
         Me.cmb_tipo_conta.Font = New System.Drawing.Font("Segoe UI", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmb_tipo_conta.FormattingEnabled = True
-        Me.cmb_tipo_conta.Location = New System.Drawing.Point(564, 153)
+        Me.cmb_tipo_conta.Location = New System.Drawing.Point(697, 152)
         Me.cmb_tipo_conta.Name = "cmb_tipo_conta"
         Me.cmb_tipo_conta.Size = New System.Drawing.Size(193, 36)
         Me.cmb_tipo_conta.TabIndex = 23
@@ -207,7 +208,7 @@ Partial Class frm_funcionarios
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Cambria", 22.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(558, 115)
+        Me.Label6.Location = New System.Drawing.Point(691, 114)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(203, 36)
         Me.Label6.TabIndex = 22
@@ -217,7 +218,7 @@ Partial Class frm_funcionarios
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Cambria", 22.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(558, 195)
+        Me.Label5.Location = New System.Drawing.Point(691, 194)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(98, 36)
         Me.Label5.TabIndex = 20
@@ -227,7 +228,7 @@ Partial Class frm_funcionarios
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Cambria", 22.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(19, 26)
+        Me.Label4.Location = New System.Drawing.Point(19, 50)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(106, 36)
         Me.Label4.TabIndex = 19
@@ -236,7 +237,7 @@ Partial Class frm_funcionarios
         'txt_email
         '
         Me.txt_email.Font = New System.Drawing.Font("Cambria", 18.0!)
-        Me.txt_email.Location = New System.Drawing.Point(25, 64)
+        Me.txt_email.Location = New System.Drawing.Point(131, 50)
         Me.txt_email.Name = "txt_email"
         Me.txt_email.Size = New System.Drawing.Size(482, 36)
         Me.txt_email.TabIndex = 18
@@ -245,7 +246,7 @@ Partial Class frm_funcionarios
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Cambria", 22.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(19, 291)
+        Me.Label3.Location = New System.Drawing.Point(23, 250)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(240, 36)
         Me.Label3.TabIndex = 17
@@ -254,7 +255,7 @@ Partial Class frm_funcionarios
         'txt_confirmar_senha
         '
         Me.txt_confirmar_senha.Font = New System.Drawing.Font("Cambria", 18.0!)
-        Me.txt_confirmar_senha.Location = New System.Drawing.Point(25, 329)
+        Me.txt_confirmar_senha.Location = New System.Drawing.Point(29, 289)
         Me.txt_confirmar_senha.Name = "txt_confirmar_senha"
         Me.txt_confirmar_senha.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txt_confirmar_senha.Size = New System.Drawing.Size(434, 36)
@@ -264,7 +265,7 @@ Partial Class frm_funcionarios
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Cambria", 22.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(19, 197)
+        Me.Label1.Location = New System.Drawing.Point(23, 179)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(102, 36)
         Me.Label1.TabIndex = 15
@@ -273,7 +274,7 @@ Partial Class frm_funcionarios
         'txt_senha
         '
         Me.txt_senha.Font = New System.Drawing.Font("Cambria", 18.0!)
-        Me.txt_senha.Location = New System.Drawing.Point(25, 235)
+        Me.txt_senha.Location = New System.Drawing.Point(131, 181)
         Me.txt_senha.Name = "txt_senha"
         Me.txt_senha.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txt_senha.Size = New System.Drawing.Size(434, 36)
@@ -286,7 +287,7 @@ Partial Class frm_funcionarios
         Me.tab_lista.Location = New System.Drawing.Point(4, 34)
         Me.tab_lista.Name = "tab_lista"
         Me.tab_lista.Padding = New System.Windows.Forms.Padding(3)
-        Me.tab_lista.Size = New System.Drawing.Size(783, 426)
+        Me.tab_lista.Size = New System.Drawing.Size(980, 426)
         Me.tab_lista.TabIndex = 1
         Me.tab_lista.Text = "Lista"
         Me.tab_lista.UseVisualStyleBackColor = True
@@ -298,14 +299,84 @@ Partial Class frm_funcionarios
         Me.dgv_fun.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgv_fun.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgv_fun.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_fun.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column6, Me.Column2, Me.Column1, Me.Column3, Me.Column7, Me.Column8, Me.Column4, Me.Column5})
+        Me.dgv_fun.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column2, Me.Column1, Me.Column3, Me.Column7, Me.Column8, Me.Column9, Me.Column10, Me.Column4, Me.Column5})
         Me.dgv_fun.GridColor = System.Drawing.Color.White
         Me.dgv_fun.Location = New System.Drawing.Point(5, 4)
         Me.dgv_fun.Name = "dgv_fun"
         Me.dgv_fun.ReadOnly = True
         Me.dgv_fun.RowHeadersWidth = 62
-        Me.dgv_fun.Size = New System.Drawing.Size(772, 422)
+        Me.dgv_fun.Size = New System.Drawing.Size(973, 422)
         Me.dgv_fun.TabIndex = 0
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "E-mail"
+        Me.Column2.MinimumWidth = 8
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        Me.Column2.Width = 72
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "Nome"
+        Me.Column1.MinimumWidth = 8
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Width = 68
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "Cargo"
+        Me.Column3.MinimumWidth = 8
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        Me.Column3.Width = 67
+        '
+        'Column7
+        '
+        Me.Column7.HeaderText = "Conta"
+        Me.Column7.Name = "Column7"
+        Me.Column7.ReadOnly = True
+        Me.Column7.Width = 67
+        '
+        'Column8
+        '
+        Me.Column8.HeaderText = "Status"
+        Me.Column8.Name = "Column8"
+        Me.Column8.ReadOnly = True
+        Me.Column8.Width = 70
+        '
+        'Column9
+        '
+        Me.Column9.HeaderText = "Data/Hora Criação"
+        Me.Column9.Name = "Column9"
+        Me.Column9.ReadOnly = True
+        Me.Column9.Width = 133
+        '
+        'Column10
+        '
+        Me.Column10.HeaderText = "Data/Hora Alteração"
+        Me.Column10.Name = "Column10"
+        Me.Column10.ReadOnly = True
+        Me.Column10.Width = 144
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "Editar"
+        Me.Column4.Image = CType(resources.GetObject("Column4.Image"), System.Drawing.Image)
+        Me.Column4.MinimumWidth = 8
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        Me.Column4.Width = 51
+        '
+        'Column5
+        '
+        Me.Column5.HeaderText = "Excluir"
+        Me.Column5.Image = CType(resources.GetObject("Column5.Image"), System.Drawing.Image)
+        Me.Column5.MinimumWidth = 8
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        Me.Column5.Width = 56
         '
         'ToolStrip1
         '
@@ -314,7 +385,7 @@ Partial Class frm_funcionarios
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Padding = New System.Windows.Forms.Padding(0, 0, 2, 0)
-        Me.ToolStrip1.Size = New System.Drawing.Size(817, 42)
+        Me.ToolStrip1.Size = New System.Drawing.Size(1010, 42)
         Me.ToolStrip1.TabIndex = 77
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -373,75 +444,12 @@ Partial Class frm_funcionarios
         Me.EncerrarSessToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
         Me.EncerrarSessToolStripMenuItem.Text = "Encerrar sessão"
         '
-        'Column6
-        '
-        Me.Column6.HeaderText = "Nº"
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
-        Me.Column6.Width = 48
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "E-mail"
-        Me.Column2.MinimumWidth = 8
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        Me.Column2.Width = 72
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "Nome"
-        Me.Column1.MinimumWidth = 8
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Width = 68
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Cargo"
-        Me.Column3.MinimumWidth = 8
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        Me.Column3.Width = 67
-        '
-        'Column7
-        '
-        Me.Column7.HeaderText = "Conta"
-        Me.Column7.Name = "Column7"
-        Me.Column7.ReadOnly = True
-        Me.Column7.Width = 67
-        '
-        'Column8
-        '
-        Me.Column8.HeaderText = "Status"
-        Me.Column8.Name = "Column8"
-        Me.Column8.ReadOnly = True
-        Me.Column8.Width = 70
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "Editar"
-        Me.Column4.Image = CType(resources.GetObject("Column4.Image"), System.Drawing.Image)
-        Me.Column4.MinimumWidth = 8
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        Me.Column4.Width = 51
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "Excluir"
-        Me.Column5.Image = CType(resources.GetObject("Column5.Image"), System.Drawing.Image)
-        Me.Column5.MinimumWidth = 8
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        Me.Column5.Width = 56
-        '
         'frm_funcionarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(187, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(817, 534)
+        Me.ClientSize = New System.Drawing.Size(1010, 534)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.TabControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -489,12 +497,13 @@ Partial Class frm_funcionarios
     Friend WithEvents PacoteDeServiçosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents QuartosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EncerrarSessToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents Column6 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
     Friend WithEvents Column8 As DataGridViewTextBoxColumn
+    Friend WithEvents Column9 As DataGridViewTextBoxColumn
+    Friend WithEvents Column10 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewImageColumn
     Friend WithEvents Column5 As DataGridViewImageColumn
 End Class

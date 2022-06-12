@@ -16,6 +16,17 @@
         End Try
     End Sub
 
+    Sub limpar_func()
+        With frm_funcionarios
+            .txt_nome.Clear()
+            .txt_email.Clear()
+            .txt_senha.Clear()
+            .txt_confirmar_senha.Clear()
+            .cmb_cargo.Text = ""
+            .cmb_status_conta.Text = ""
+            .cmb_tipo_conta.Text = ""
+        End With
+    End Sub
 
     Sub limpar_login()
         With frm_login
@@ -27,6 +38,7 @@
 
     Sub carregar_dados_func()
         Try
+
             sql = "select * from tb_funcionario order by nome_func asc"
             rs = db.Execute(sql)
             cont = 1
@@ -34,7 +46,7 @@
             With frm_funcionarios.dgv_fun
                 .Rows.Clear()
                 Do While rs.EOF = False
-                    .Rows.Add(cont, rs.Fields(0).Value, rs.Fields(2).Value, rs.Fields(3).Value, rs.Fields(4).Value, rs.Fields(5).Value, Nothing, Nothing)
+                    .Rows.Add(rs.Fields(0).Value, rs.Fields(2).Value, rs.Fields(3).Value, rs.Fields(4).Value, rs.Fields(5).Value, rs.Fields(6).Value, rs.Fields(7).Value, Nothing, Nothing)
                     rs.MoveNext()
                     cont += 1
                 Loop
