@@ -10,22 +10,6 @@
         cmb_tipo_conta.Text = ""
     End Sub
 
-    Private Sub btn_ver_senha_Click(sender As Object, e As EventArgs) Handles btn_ver_senha.Click
-        If txt_senha.PasswordChar = "*" Then
-            txt_senha.PasswordChar = ""
-        Else
-            txt_senha.PasswordChar = "*"
-        End If
-    End Sub
-
-    Private Sub btn_ver_confirmar_senha_Click(sender As Object, e As EventArgs) Handles btn_ver_confirmar_senha.Click
-        If txt_confirmar_senha.PasswordChar = "*" Then
-            txt_confirmar_senha.PasswordChar = ""
-        Else
-            txt_confirmar_senha.PasswordChar = "*"
-        End If
-    End Sub
-
     Private Sub dgv_fun_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_fun.CellContentClick
         Try
             With dgv_fun
@@ -104,5 +88,54 @@
             MsgBox("Erro de processamento!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ALERTA")
         End Try
     End Sub
+
+
+
+    Private Sub txt_senha_DoubleClick(sender As Object, e As EventArgs) Handles txt_senha.DoubleClick
+        If txt_senha.PasswordChar = "*" Then
+            txt_senha.PasswordChar = ""
+        Else
+            txt_senha.PasswordChar = "*"
+        End If
+    End Sub
+
+    Private Sub txt_confirmar_senha_DoubleClick(sender As Object, e As EventArgs) Handles txt_confirmar_senha.DoubleClick
+        If txt_confirmar_senha.PasswordChar = "*" Then
+            txt_confirmar_senha.PasswordChar = ""
+        Else
+            txt_confirmar_senha.PasswordChar = "*"
+        End If
+    End Sub
+
+    Private Sub CheckinToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CheckinToolStripMenuItem.Click
+        Me.Hide()
+        frm_checkin.Visible = True
+    End Sub
+
+    Private Sub CheckoutToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles CheckoutToolStripMenuItem1.Click
+        Me.Hide()
+        frm_checkout.Visible = True
+    End Sub
+
+    Private Sub PacoteDeServiçosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PacoteDeServiçosToolStripMenuItem.Click
+        Me.Hide()
+        frm_pacote_servico.Visible = True
+    End Sub
+
+    Private Sub QuartosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QuartosToolStripMenuItem.Click
+        Me.Hide()
+        frm_quartos.Visible = True
+    End Sub
+
+    Private Sub EncerrarSessToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EncerrarSessToolStripMenuItem.Click
+        Me.Close()
+
+    End Sub
+
+    Private Sub CheckoutToolStripMenuItem_Click(sender As Object, e As EventArgs)
+        Me.Hide()
+        frm_reserva.Visible = True
+    End Sub
+
 End Class
 

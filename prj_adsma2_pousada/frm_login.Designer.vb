@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frm_login
     Inherits System.Windows.Forms.Form
 
     'Descartar substituições de formulário para limpar a lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,15 +20,13 @@ Partial Class frm_login
     'OBSERVAÇÃO: o procedimento a seguir é exigido pelo Windows Form Designer
     'Pode ser modificado usando o Windows Form Designer.  
     'Não o modifique usando o editor de códigos.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_login))
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txt_senha = New System.Windows.Forms.TextBox()
         Me.btn_entrar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txt_email = New System.Windows.Forms.TextBox()
-        Me.btn_ver_senha = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label2
@@ -55,9 +53,9 @@ Partial Class frm_login
         Me.btn_entrar.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
         Me.btn_entrar.Font = New System.Drawing.Font("Cambria", 20.0!, System.Drawing.FontStyle.Bold)
         Me.btn_entrar.ForeColor = System.Drawing.Color.White
-        Me.btn_entrar.Location = New System.Drawing.Point(400, 232)
+        Me.btn_entrar.Location = New System.Drawing.Point(314, 232)
         Me.btn_entrar.Name = "btn_entrar"
-        Me.btn_entrar.Size = New System.Drawing.Size(108, 60)
+        Me.btn_entrar.Size = New System.Drawing.Size(135, 60)
         Me.btn_entrar.TabIndex = 14
         Me.btn_entrar.Text = "Entrar"
         Me.btn_entrar.UseVisualStyleBackColor = False
@@ -80,23 +78,12 @@ Partial Class frm_login
         Me.txt_email.Size = New System.Drawing.Size(421, 36)
         Me.txt_email.TabIndex = 12
         '
-        'btn_ver_senha
-        '
-        Me.btn_ver_senha.BackColor = System.Drawing.Color.White
-        Me.btn_ver_senha.Image = CType(resources.GetObject("btn_ver_senha.Image"), System.Drawing.Image)
-        Me.btn_ver_senha.Location = New System.Drawing.Point(466, 152)
-        Me.btn_ver_senha.Name = "btn_ver_senha"
-        Me.btn_ver_senha.Size = New System.Drawing.Size(42, 36)
-        Me.btn_ver_senha.TabIndex = 29
-        Me.btn_ver_senha.UseVisualStyleBackColor = False
-        '
         'frm_login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(187, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(547, 317)
-        Me.Controls.Add(Me.btn_ver_senha)
+        Me.ClientSize = New System.Drawing.Size(498, 317)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.txt_senha)
         Me.Controls.Add(Me.btn_entrar)
@@ -117,5 +104,4 @@ Partial Class frm_login
     Friend WithEvents btn_entrar As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents txt_email As TextBox
-    Friend WithEvents btn_ver_senha As Button
 End Class

@@ -71,8 +71,9 @@ Partial Class frm_checkin
         '
         CheckoutToolStripMenuItem.Image = CType(resources.GetObject("CheckoutToolStripMenuItem.Image"), System.Drawing.Image)
         CheckoutToolStripMenuItem.Name = "CheckoutToolStripMenuItem"
-        CheckoutToolStripMenuItem.Size = New System.Drawing.Size(151, 26)
+        CheckoutToolStripMenuItem.Size = New System.Drawing.Size(199, 42)
         CheckoutToolStripMenuItem.Text = "Reserva"
+        AddHandler CheckoutToolStripMenuItem.Click, AddressOf Me.CheckoutToolStripMenuItem_Click
         '
         'ToolStrip1
         '
@@ -101,21 +102,22 @@ Partial Class frm_checkin
         Me.ReservaToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ReservaToolStripMenuItem.Image = CType(resources.GetObject("ReservaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ReservaToolStripMenuItem.Name = "ReservaToolStripMenuItem"
-        Me.ReservaToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
+        Me.ReservaToolStripMenuItem.Size = New System.Drawing.Size(222, 42)
         Me.ReservaToolStripMenuItem.Text = "Cliente"
         '
         'CheckoutToolStripMenuItem1
         '
+        Me.CheckoutToolStripMenuItem1.Image = CType(resources.GetObject("CheckoutToolStripMenuItem1.Image"), System.Drawing.Image)
         Me.CheckoutToolStripMenuItem1.Name = "CheckoutToolStripMenuItem1"
-        Me.CheckoutToolStripMenuItem1.Size = New System.Drawing.Size(151, 26)
-        Me.CheckoutToolStripMenuItem1.Text = "Check-out"
+        Me.CheckoutToolStripMenuItem1.Size = New System.Drawing.Size(199, 42)
+        Me.CheckoutToolStripMenuItem1.Text = "Checkout"
         '
         'PacoteDeServiçosToolStripMenuItem
         '
         Me.PacoteDeServiçosToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PacoteDeServiçosToolStripMenuItem.Image = CType(resources.GetObject("PacoteDeServiçosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.PacoteDeServiçosToolStripMenuItem.Name = "PacoteDeServiçosToolStripMenuItem"
-        Me.PacoteDeServiçosToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
+        Me.PacoteDeServiçosToolStripMenuItem.Size = New System.Drawing.Size(222, 42)
         Me.PacoteDeServiçosToolStripMenuItem.Text = "Pacote de serviços"
         '
         'QuartosToolStripMenuItem
@@ -123,7 +125,7 @@ Partial Class frm_checkin
         Me.QuartosToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.QuartosToolStripMenuItem.Image = CType(resources.GetObject("QuartosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.QuartosToolStripMenuItem.Name = "QuartosToolStripMenuItem"
-        Me.QuartosToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
+        Me.QuartosToolStripMenuItem.Size = New System.Drawing.Size(222, 42)
         Me.QuartosToolStripMenuItem.Text = "Quartos"
         '
         'FuncionáriosToolStripMenuItem
@@ -131,7 +133,7 @@ Partial Class frm_checkin
         Me.FuncionáriosToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.FuncionáriosToolStripMenuItem.Image = CType(resources.GetObject("FuncionáriosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.FuncionáriosToolStripMenuItem.Name = "FuncionáriosToolStripMenuItem"
-        Me.FuncionáriosToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
+        Me.FuncionáriosToolStripMenuItem.Size = New System.Drawing.Size(222, 42)
         Me.FuncionáriosToolStripMenuItem.Text = "Funcionários"
         '
         'EncerrarSessToolStripMenuItem
@@ -139,7 +141,7 @@ Partial Class frm_checkin
         Me.EncerrarSessToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.EncerrarSessToolStripMenuItem.Image = CType(resources.GetObject("EncerrarSessToolStripMenuItem.Image"), System.Drawing.Image)
         Me.EncerrarSessToolStripMenuItem.Name = "EncerrarSessToolStripMenuItem"
-        Me.EncerrarSessToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
+        Me.EncerrarSessToolStripMenuItem.Size = New System.Drawing.Size(222, 42)
         Me.EncerrarSessToolStripMenuItem.Text = "Encerrar sessão"
         '
         'btn_cadastrar
@@ -147,7 +149,7 @@ Partial Class frm_checkin
         Me.btn_cadastrar.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
         Me.btn_cadastrar.Font = New System.Drawing.Font("Cambria", 20.0!, System.Drawing.FontStyle.Bold)
         Me.btn_cadastrar.ForeColor = System.Drawing.Color.White
-        Me.btn_cadastrar.Location = New System.Drawing.Point(620, 339)
+        Me.btn_cadastrar.Location = New System.Drawing.Point(618, 339)
         Me.btn_cadastrar.Name = "btn_cadastrar"
         Me.btn_cadastrar.Size = New System.Drawing.Size(157, 59)
         Me.btn_cadastrar.TabIndex = 75
@@ -157,16 +159,16 @@ Partial Class frm_checkin
         'TextBox4
         '
         Me.TextBox4.Font = New System.Drawing.Font("Cambria", 13.0!)
-        Me.TextBox4.Location = New System.Drawing.Point(591, 53)
+        Me.TextBox4.Location = New System.Drawing.Point(536, 53)
         Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(185, 28)
+        Me.TextBox4.Size = New System.Drawing.Size(208, 28)
         Me.TextBox4.TabIndex = 90
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Cambria", 15.0!)
-        Me.Label3.Location = New System.Drawing.Point(467, 53)
+        Me.Label3.Location = New System.Drawing.Point(412, 53)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(118, 23)
         Me.Label3.TabIndex = 89
@@ -216,7 +218,7 @@ Partial Class frm_checkin
         '
         Me.DateTimePicker3.Font = New System.Drawing.Font("Cambria", 13.0!)
         Me.DateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Time
-        Me.DateTimePicker3.Location = New System.Drawing.Point(271, 172)
+        Me.DateTimePicker3.Location = New System.Drawing.Point(260, 182)
         Me.DateTimePicker3.Margin = New System.Windows.Forms.Padding(2)
         Me.DateTimePicker3.Name = "DateTimePicker3"
         Me.DateTimePicker3.Size = New System.Drawing.Size(88, 28)
@@ -226,7 +228,7 @@ Partial Class frm_checkin
         '
         Me.DateTimePicker1.Font = New System.Drawing.Font("Cambria", 13.0!)
         Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker1.Location = New System.Drawing.Point(76, 172)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(76, 182)
         Me.DateTimePicker1.Margin = New System.Windows.Forms.Padding(2)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(112, 28)
@@ -235,34 +237,34 @@ Partial Class frm_checkin
         'TextBox7
         '
         Me.TextBox7.Font = New System.Drawing.Font("Cambria", 13.0!)
-        Me.TextBox7.Location = New System.Drawing.Point(184, 123)
+        Me.TextBox7.Location = New System.Drawing.Point(139, 134)
         Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(175, 28)
+        Me.TextBox7.Size = New System.Drawing.Size(209, 28)
         Me.TextBox7.TabIndex = 70
         '
         'TextBox6
         '
         Me.TextBox6.Font = New System.Drawing.Font("Cambria", 13.0!)
-        Me.TextBox6.Location = New System.Drawing.Point(97, 79)
+        Me.TextBox6.Location = New System.Drawing.Point(139, 79)
         Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(185, 28)
+        Me.TextBox6.Size = New System.Drawing.Size(209, 28)
         Me.TextBox6.TabIndex = 32
         '
         'Label8
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Cambria", 15.0!)
-        Me.Label8.Location = New System.Drawing.Point(16, 123)
+        Me.Label8.Location = New System.Drawing.Point(16, 116)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(166, 23)
+        Me.Label8.Size = New System.Drawing.Size(104, 46)
         Me.Label8.TabIndex = 68
-        Me.Label8.Text = "Pacote de Serviço:"
+        Me.Label8.Text = "Pacote " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "de Serviço:"
         '
         'Label13
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Cambria", 15.0!)
-        Me.Label13.Location = New System.Drawing.Point(208, 172)
+        Me.Label13.Location = New System.Drawing.Point(197, 182)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(58, 23)
         Me.Label13.TabIndex = 67
@@ -273,7 +275,7 @@ Partial Class frm_checkin
         Me.Label9.AutoSize = True
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Cambria", 15.0!)
-        Me.Label9.Location = New System.Drawing.Point(16, 172)
+        Me.Label9.Location = New System.Drawing.Point(16, 182)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(55, 23)
         Me.Label9.TabIndex = 53
@@ -328,10 +330,10 @@ Partial Class frm_checkin
         '
         Me.ComboBox1.Font = New System.Drawing.Font("Cambria", 13.0!)
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(107, 44)
+        Me.ComboBox1.Location = New System.Drawing.Point(98, 44)
         Me.ComboBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(209, 28)
+        Me.ComboBox1.Size = New System.Drawing.Size(218, 28)
         Me.ComboBox1.TabIndex = 36
         '
         'Label5
@@ -348,7 +350,7 @@ Partial Class frm_checkin
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Cambria", 15.0!)
-        Me.Label7.Location = New System.Drawing.Point(25, 43)
+        Me.Label7.Location = New System.Drawing.Point(25, 44)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(47, 23)
         Me.Label7.TabIndex = 33
@@ -358,9 +360,9 @@ Partial Class frm_checkin
         '
         Me.TextBox5.Enabled = False
         Me.TextBox5.Font = New System.Drawing.Font("Cambria", 13.0!)
-        Me.TextBox5.Location = New System.Drawing.Point(107, 82)
+        Me.TextBox5.Location = New System.Drawing.Point(98, 82)
         Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(209, 28)
+        Me.TextBox5.Size = New System.Drawing.Size(218, 28)
         Me.TextBox5.TabIndex = 34
         '
         'GroupBox3
@@ -392,7 +394,7 @@ Partial Class frm_checkin
         Me.TextBox1.Font = New System.Drawing.Font("Cambria", 13.0!)
         Me.TextBox1.Location = New System.Drawing.Point(98, 76)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(200, 28)
+        Me.TextBox1.Size = New System.Drawing.Size(218, 28)
         Me.TextBox1.TabIndex = 28
         '
         'Label1
@@ -408,9 +410,9 @@ Partial Class frm_checkin
         'TextBox2
         '
         Me.TextBox2.Font = New System.Drawing.Font("Cambria", 13.0!)
-        Me.TextBox2.Location = New System.Drawing.Point(89, 31)
+        Me.TextBox2.Location = New System.Drawing.Point(98, 31)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(209, 28)
+        Me.TextBox2.Size = New System.Drawing.Size(218, 28)
         Me.TextBox2.TabIndex = 30
         '
         'TextBox3
@@ -440,7 +442,7 @@ Partial Class frm_checkin
         Me.MaximizeBox = False
         Me.Name = "frm_checkin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "CHECK-IN"
+        Me.Text = "Check-in"
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
