@@ -1,11 +1,41 @@
 ﻿Public Class frm_quartos
     Private Sub frm_quartos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         conectar_banco()
+        carregar_acompanhante()
+        carregar_cargo()
+        carregar_catergoria_pesquisa()
+        carregar_cliente()
+        carregar_dados_func()
+        carregar_forma_pagamanto()
+        carregar_pacote_serv()
+        carregar_pac_serv_reserva()
+        carregar_parcela()
         carregar_quartos()
+        carregar_quartos_reserva()
+        carregar_reserva()
+        carregar_status_conta()
+        carregar_tipo_conta()
+        carregar_tipo_pacote()
+        carregar_tipo_quarto()
+
+        cmb_tipo.Text = ""
+
         If type_login = "admin" Then
             FuncionáriosToolStripMenuItem.Visible = True
+            btn_entrar.Visible = True
+            txt_num.Enabled = True
+            txt_desc.Enabled = True
+            txt_preco.Enabled = True
+            cmb_tipo.Enabled = True
+            img_foto.Enabled = True
         Else
             FuncionáriosToolStripMenuItem.Visible = False
+            btn_entrar.Visible = False
+            txt_num.Enabled = False
+            txt_desc.Enabled = False
+            txt_preco.Enabled = False
+            cmb_tipo.Enabled = False
+            img_foto.Enabled = False
         End If
     End Sub
 
@@ -23,9 +53,9 @@
                         cmb_tipo.Text = rs.Fields(1).Value
                         txt_desc.Text = rs.Fields(2).Value
                         img_foto.Load(rs.Fields(3).Value)
-                        txt_preco.Text = rs.Fields(4).Value
+                        txt_preco.Text = FormatCurrency(rs.Fields(4).Value)
                     End If
-                ElseIf .CurrentRow.Cells(5).Selected Then
+                ElseIf .CurrentRow.Cells(5).Selected And type_login = "admin" Then
                     aux = .CurrentRow.Cells(0).Value
                     resp = MsgBox("Deseja realmente excluir" + vbNewLine &
                             "Quarto: " & aux & "?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "ATENÇÃO")
@@ -85,11 +115,81 @@
     End Sub
 
     Private Sub EncerrarSessToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EncerrarSessToolStripMenuItem.Click
-        Me.Close()
+        Me.Hide()
+        frm_login.Visible = True
 
     End Sub
 
-    Private Sub CheckoutToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
+    Private Sub btn_entrar_Click(sender As Object, e As EventArgs) Handles btn_entrar.Click
+        Try
+            If txt_num.Text = "" Or txt_preco.Text = "" Or
+                 txt_desc.Text = "" Or cmb_tipo.Text = "" Or img_foto.ImageLocation = "" Then
+                MsgBox("Preencha todos os campos!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "ATENÇÃO")
+            Else
+                sql = "select * from tb_quartos where num_quarto=" & txt_num.Text & ""
+                rs = db.Execute(sql)
+                txt_preco.Text = txt_preco.Text.Remove(0, 3)
+                txt_preco.Text = txt_preco.Text.Replace(".", "")
+                txt_preco.Text = txt_preco.Text.Replace(",", ".")
+
+                If rs.EOF = False Then
+                    resp = MsgBox("Deseja atualizar as informações do Quarto Nº" & rs.Fields(0).Value & "?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "ATENÇÃO")
+                    If resp = vbYes Then
+                        sql = "update tb_quartos set tipo_quarto='" & cmb_tipo.Text & "', desc_quarto='" & txt_desc.Text & "', foto_quarto='" & img_foto.ImageLocation & "', " &
+                        "preco_quarto=" & txt_preco.Text & " where num_quarto=" & txt_num.Text & ""
+                        rs = db.Execute(sql)
+                        aux = txt_num.Text
+                        limpar_quarto()
+                        MsgBox("Informações do Quarto Nº" & aux & " atualizada!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "ATENÇÃO")
+                        carregar_quartos()
+                    End If
+                Else
+                    sql = "insert into tb_quartos values (" & txt_num.Text & ", '" & cmb_tipo.Text & "', '" & txt_desc.Text & "', '" & img_foto.ImageLocation & "'," &
+                        " " & txt_preco.Text & ")"
+
+                    rs = db.Execute(sql)
+                    limpar_quarto()
+                    MsgBox("Quarto cadastrado", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "ATENÇÃO")
+
+                    carregar_quartos()
+                End If
+
+            End If
+        Catch ex As Exception
+            MsgBox("Erro de processamento!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ATENÇÃO")
+        End Try
+    End Sub
+
+    Private Sub frm_quartos_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
+        conectar_banco()
+        carregar_acompanhante()
+        carregar_cargo()
+        carregar_catergoria_pesquisa()
+        carregar_cliente()
+        carregar_dados_func()
+        carregar_forma_pagamanto()
+        carregar_pacote_serv()
+        carregar_pac_serv_reserva()
+        carregar_parcela()
+        carregar_quartos()
+        carregar_quartos_reserva()
+        carregar_reserva()
+        carregar_status_conta()
+        carregar_tipo_conta()
+        carregar_tipo_pacote()
+        carregar_tipo_quarto()
+
+        cmb_tipo.Text = ""
+
+        If type_login = "admin" Then
+            FuncionáriosToolStripMenuItem.Visible = True
+        Else
+            FuncionáriosToolStripMenuItem.Visible = False
+        End If
+    End Sub
+
+    Private Sub CheckoutToolStripMenuItem_Click_1(sender As Object, e As EventArgs)
         Me.Hide()
         frm_reserva.Visible = True
     End Sub

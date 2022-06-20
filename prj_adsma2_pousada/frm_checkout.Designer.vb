@@ -24,47 +24,47 @@ Partial Class frm_checkout
     Private Sub InitializeComponent()
         Dim CheckoutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_checkout))
-        Me.btn_cadastrar = New System.Windows.Forms.Button()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.DateTimePicker3 = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripDropDownButton1 = New System.Windows.Forms.ToolStripDropDownButton()
         Me.ReservaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CheckinToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CheckoutToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.PacoteDeServiçosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.QuartosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FuncionáriosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EncerrarSessToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.txt_num_reserva = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.txt_hora = New System.Windows.Forms.TextBox()
+        Me.txt_data = New System.Windows.Forms.TextBox()
+        Me.cmb_num_reserva = New System.Windows.Forms.ComboBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.txt_pac_serv = New System.Windows.Forms.TextBox()
+        Me.txt_num_quarto = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.btn_cadastrar = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.cmb_cpf_acomp = New System.Windows.Forms.ComboBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.txt_nome_acomp = New System.Windows.Forms.TextBox()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txt_celular = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txt_nome = New System.Windows.Forms.TextBox()
+        Me.txt_cpf = New System.Windows.Forms.TextBox()
         CheckoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStrip1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
-        Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'CheckoutToolStripMenuItem
@@ -73,278 +73,7 @@ Partial Class frm_checkout
         CheckoutToolStripMenuItem.Name = "CheckoutToolStripMenuItem"
         CheckoutToolStripMenuItem.Size = New System.Drawing.Size(199, 42)
         CheckoutToolStripMenuItem.Text = "Reserva"
-        AddHandler CheckoutToolStripMenuItem.Click, AddressOf Me.CheckoutToolStripMenuItem_Click
-        '
-        'btn_cadastrar
-        '
-        Me.btn_cadastrar.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
-        Me.btn_cadastrar.Font = New System.Drawing.Font("Cambria", 20.0!, System.Drawing.FontStyle.Bold)
-        Me.btn_cadastrar.ForeColor = System.Drawing.Color.White
-        Me.btn_cadastrar.Location = New System.Drawing.Point(602, 332)
-        Me.btn_cadastrar.Name = "btn_cadastrar"
-        Me.btn_cadastrar.Size = New System.Drawing.Size(174, 59)
-        Me.btn_cadastrar.TabIndex = 83
-        Me.btn_cadastrar.Text = "CHECK-OUT"
-        Me.btn_cadastrar.UseVisualStyleBackColor = False
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Cambria", 15.0!)
-        Me.Label3.Location = New System.Drawing.Point(467, 52)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(118, 23)
-        Me.Label3.TabIndex = 82
-        Me.Label3.Text = "Nª Rerserva:"
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.Controls.Add(Me.ComboBox2)
-        Me.GroupBox2.Controls.Add(Me.Label11)
-        Me.GroupBox2.Controls.Add(Me.DateTimePicker3)
-        Me.GroupBox2.Controls.Add(Me.DateTimePicker1)
-        Me.GroupBox2.Controls.Add(Me.TextBox7)
-        Me.GroupBox2.Controls.Add(Me.TextBox6)
-        Me.GroupBox2.Controls.Add(Me.Label8)
-        Me.GroupBox2.Controls.Add(Me.Label13)
-        Me.GroupBox2.Controls.Add(Me.Label9)
-        Me.GroupBox2.Controls.Add(Me.Label10)
-        Me.GroupBox2.Font = New System.Drawing.Font("Cambria", 12.0!)
-        Me.GroupBox2.Location = New System.Drawing.Point(396, 86)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(379, 224)
-        Me.GroupBox2.TabIndex = 78
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Dados da Reserva"
-        '
-        'ComboBox2
-        '
-        Me.ComboBox2.Font = New System.Drawing.Font("Cambria", 13.0!)
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(139, 36)
-        Me.ComboBox2.Margin = New System.Windows.Forms.Padding(2)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(209, 28)
-        Me.ComboBox2.TabIndex = 37
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Cambria", 15.0!)
-        Me.Label11.Location = New System.Drawing.Point(16, 36)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(118, 23)
-        Me.Label11.TabIndex = 84
-        Me.Label11.Text = "Nª Rerserva:"
-        '
-        'DateTimePicker3
-        '
-        Me.DateTimePicker3.Font = New System.Drawing.Font("Cambria", 13.0!)
-        Me.DateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Time
-        Me.DateTimePicker3.Location = New System.Drawing.Point(271, 172)
-        Me.DateTimePicker3.Margin = New System.Windows.Forms.Padding(2)
-        Me.DateTimePicker3.Name = "DateTimePicker3"
-        Me.DateTimePicker3.Size = New System.Drawing.Size(88, 28)
-        Me.DateTimePicker3.TabIndex = 74
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.Font = New System.Drawing.Font("Cambria", 13.0!)
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker1.Location = New System.Drawing.Point(76, 172)
-        Me.DateTimePicker1.Margin = New System.Windows.Forms.Padding(2)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(112, 28)
-        Me.DateTimePicker1.TabIndex = 73
-        '
-        'TextBox7
-        '
-        Me.TextBox7.Font = New System.Drawing.Font("Cambria", 13.0!)
-        Me.TextBox7.Location = New System.Drawing.Point(184, 123)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(175, 28)
-        Me.TextBox7.TabIndex = 70
-        '
-        'TextBox6
-        '
-        Me.TextBox6.Font = New System.Drawing.Font("Cambria", 13.0!)
-        Me.TextBox6.Location = New System.Drawing.Point(97, 79)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(185, 28)
-        Me.TextBox6.TabIndex = 32
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Cambria", 15.0!)
-        Me.Label8.Location = New System.Drawing.Point(16, 123)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(166, 23)
-        Me.Label8.TabIndex = 68
-        Me.Label8.Text = "Pacote de Serviço:"
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Cambria", 15.0!)
-        Me.Label13.Location = New System.Drawing.Point(208, 172)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(58, 23)
-        Me.Label13.TabIndex = 67
-        Me.Label13.Text = "Hora:"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.BackColor = System.Drawing.Color.Transparent
-        Me.Label9.Font = New System.Drawing.Font("Cambria", 15.0!)
-        Me.Label9.Location = New System.Drawing.Point(16, 172)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(55, 23)
-        Me.Label9.TabIndex = 53
-        Me.Label9.Text = "Data:"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.BackColor = System.Drawing.Color.Transparent
-        Me.Label10.Font = New System.Drawing.Font("Cambria", 15.0!)
-        Me.Label10.Location = New System.Drawing.Point(16, 79)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(75, 23)
-        Me.Label10.TabIndex = 52
-        Me.Label10.Text = "Quarto:"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Cambria", 15.0!)
-        Me.Label4.Location = New System.Drawing.Point(12, 52)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(47, 23)
-        Me.Label4.TabIndex = 80
-        Me.Label4.Text = "CPF:"
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.GroupBox4)
-        Me.GroupBox1.Controls.Add(Me.GroupBox3)
-        Me.GroupBox1.Location = New System.Drawing.Point(10, 86)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(379, 305)
-        Me.GroupBox1.TabIndex = 77
-        Me.GroupBox1.TabStop = False
-        '
-        'GroupBox4
-        '
-        Me.GroupBox4.Controls.Add(Me.ComboBox1)
-        Me.GroupBox4.Controls.Add(Me.Label5)
-        Me.GroupBox4.Controls.Add(Me.Label7)
-        Me.GroupBox4.Controls.Add(Me.TextBox5)
-        Me.GroupBox4.Font = New System.Drawing.Font("Cambria", 12.0!)
-        Me.GroupBox4.Location = New System.Drawing.Point(6, 157)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(367, 133)
-        Me.GroupBox4.TabIndex = 26
-        Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "Acompanhante"
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.Font = New System.Drawing.Font("Cambria", 13.0!)
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(107, 44)
-        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(2)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(209, 28)
-        Me.ComboBox1.TabIndex = 36
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Cambria", 15.0!)
-        Me.Label5.Location = New System.Drawing.Point(25, 81)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(67, 23)
-        Me.Label5.TabIndex = 35
-        Me.Label5.Text = "Nome:"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Cambria", 15.0!)
-        Me.Label7.Location = New System.Drawing.Point(25, 43)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(47, 23)
-        Me.Label7.TabIndex = 33
-        Me.Label7.Text = "CPF:"
-        '
-        'TextBox5
-        '
-        Me.TextBox5.Enabled = False
-        Me.TextBox5.Font = New System.Drawing.Font("Cambria", 13.0!)
-        Me.TextBox5.Location = New System.Drawing.Point(107, 82)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(209, 28)
-        Me.TextBox5.TabIndex = 34
-        '
-        'GroupBox3
-        '
-        Me.GroupBox3.Controls.Add(Me.Label2)
-        Me.GroupBox3.Controls.Add(Me.TextBox1)
-        Me.GroupBox3.Controls.Add(Me.Label1)
-        Me.GroupBox3.Controls.Add(Me.TextBox2)
-        Me.GroupBox3.Font = New System.Drawing.Font("Cambria", 12.0!)
-        Me.GroupBox3.Location = New System.Drawing.Point(6, 24)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(367, 127)
-        Me.GroupBox3.TabIndex = 25
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Cliente"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Cambria", 15.0!)
-        Me.Label2.Location = New System.Drawing.Point(16, 31)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(67, 23)
-        Me.Label2.TabIndex = 31
-        Me.Label2.Text = "Nome:"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Font = New System.Drawing.Font("Cambria", 13.0!)
-        Me.TextBox1.Location = New System.Drawing.Point(98, 76)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(200, 28)
-        Me.TextBox1.TabIndex = 28
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Cambria", 15.0!)
-        Me.Label1.Location = New System.Drawing.Point(17, 76)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(75, 23)
-        Me.Label1.TabIndex = 29
-        Me.Label1.Text = "Celular:"
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Font = New System.Drawing.Font("Cambria", 13.0!)
-        Me.TextBox2.Location = New System.Drawing.Point(89, 31)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(209, 28)
-        Me.TextBox2.TabIndex = 30
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Font = New System.Drawing.Font("Cambria", 13.0!)
-        Me.TextBox3.Location = New System.Drawing.Point(65, 52)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(203, 28)
-        Me.TextBox3.TabIndex = 79
+        AddHandler CheckoutToolStripMenuItem.Click, AddressOf Me.CheckoutToolStripMenuItem_Click_2
         '
         'ToolStrip1
         '
@@ -354,7 +83,7 @@ Partial Class frm_checkout
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Padding = New System.Windows.Forms.Padding(0, 0, 2, 0)
         Me.ToolStrip1.Size = New System.Drawing.Size(800, 42)
-        Me.ToolStrip1.TabIndex = 76
+        Me.ToolStrip1.TabIndex = 102
         Me.ToolStrip1.Text = "ToolStrip1"
         '
         'ToolStripDropDownButton1
@@ -369,18 +98,19 @@ Partial Class frm_checkout
         '
         'ReservaToolStripMenuItem
         '
-        Me.ReservaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {CheckoutToolStripMenuItem, Me.CheckinToolStripMenuItem})
+        Me.ReservaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {CheckoutToolStripMenuItem, Me.CheckoutToolStripMenuItem1})
         Me.ReservaToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ReservaToolStripMenuItem.Image = CType(resources.GetObject("ReservaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ReservaToolStripMenuItem.Name = "ReservaToolStripMenuItem"
         Me.ReservaToolStripMenuItem.Size = New System.Drawing.Size(222, 42)
         Me.ReservaToolStripMenuItem.Text = "Cliente"
         '
-        'CheckinToolStripMenuItem
+        'CheckoutToolStripMenuItem1
         '
-        Me.CheckinToolStripMenuItem.Name = "CheckinToolStripMenuItem"
-        Me.CheckinToolStripMenuItem.Size = New System.Drawing.Size(199, 42)
-        Me.CheckinToolStripMenuItem.Text = "Check-in"
+        Me.CheckoutToolStripMenuItem1.Image = CType(resources.GetObject("CheckoutToolStripMenuItem1.Image"), System.Drawing.Image)
+        Me.CheckoutToolStripMenuItem1.Name = "CheckoutToolStripMenuItem1"
+        Me.CheckoutToolStripMenuItem1.Size = New System.Drawing.Size(199, 42)
+        Me.CheckoutToolStripMenuItem1.Text = "Check-in"
         '
         'PacoteDeServiçosToolStripMenuItem
         '
@@ -414,13 +144,282 @@ Partial Class frm_checkout
         Me.EncerrarSessToolStripMenuItem.Size = New System.Drawing.Size(222, 42)
         Me.EncerrarSessToolStripMenuItem.Text = "Encerrar sessão"
         '
-        'TextBox4
+        'txt_num_reserva
         '
-        Me.TextBox4.Font = New System.Drawing.Font("Cambria", 13.0!)
-        Me.TextBox4.Location = New System.Drawing.Point(591, 52)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(185, 28)
-        Me.TextBox4.TabIndex = 84
+        Me.txt_num_reserva.Font = New System.Drawing.Font("Cambria", 13.0!)
+        Me.txt_num_reserva.Location = New System.Drawing.Point(536, 62)
+        Me.txt_num_reserva.Name = "txt_num_reserva"
+        Me.txt_num_reserva.Size = New System.Drawing.Size(208, 28)
+        Me.txt_num_reserva.TabIndex = 101
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Cambria", 15.0!)
+        Me.Label3.Location = New System.Drawing.Point(412, 62)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(118, 23)
+        Me.Label3.TabIndex = 100
+        Me.Label3.Text = "Nª Rerserva:"
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.txt_hora)
+        Me.GroupBox2.Controls.Add(Me.txt_data)
+        Me.GroupBox2.Controls.Add(Me.cmb_num_reserva)
+        Me.GroupBox2.Controls.Add(Me.Label11)
+        Me.GroupBox2.Controls.Add(Me.txt_pac_serv)
+        Me.GroupBox2.Controls.Add(Me.txt_num_quarto)
+        Me.GroupBox2.Controls.Add(Me.Label8)
+        Me.GroupBox2.Controls.Add(Me.Label13)
+        Me.GroupBox2.Controls.Add(Me.Label9)
+        Me.GroupBox2.Controls.Add(Me.Label10)
+        Me.GroupBox2.Font = New System.Drawing.Font("Cambria", 12.0!)
+        Me.GroupBox2.Location = New System.Drawing.Point(396, 96)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(379, 227)
+        Me.GroupBox2.TabIndex = 99
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Dados da Reserva"
+        '
+        'txt_hora
+        '
+        Me.txt_hora.Enabled = False
+        Me.txt_hora.Font = New System.Drawing.Font("Cambria", 13.0!)
+        Me.txt_hora.Location = New System.Drawing.Point(259, 182)
+        Me.txt_hora.Name = "txt_hora"
+        Me.txt_hora.Size = New System.Drawing.Size(89, 28)
+        Me.txt_hora.TabIndex = 98
+        '
+        'txt_data
+        '
+        Me.txt_data.Enabled = False
+        Me.txt_data.Font = New System.Drawing.Font("Cambria", 13.0!)
+        Me.txt_data.Location = New System.Drawing.Point(77, 182)
+        Me.txt_data.Name = "txt_data"
+        Me.txt_data.Size = New System.Drawing.Size(114, 28)
+        Me.txt_data.TabIndex = 97
+        '
+        'cmb_num_reserva
+        '
+        Me.cmb_num_reserva.Font = New System.Drawing.Font("Cambria", 13.0!)
+        Me.cmb_num_reserva.FormattingEnabled = True
+        Me.cmb_num_reserva.Location = New System.Drawing.Point(139, 36)
+        Me.cmb_num_reserva.Margin = New System.Windows.Forms.Padding(2)
+        Me.cmb_num_reserva.Name = "cmb_num_reserva"
+        Me.cmb_num_reserva.Size = New System.Drawing.Size(209, 28)
+        Me.cmb_num_reserva.TabIndex = 37
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Cambria", 15.0!)
+        Me.Label11.Location = New System.Drawing.Point(16, 36)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(118, 23)
+        Me.Label11.TabIndex = 84
+        Me.Label11.Text = "Nª Rerserva:"
+        '
+        'txt_pac_serv
+        '
+        Me.txt_pac_serv.Font = New System.Drawing.Font("Cambria", 13.0!)
+        Me.txt_pac_serv.Location = New System.Drawing.Point(139, 134)
+        Me.txt_pac_serv.Name = "txt_pac_serv"
+        Me.txt_pac_serv.Size = New System.Drawing.Size(209, 28)
+        Me.txt_pac_serv.TabIndex = 70
+        '
+        'txt_num_quarto
+        '
+        Me.txt_num_quarto.Font = New System.Drawing.Font("Cambria", 13.0!)
+        Me.txt_num_quarto.Location = New System.Drawing.Point(139, 79)
+        Me.txt_num_quarto.Name = "txt_num_quarto"
+        Me.txt_num_quarto.Size = New System.Drawing.Size(209, 28)
+        Me.txt_num_quarto.TabIndex = 32
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Cambria", 15.0!)
+        Me.Label8.Location = New System.Drawing.Point(16, 116)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(104, 46)
+        Me.Label8.TabIndex = 68
+        Me.Label8.Text = "Pacote " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "de Serviço:"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Cambria", 15.0!)
+        Me.Label13.Location = New System.Drawing.Point(197, 182)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(58, 23)
+        Me.Label13.TabIndex = 67
+        Me.Label13.Text = "Hora:"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.BackColor = System.Drawing.Color.Transparent
+        Me.Label9.Font = New System.Drawing.Font("Cambria", 15.0!)
+        Me.Label9.Location = New System.Drawing.Point(16, 182)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(55, 23)
+        Me.Label9.TabIndex = 53
+        Me.Label9.Text = "Data:"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.Color.Transparent
+        Me.Label10.Font = New System.Drawing.Font("Cambria", 15.0!)
+        Me.Label10.Location = New System.Drawing.Point(16, 79)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(75, 23)
+        Me.Label10.TabIndex = 52
+        Me.Label10.Text = "Quarto:"
+        '
+        'btn_cadastrar
+        '
+        Me.btn_cadastrar.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
+        Me.btn_cadastrar.Font = New System.Drawing.Font("Cambria", 20.0!, System.Drawing.FontStyle.Bold)
+        Me.btn_cadastrar.ForeColor = System.Drawing.Color.White
+        Me.btn_cadastrar.Location = New System.Drawing.Point(601, 348)
+        Me.btn_cadastrar.Name = "btn_cadastrar"
+        Me.btn_cadastrar.Size = New System.Drawing.Size(174, 59)
+        Me.btn_cadastrar.TabIndex = 98
+        Me.btn_cadastrar.Text = "CHECKOUT"
+        Me.btn_cadastrar.UseVisualStyleBackColor = False
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Cambria", 15.0!)
+        Me.Label4.Location = New System.Drawing.Point(12, 62)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(47, 23)
+        Me.Label4.TabIndex = 97
+        Me.Label4.Text = "CPF:"
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.GroupBox4)
+        Me.GroupBox1.Controls.Add(Me.GroupBox3)
+        Me.GroupBox1.Location = New System.Drawing.Point(10, 96)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(379, 305)
+        Me.GroupBox1.TabIndex = 95
+        Me.GroupBox1.TabStop = False
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.Controls.Add(Me.cmb_cpf_acomp)
+        Me.GroupBox4.Controls.Add(Me.Label5)
+        Me.GroupBox4.Controls.Add(Me.Label7)
+        Me.GroupBox4.Controls.Add(Me.txt_nome_acomp)
+        Me.GroupBox4.Font = New System.Drawing.Font("Cambria", 12.0!)
+        Me.GroupBox4.Location = New System.Drawing.Point(6, 157)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(367, 133)
+        Me.GroupBox4.TabIndex = 26
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "Acompanhante"
+        '
+        'cmb_cpf_acomp
+        '
+        Me.cmb_cpf_acomp.Font = New System.Drawing.Font("Cambria", 13.0!)
+        Me.cmb_cpf_acomp.FormattingEnabled = True
+        Me.cmb_cpf_acomp.Location = New System.Drawing.Point(98, 44)
+        Me.cmb_cpf_acomp.Margin = New System.Windows.Forms.Padding(2)
+        Me.cmb_cpf_acomp.Name = "cmb_cpf_acomp"
+        Me.cmb_cpf_acomp.Size = New System.Drawing.Size(218, 28)
+        Me.cmb_cpf_acomp.TabIndex = 36
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Cambria", 15.0!)
+        Me.Label5.Location = New System.Drawing.Point(25, 81)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(67, 23)
+        Me.Label5.TabIndex = 35
+        Me.Label5.Text = "Nome:"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Cambria", 15.0!)
+        Me.Label7.Location = New System.Drawing.Point(25, 44)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(47, 23)
+        Me.Label7.TabIndex = 33
+        Me.Label7.Text = "CPF:"
+        '
+        'txt_nome_acomp
+        '
+        Me.txt_nome_acomp.Enabled = False
+        Me.txt_nome_acomp.Font = New System.Drawing.Font("Cambria", 13.0!)
+        Me.txt_nome_acomp.Location = New System.Drawing.Point(98, 82)
+        Me.txt_nome_acomp.Name = "txt_nome_acomp"
+        Me.txt_nome_acomp.Size = New System.Drawing.Size(218, 28)
+        Me.txt_nome_acomp.TabIndex = 34
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.Label2)
+        Me.GroupBox3.Controls.Add(Me.txt_celular)
+        Me.GroupBox3.Controls.Add(Me.Label1)
+        Me.GroupBox3.Controls.Add(Me.txt_nome)
+        Me.GroupBox3.Font = New System.Drawing.Font("Cambria", 12.0!)
+        Me.GroupBox3.Location = New System.Drawing.Point(6, 24)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(367, 127)
+        Me.GroupBox3.TabIndex = 25
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Cliente"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Cambria", 15.0!)
+        Me.Label2.Location = New System.Drawing.Point(16, 31)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(67, 23)
+        Me.Label2.TabIndex = 31
+        Me.Label2.Text = "Nome:"
+        '
+        'txt_celular
+        '
+        Me.txt_celular.Font = New System.Drawing.Font("Cambria", 13.0!)
+        Me.txt_celular.Location = New System.Drawing.Point(98, 76)
+        Me.txt_celular.Name = "txt_celular"
+        Me.txt_celular.Size = New System.Drawing.Size(218, 28)
+        Me.txt_celular.TabIndex = 28
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Cambria", 15.0!)
+        Me.Label1.Location = New System.Drawing.Point(17, 76)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(75, 23)
+        Me.Label1.TabIndex = 29
+        Me.Label1.Text = "Celular:"
+        '
+        'txt_nome
+        '
+        Me.txt_nome.Font = New System.Drawing.Font("Cambria", 13.0!)
+        Me.txt_nome.Location = New System.Drawing.Point(98, 31)
+        Me.txt_nome.Name = "txt_nome"
+        Me.txt_nome.Size = New System.Drawing.Size(218, 28)
+        Me.txt_nome.TabIndex = 30
+        '
+        'txt_cpf
+        '
+        Me.txt_cpf.Font = New System.Drawing.Font("Cambria", 13.0!)
+        Me.txt_cpf.Location = New System.Drawing.Point(65, 62)
+        Me.txt_cpf.Name = "txt_cpf"
+        Me.txt_cpf.Size = New System.Drawing.Size(203, 28)
+        Me.txt_cpf.TabIndex = 96
         '
         'frm_checkout
         '
@@ -428,16 +427,18 @@ Partial Class frm_checkout
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(187, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(800, 417)
-        Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.btn_cadastrar)
+        Me.Controls.Add(Me.ToolStrip1)
+        Me.Controls.Add(Me.txt_num_reserva)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.btn_cadastrar)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.ToolStrip1)
+        Me.Controls.Add(Me.txt_cpf)
         Me.Name = "frm_checkout"
         Me.Text = "CHECK-OUT"
+        Me.ToolStrip1.ResumeLayout(False)
+        Me.ToolStrip1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
@@ -445,8 +446,6 @@ Partial Class frm_checkout
         Me.GroupBox4.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
-        Me.ToolStrip1.ResumeLayout(False)
-        Me.ToolStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -456,39 +455,39 @@ Partial Class frm_checkout
         Throw New NotImplementedException()
     End Sub
 
-    Friend WithEvents btn_cadastrar As Button
-    Friend WithEvents Label3 As Label
-    Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents DateTimePicker3 As DateTimePicker
-    Friend WithEvents DateTimePicker1 As DateTimePicker
-    Friend WithEvents TextBox7 As TextBox
-    Friend WithEvents TextBox6 As TextBox
-    Friend WithEvents Label8 As Label
-    Friend WithEvents Label13 As Label
-    Friend WithEvents Label9 As Label
-    Friend WithEvents Label10 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents GroupBox4 As GroupBox
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents Label2 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
     Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents ToolStripDropDownButton1 As ToolStripDropDownButton
     Friend WithEvents ReservaToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents CheckinToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CheckoutToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents PacoteDeServiçosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents QuartosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents FuncionáriosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EncerrarSessToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents txt_num_reserva As TextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents cmb_num_reserva As ComboBox
     Friend WithEvents Label11 As Label
-    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents txt_pac_serv As TextBox
+    Friend WithEvents txt_num_quarto As TextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label13 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label10 As Label
+    Friend WithEvents btn_cadastrar As Button
+    Friend WithEvents Label4 As Label
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents cmb_cpf_acomp As ComboBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents txt_nome_acomp As TextBox
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents txt_celular As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents txt_nome As TextBox
+    Friend WithEvents txt_cpf As TextBox
+    Friend WithEvents txt_data As TextBox
+    Friend WithEvents txt_hora As TextBox
 End Class

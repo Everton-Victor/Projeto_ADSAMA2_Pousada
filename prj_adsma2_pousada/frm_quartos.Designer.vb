@@ -24,26 +24,7 @@ Partial Class frm_quartos
     Private Sub InitializeComponent()
         Dim CheckoutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_quartos))
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.img_foto = New System.Windows.Forms.PictureBox()
-        Me.btn_cadastrar = New System.Windows.Forms.Button()
-        Me.cmb_tipo = New System.Windows.Forms.ComboBox()
-        Me.txt_desc = New System.Windows.Forms.TextBox()
-        Me.txt_preco = New System.Windows.Forms.TextBox()
-        Me.txt_num = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.dgv_quartos = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.Column8 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripDropDownButton1 = New System.Windows.Forms.ToolStripDropDownButton()
         Me.ReservaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -52,224 +33,46 @@ Partial Class frm_quartos
         Me.PacoteDeServiçosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FuncionáriosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EncerrarSessToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.dgv_quartos = New System.Windows.Forms.DataGridView()
+        Me.Column8 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txt_num = New System.Windows.Forms.TextBox()
+        Me.txt_preco = New System.Windows.Forms.TextBox()
+        Me.txt_desc = New System.Windows.Forms.TextBox()
+        Me.cmb_tipo = New System.Windows.Forms.ComboBox()
+        Me.img_foto = New System.Windows.Forms.PictureBox()
+        Me.btn_entrar = New System.Windows.Forms.Button()
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
         CheckoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TabControl1.SuspendLayout()
-        Me.TabPage1.SuspendLayout()
-        CType(Me.img_foto, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ToolStrip1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         CType(Me.dgv_quartos, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.ToolStrip1.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
+        CType(Me.img_foto, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabControl1.SuspendLayout()
         Me.SuspendLayout()
         '
         'CheckoutToolStripMenuItem
         '
         CheckoutToolStripMenuItem.Image = CType(resources.GetObject("CheckoutToolStripMenuItem.Image"), System.Drawing.Image)
         CheckoutToolStripMenuItem.Name = "CheckoutToolStripMenuItem"
-        CheckoutToolStripMenuItem.Size = New System.Drawing.Size(199, 42)
+        CheckoutToolStripMenuItem.Size = New System.Drawing.Size(145, 26)
         CheckoutToolStripMenuItem.Text = "Reserva"
-        AddHandler CheckoutToolStripMenuItem.Click, AddressOf Me.CheckoutToolStripMenuItem_Click
+        AddHandler CheckoutToolStripMenuItem.Click, AddressOf Me.CheckoutToolStripMenuItem_Click_1
         '
-        'TabControl1
+        'OpenFileDialog1
         '
-        Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Location = New System.Drawing.Point(12, 55)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(738, 407)
-        Me.TabControl1.TabIndex = 1
-        '
-        'TabPage1
-        '
-        Me.TabPage1.Controls.Add(Me.img_foto)
-        Me.TabPage1.Controls.Add(Me.btn_cadastrar)
-        Me.TabPage1.Controls.Add(Me.cmb_tipo)
-        Me.TabPage1.Controls.Add(Me.txt_desc)
-        Me.TabPage1.Controls.Add(Me.txt_preco)
-        Me.TabPage1.Controls.Add(Me.txt_num)
-        Me.TabPage1.Controls.Add(Me.Label4)
-        Me.TabPage1.Controls.Add(Me.Label3)
-        Me.TabPage1.Controls.Add(Me.Label2)
-        Me.TabPage1.Controls.Add(Me.Label1)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(730, 381)
-        Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "CADASTRAR"
-        Me.TabPage1.UseVisualStyleBackColor = True
-        '
-        'img_foto
-        '
-        Me.img_foto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.img_foto.Image = CType(resources.GetObject("img_foto.Image"), System.Drawing.Image)
-        Me.img_foto.Location = New System.Drawing.Point(30, 26)
-        Me.img_foto.Margin = New System.Windows.Forms.Padding(2)
-        Me.img_foto.Name = "img_foto"
-        Me.img_foto.Size = New System.Drawing.Size(216, 219)
-        Me.img_foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.img_foto.TabIndex = 78
-        Me.img_foto.TabStop = False
-        '
-        'btn_cadastrar
-        '
-        Me.btn_cadastrar.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_cadastrar.Location = New System.Drawing.Point(517, 279)
-        Me.btn_cadastrar.Name = "btn_cadastrar"
-        Me.btn_cadastrar.Size = New System.Drawing.Size(171, 62)
-        Me.btn_cadastrar.TabIndex = 9
-        Me.btn_cadastrar.Text = "CADASTRAR"
-        Me.btn_cadastrar.UseVisualStyleBackColor = True
-        '
-        'cmb_tipo
-        '
-        Me.cmb_tipo.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmb_tipo.FormattingEnabled = True
-        Me.cmb_tipo.Location = New System.Drawing.Point(495, 106)
-        Me.cmb_tipo.Name = "cmb_tipo"
-        Me.cmb_tipo.Size = New System.Drawing.Size(193, 33)
-        Me.cmb_tipo.TabIndex = 8
-        '
-        'txt_desc
-        '
-        Me.txt_desc.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_desc.Location = New System.Drawing.Point(30, 295)
-        Me.txt_desc.Name = "txt_desc"
-        Me.txt_desc.Size = New System.Drawing.Size(378, 32)
-        Me.txt_desc.TabIndex = 7
-        '
-        'txt_preco
-        '
-        Me.txt_preco.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_preco.Location = New System.Drawing.Point(494, 191)
-        Me.txt_preco.Name = "txt_preco"
-        Me.txt_preco.Size = New System.Drawing.Size(193, 32)
-        Me.txt_preco.TabIndex = 6
-        '
-        'txt_num
-        '
-        Me.txt_num.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_num.Location = New System.Drawing.Point(494, 22)
-        Me.txt_num.Name = "txt_num"
-        Me.txt_num.Size = New System.Drawing.Size(193, 32)
-        Me.txt_num.TabIndex = 5
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(416, 110)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(58, 24)
-        Me.Label4.TabIndex = 3
-        Me.Label4.Text = "TIPO:"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(407, 195)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(81, 24)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "PREÇO:"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(26, 266)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(124, 24)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "DESCRIÇÃO:"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(270, 26)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(218, 24)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "NÚMERO DO QUARTO:"
-        '
-        'TabPage2
-        '
-        Me.TabPage2.Controls.Add(Me.dgv_quartos)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(730, 381)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "LISTA"
-        Me.TabPage2.UseVisualStyleBackColor = True
-        '
-        'dgv_quartos
-        '
-        Me.dgv_quartos.AllowUserToAddRows = False
-        Me.dgv_quartos.AllowUserToDeleteRows = False
-        Me.dgv_quartos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
-        Me.dgv_quartos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        Me.dgv_quartos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_quartos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column4, Me.Column3, Me.Column5, Me.Column7, Me.Column8})
-        Me.dgv_quartos.Location = New System.Drawing.Point(6, 0)
-        Me.dgv_quartos.Name = "dgv_quartos"
-        Me.dgv_quartos.ReadOnly = True
-        Me.dgv_quartos.RowHeadersWidth = 51
-        Me.dgv_quartos.Size = New System.Drawing.Size(744, 367)
-        Me.dgv_quartos.TabIndex = 0
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "NÚM"
-        Me.Column1.MinimumWidth = 6
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Width = 57
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "TIPO"
-        Me.Column4.MinimumWidth = 6
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        Me.Column4.Width = 57
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "DESCRIÇÃO"
-        Me.Column3.MinimumWidth = 6
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        Me.Column3.Width = 94
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "PREÇO"
-        Me.Column5.MinimumWidth = 6
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        Me.Column5.Width = 69
-        '
-        'Column7
-        '
-        Me.Column7.HeaderText = "EDITAR"
-        Me.Column7.Image = CType(resources.GetObject("Column7.Image"), System.Drawing.Image)
-        Me.Column7.MinimumWidth = 6
-        Me.Column7.Name = "Column7"
-        Me.Column7.ReadOnly = True
-        Me.Column7.Width = 53
-        '
-        'Column8
-        '
-        Me.Column8.HeaderText = "REMOVER"
-        Me.Column8.Image = CType(resources.GetObject("Column8.Image"), System.Drawing.Image)
-        Me.Column8.MinimumWidth = 6
-        Me.Column8.Name = "Column8"
-        Me.Column8.ReadOnly = True
-        Me.Column8.Width = 67
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
         'ToolStrip1
         '
@@ -279,7 +82,7 @@ Partial Class frm_quartos
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Padding = New System.Windows.Forms.Padding(0, 0, 2, 0)
         Me.ToolStrip1.Size = New System.Drawing.Size(776, 42)
-        Me.ToolStrip1.TabIndex = 77
+        Me.ToolStrip1.TabIndex = 79
         Me.ToolStrip1.Text = "ToolStrip1"
         '
         'ToolStripDropDownButton1
@@ -298,27 +101,29 @@ Partial Class frm_quartos
         Me.ReservaToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ReservaToolStripMenuItem.Image = CType(resources.GetObject("ReservaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ReservaToolStripMenuItem.Name = "ReservaToolStripMenuItem"
-        Me.ReservaToolStripMenuItem.Size = New System.Drawing.Size(222, 42)
+        Me.ReservaToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
         Me.ReservaToolStripMenuItem.Text = "Cliente"
         '
         'CheckinToolStripMenuItem
         '
+        Me.CheckinToolStripMenuItem.Image = CType(resources.GetObject("CheckinToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CheckinToolStripMenuItem.Name = "CheckinToolStripMenuItem"
-        Me.CheckinToolStripMenuItem.Size = New System.Drawing.Size(199, 42)
+        Me.CheckinToolStripMenuItem.Size = New System.Drawing.Size(145, 26)
         Me.CheckinToolStripMenuItem.Text = "Check-in"
         '
         'CheckoutToolStripMenuItem1
         '
+        Me.CheckoutToolStripMenuItem1.Image = CType(resources.GetObject("CheckoutToolStripMenuItem1.Image"), System.Drawing.Image)
         Me.CheckoutToolStripMenuItem1.Name = "CheckoutToolStripMenuItem1"
-        Me.CheckoutToolStripMenuItem1.Size = New System.Drawing.Size(199, 42)
-        Me.CheckoutToolStripMenuItem1.Text = "Check-out"
+        Me.CheckoutToolStripMenuItem1.Size = New System.Drawing.Size(145, 26)
+        Me.CheckoutToolStripMenuItem1.Text = "Checkout"
         '
         'PacoteDeServiçosToolStripMenuItem
         '
         Me.PacoteDeServiçosToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PacoteDeServiçosToolStripMenuItem.Image = CType(resources.GetObject("PacoteDeServiçosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.PacoteDeServiçosToolStripMenuItem.Name = "PacoteDeServiçosToolStripMenuItem"
-        Me.PacoteDeServiçosToolStripMenuItem.Size = New System.Drawing.Size(222, 42)
+        Me.PacoteDeServiçosToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
         Me.PacoteDeServiçosToolStripMenuItem.Text = "Pacote de serviços"
         '
         'FuncionáriosToolStripMenuItem
@@ -326,7 +131,7 @@ Partial Class frm_quartos
         Me.FuncionáriosToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.FuncionáriosToolStripMenuItem.Image = CType(resources.GetObject("FuncionáriosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.FuncionáriosToolStripMenuItem.Name = "FuncionáriosToolStripMenuItem"
-        Me.FuncionáriosToolStripMenuItem.Size = New System.Drawing.Size(222, 42)
+        Me.FuncionáriosToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
         Me.FuncionáriosToolStripMenuItem.Text = "Funcionários"
         '
         'EncerrarSessToolStripMenuItem
@@ -334,12 +139,212 @@ Partial Class frm_quartos
         Me.EncerrarSessToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.EncerrarSessToolStripMenuItem.Image = CType(resources.GetObject("EncerrarSessToolStripMenuItem.Image"), System.Drawing.Image)
         Me.EncerrarSessToolStripMenuItem.Name = "EncerrarSessToolStripMenuItem"
-        Me.EncerrarSessToolStripMenuItem.Size = New System.Drawing.Size(222, 42)
+        Me.EncerrarSessToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
         Me.EncerrarSessToolStripMenuItem.Text = "Encerrar sessão"
         '
-        'OpenFileDialog1
+        'TabPage2
         '
-        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        Me.TabPage2.Controls.Add(Me.dgv_quartos)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 34)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(730, 369)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "Lista"
+        Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'dgv_quartos
+        '
+        Me.dgv_quartos.AllowUserToAddRows = False
+        Me.dgv_quartos.AllowUserToDeleteRows = False
+        Me.dgv_quartos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.dgv_quartos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.dgv_quartos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_quartos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column4, Me.Column3, Me.Column5, Me.Column7, Me.Column8})
+        Me.dgv_quartos.Location = New System.Drawing.Point(6, 0)
+        Me.dgv_quartos.Name = "dgv_quartos"
+        Me.dgv_quartos.ReadOnly = True
+        Me.dgv_quartos.RowHeadersWidth = 51
+        Me.dgv_quartos.Size = New System.Drawing.Size(744, 367)
+        Me.dgv_quartos.TabIndex = 0
+        '
+        'Column8
+        '
+        Me.Column8.HeaderText = "Remover"
+        Me.Column8.Image = CType(resources.GetObject("Column8.Image"), System.Drawing.Image)
+        Me.Column8.MinimumWidth = 6
+        Me.Column8.Name = "Column8"
+        Me.Column8.ReadOnly = True
+        Me.Column8.Width = 91
+        '
+        'Column7
+        '
+        Me.Column7.HeaderText = "Editar"
+        Me.Column7.Image = CType(resources.GetObject("Column7.Image"), System.Drawing.Image)
+        Me.Column7.MinimumWidth = 6
+        Me.Column7.Name = "Column7"
+        Me.Column7.ReadOnly = True
+        Me.Column7.Width = 67
+        '
+        'Column5
+        '
+        Me.Column5.HeaderText = "Preço"
+        Me.Column5.MinimumWidth = 6
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        Me.Column5.Width = 85
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "Descrição"
+        Me.Column3.MinimumWidth = 6
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        Me.Column3.Width = 119
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "Tipo"
+        Me.Column4.MinimumWidth = 6
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        Me.Column4.Width = 74
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "Núm"
+        Me.Column1.MinimumWidth = 6
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Width = 78
+        '
+        'TabPage1
+        '
+        Me.TabPage1.Controls.Add(Me.btn_entrar)
+        Me.TabPage1.Controls.Add(Me.img_foto)
+        Me.TabPage1.Controls.Add(Me.cmb_tipo)
+        Me.TabPage1.Controls.Add(Me.txt_desc)
+        Me.TabPage1.Controls.Add(Me.txt_preco)
+        Me.TabPage1.Controls.Add(Me.txt_num)
+        Me.TabPage1.Controls.Add(Me.Label4)
+        Me.TabPage1.Controls.Add(Me.Label3)
+        Me.TabPage1.Controls.Add(Me.Label2)
+        Me.TabPage1.Controls.Add(Me.Label1)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 34)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(730, 369)
+        Me.TabPage1.TabIndex = 0
+        Me.TabPage1.Text = "Cadastro"
+        Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Cambria", 18.0!)
+        Me.Label1.Location = New System.Drawing.Point(281, 26)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(207, 28)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Número do quarto:"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Cambria", 18.0!)
+        Me.Label2.Location = New System.Drawing.Point(26, 266)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(120, 28)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "Descrição:"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Cambria", 18.0!)
+        Me.Label3.Location = New System.Drawing.Point(410, 191)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(78, 28)
+        Me.Label3.TabIndex = 2
+        Me.Label3.Text = "Preço:"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Cambria", 18.0!)
+        Me.Label4.Location = New System.Drawing.Point(424, 106)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(65, 28)
+        Me.Label4.TabIndex = 3
+        Me.Label4.Text = "Tipo:"
+        '
+        'txt_num
+        '
+        Me.txt_num.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_num.Location = New System.Drawing.Point(494, 22)
+        Me.txt_num.Name = "txt_num"
+        Me.txt_num.Size = New System.Drawing.Size(193, 32)
+        Me.txt_num.TabIndex = 5
+        '
+        'txt_preco
+        '
+        Me.txt_preco.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_preco.Location = New System.Drawing.Point(494, 191)
+        Me.txt_preco.Name = "txt_preco"
+        Me.txt_preco.Size = New System.Drawing.Size(193, 32)
+        Me.txt_preco.TabIndex = 6
+        '
+        'txt_desc
+        '
+        Me.txt_desc.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_desc.Location = New System.Drawing.Point(30, 295)
+        Me.txt_desc.Name = "txt_desc"
+        Me.txt_desc.Size = New System.Drawing.Size(378, 32)
+        Me.txt_desc.TabIndex = 7
+        '
+        'cmb_tipo
+        '
+        Me.cmb_tipo.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmb_tipo.FormattingEnabled = True
+        Me.cmb_tipo.Location = New System.Drawing.Point(495, 106)
+        Me.cmb_tipo.Name = "cmb_tipo"
+        Me.cmb_tipo.Size = New System.Drawing.Size(193, 33)
+        Me.cmb_tipo.TabIndex = 8
+        '
+        'img_foto
+        '
+        Me.img_foto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.img_foto.Image = CType(resources.GetObject("img_foto.Image"), System.Drawing.Image)
+        Me.img_foto.Location = New System.Drawing.Point(30, 26)
+        Me.img_foto.Margin = New System.Windows.Forms.Padding(2)
+        Me.img_foto.Name = "img_foto"
+        Me.img_foto.Size = New System.Drawing.Size(216, 219)
+        Me.img_foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.img_foto.TabIndex = 78
+        Me.img_foto.TabStop = False
+        '
+        'btn_entrar
+        '
+        Me.btn_entrar.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
+        Me.btn_entrar.Font = New System.Drawing.Font("Cambria", 20.0!, System.Drawing.FontStyle.Bold)
+        Me.btn_entrar.ForeColor = System.Drawing.Color.White
+        Me.btn_entrar.Location = New System.Drawing.Point(519, 295)
+        Me.btn_entrar.Name = "btn_entrar"
+        Me.btn_entrar.Size = New System.Drawing.Size(169, 59)
+        Me.btn_entrar.TabIndex = 79
+        Me.btn_entrar.Text = "Cadastrar"
+        Me.btn_entrar.UseVisualStyleBackColor = False
+        '
+        'TabControl1
+        '
+        Me.TabControl1.Controls.Add(Me.TabPage1)
+        Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Font = New System.Drawing.Font("Segoe UI", 14.25!)
+        Me.TabControl1.Location = New System.Drawing.Point(12, 64)
+        Me.TabControl1.Name = "TabControl1"
+        Me.TabControl1.SelectedIndex = 0
+        Me.TabControl1.Size = New System.Drawing.Size(738, 407)
+        Me.TabControl1.TabIndex = 78
         '
         'frm_quartos
         '
@@ -351,32 +356,19 @@ Partial Class frm_quartos
         Me.Controls.Add(Me.TabControl1)
         Me.Name = "frm_quartos"
         Me.Text = "frm_quartos"
-        Me.TabControl1.ResumeLayout(False)
+        Me.ToolStrip1.ResumeLayout(False)
+        Me.ToolStrip1.PerformLayout()
+        Me.TabPage2.ResumeLayout(False)
+        CType(Me.dgv_quartos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
         CType(Me.img_foto, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabPage2.ResumeLayout(False)
-        CType(Me.dgv_quartos, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ToolStrip1.ResumeLayout(False)
-        Me.ToolStrip1.PerformLayout()
+        Me.TabControl1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents TabControl1 As TabControl
-    Friend WithEvents TabPage1 As TabPage
-    Friend WithEvents btn_cadastrar As Button
-    Friend WithEvents cmb_tipo As ComboBox
-    Friend WithEvents txt_desc As TextBox
-    Friend WithEvents txt_preco As TextBox
-    Friend WithEvents txt_num As TextBox
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label1 As Label
-    Friend WithEvents TabPage2 As TabPage
-    Friend WithEvents dgv_quartos As DataGridView
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents ToolStripDropDownButton1 As ToolStripDropDownButton
     Friend WithEvents ReservaToolStripMenuItem As ToolStripMenuItem
@@ -385,12 +377,24 @@ Partial Class frm_quartos
     Friend WithEvents PacoteDeServiçosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents FuncionáriosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EncerrarSessToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents img_foto As PictureBox
+    Friend WithEvents TabPage2 As TabPage
+    Friend WithEvents dgv_quartos As DataGridView
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column7 As DataGridViewImageColumn
     Friend WithEvents Column8 As DataGridViewImageColumn
-    Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents TabPage1 As TabPage
+    Friend WithEvents btn_entrar As Button
+    Friend WithEvents img_foto As PictureBox
+    Friend WithEvents cmb_tipo As ComboBox
+    Friend WithEvents txt_desc As TextBox
+    Friend WithEvents txt_preco As TextBox
+    Friend WithEvents txt_num As TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents TabControl1 As TabControl
 End Class

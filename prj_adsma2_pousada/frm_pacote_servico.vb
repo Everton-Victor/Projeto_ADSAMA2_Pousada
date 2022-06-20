@@ -1,20 +1,51 @@
 ﻿Public Class frm_pacote_servico
-    Private Sub frm_pacote_servico_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+    Private Sub Frm_pacote_servico_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         conectar_banco()
-        carregar_tipo_pacote()
+        carregar_acompanhante()
+        carregar_cargo()
+        carregar_catergoria_pesquisa()
+        carregar_cliente()
+        carregar_dados_func()
+        carregar_forma_pagamanto()
         carregar_pacote_serv()
+        carregar_pac_serv_reserva()
+        carregar_parcela()
+        carregar_quartos()
+        carregar_quartos_reserva()
+        carregar_reserva()
+        carregar_status_conta()
+        carregar_tipo_conta()
+        carregar_tipo_pacote()
+        carregar_tipo_quarto()
+        Try
+            cmb_tipo.Text = ""
+            txt_cod_pac_serv.Text = ""
 
-        cmb_tipo.Text = ""
+            If type_login = "admin" Then
+                FuncionáriosToolStripMenuItem.Visible = True
+                txt_nome.Enabled = True
+                txt_preco.Enabled = True
+                txt_descricao.Enabled = True
+                btn_cadastrar.Visible = True
+                cmb_tipo.Enabled = True
+                img_foto.Enabled = True
+            Else
+                FuncionáriosToolStripMenuItem.Visible = False
+                txt_nome.Enabled = False
+                txt_preco.Enabled = False
+                txt_descricao.Enabled = False
+                btn_cadastrar.Visible = False
+                cmb_tipo.Enabled = False
+                img_foto.Enabled = False
+            End If
+        Catch ex As Exception
+            MsgBox("Erro de processamento!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ATENÇÃO")
+        End Try
 
-        If type_login = "admin" Then
-            FuncionáriosToolStripMenuItem.Visible = True
-        Else
-            FuncionáriosToolStripMenuItem.Visible = False
-        End If
+
     End Sub
 
-    Private Sub img_foto_Click(sender As Object, e As EventArgs) Handles img_foto.Click
+    Private Sub img_foto_Click(sender As Object, e As EventArgs) Handles img_foto.Click, img_foto.Click
         Try
             With OpenFileDialog1
                 .Title = "Selecione uma foto"
@@ -28,7 +59,7 @@
         End Try
     End Sub
 
-    Private Sub dgv_pac_serv_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_pac_serv.CellContentClick
+    Private Sub dgv_pac_serv_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_pac_serv.CellContentClick, dgv_pac_serv.CellContentClick
         Try
             With dgv_pac_serv
                 If .CurrentRow.Cells(5).Selected Then
@@ -38,13 +69,14 @@
 
                     If rs.EOF = False Then
                         TabControl1.SelectTab(0)
+                        txt_cod_pac_serv.text = rs.Fields(0).Value
                         txt_nome.Text = rs.Fields(1).Value
                         img_foto.Load(rs.Fields(2).Value)
                         txt_descricao.Text = rs.Fields(3).Value
                         cmb_tipo.Text = rs.Fields(4).Value
-                        txt_preco.Text = rs.Fields(5).Value
+                        txt_preco.Text = FormatCurrency(rs.Fields(5).Value)
                     End If
-                ElseIf .CurrentRow.Cells(6).Selected Then
+                ElseIf .CurrentRow.Cells(6).Selected And type_login = "admin" Then
                     aux = .CurrentRow.Cells(0).Value
                     resp = MsgBox("Deseja realmente excluir" + vbNewLine &
                             "Pacote de Serviço: " & aux & "?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "ATENÇÃO")
@@ -60,7 +92,7 @@
         End Try
     End Sub
 
-    Private Sub txt_nome_DoubleClick(sender As Object, e As EventArgs) Handles txt_nome.DoubleClick
+    Private Sub txt_nome_DoubleClick(sender As Object, e As EventArgs) Handles txt_nome.DoubleClick, txt_nome.DoubleClick
         Try
             limpar_pac_serv()
         Catch ex As Exception
@@ -89,11 +121,83 @@
         frm_funcionarios.Visible = True
     End Sub
 
-    Private Sub EncerrarSessToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EncerrarSessToolStripMenuItem.Click
-        Me.Close()
+
+    Private Sub btn_cadastrar_Click(sender As Object, e As EventArgs) Handles btn_cadastrar.Click
+        Try
+            If txt_nome.Text = "" Or txt_preco.Text = "" Or
+         txt_descricao.Text = "" Or cmb_tipo.Text = "" Then
+                MsgBox("Preencha todos os campos!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "ATENÇÃO")
+
+            Else
+                If txt_cod_pac_serv.Text = "" Then
+                    sql = "insert into tb_pacote_servico (nome_pac_serv, foto_pac_serv, desc_pac_serv, tipo_pac_serv, preco_pac_serv) " &
+                    "values ('" & txt_nome.Text & "', '" & img_foto.ImageLocation & "', '" & txt_descricao.Text & "', '" & cmb_tipo.Text & "', " &
+                    txt_preco.Text & ")"
+                    rs = db.Execute(sql)
+                    carregar_pacote_serv()
+                    limpar_pac_serv()
+                    MsgBox("Pacote de Serviço Cadastrado!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "ATENÇÃO")
+                Else
+                    resp = MsgBox("Deseja atualizar o Pacote de Serviço?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "ATENÇÃO")
+                    If resp = vbYes Then
+                        txt_preco.Text = txt_preco.Text.Remove(0, 3)
+                        txt_preco.Text = txt_preco.Text.Replace(".", "")
+                        txt_preco.Text = txt_preco.Text.Replace(",", ".")
+                        sql = "update tb_pacote_servico set nome_pac_serv='" & txt_nome.Text & "', foto_pac_serv='" & img_foto.ImageLocation &
+                        "', desc_pac_serv='" & txt_descricao.Text & "', tipo_pac_serv='" & cmb_tipo.Text & "'" &
+                        ", preco_pac_serv=" & txt_preco.Text & " where cod_pac_serv=" & txt_cod_pac_serv.Text & ""
+                        rs = db.Execute(sql)
+                        carregar_pacote_serv()
+                        limpar_pac_serv()
+                        MsgBox("Pacote de Serviço Atualizado!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "ATENÇÃO")
+                    End If
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox("Erro de processamento!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ATENÇÃO")
+        End Try
+
     End Sub
 
-    Private Sub CheckoutToolStripMenuItem_Click(sender As Object, e As EventArgs)
+    Private Sub frm_pacote_servico_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
+        conectar_banco()
+        carregar_acompanhante()
+        carregar_cargo()
+        carregar_catergoria_pesquisa()
+        carregar_cliente()
+        carregar_dados_func()
+        carregar_forma_pagamanto()
+        carregar_pacote_serv()
+        carregar_pac_serv_reserva()
+        carregar_parcela()
+        carregar_quartos()
+        carregar_quartos_reserva()
+        carregar_reserva()
+        carregar_status_conta()
+        carregar_tipo_conta()
+        carregar_tipo_pacote()
+        carregar_tipo_quarto()
+        Try
+            cmb_tipo.Text = ""
+            txt_cod_pac_serv.Text = ""
+
+            If type_login = "admin" Then
+                FuncionáriosToolStripMenuItem.Visible = True
+            Else
+                FuncionáriosToolStripMenuItem.Visible = False
+            End If
+        Catch ex As Exception
+            MsgBox("Erro de processamento!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ATENÇÃO")
+        End Try
+
+    End Sub
+
+    Private Sub EncerrarSessToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EncerrarSessToolStripMenuItem.Click
+        Me.Hide()
+        frm_login.Visible = True
+    End Sub
+
+    Private Sub CheckoutToolStripMenuItem_Click_1(sender As Object, e As EventArgs)
         Me.Hide()
         frm_reserva.Visible = True
     End Sub

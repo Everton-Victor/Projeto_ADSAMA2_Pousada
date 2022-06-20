@@ -1,10 +1,22 @@
 ﻿Public Class frm_funcionarios
     Private Sub frm_funcionarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         conectar_banco()
-        carregar_dados_func()
+        carregar_acompanhante()
         carregar_cargo()
+        carregar_catergoria_pesquisa()
+        carregar_cliente()
+        carregar_dados_func()
+        carregar_forma_pagamanto()
+        carregar_pacote_serv()
+        carregar_pac_serv_reserva()
+        carregar_parcela()
+        carregar_quartos()
+        carregar_quartos_reserva()
+        carregar_reserva()
         carregar_status_conta()
         carregar_tipo_conta()
+        carregar_tipo_pacote()
+        carregar_tipo_quarto()
         cmb_cargo.Text = ""
         cmb_status_conta.Text = ""
         cmb_tipo_conta.Text = ""
@@ -128,11 +140,35 @@
     End Sub
 
     Private Sub EncerrarSessToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EncerrarSessToolStripMenuItem.Click
-        Me.Close()
+        Me.Hide()
+        frm_login.Visible = True
 
     End Sub
 
-    Private Sub CheckoutToolStripMenuItem_Click(sender As Object, e As EventArgs)
+    Private Sub frm_funcionarios_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
+        conectar_banco()
+        carregar_acompanhante()
+        carregar_cargo()
+        carregar_catergoria_pesquisa()
+        carregar_cliente()
+        carregar_dados_func()
+        carregar_forma_pagamanto()
+        carregar_pacote_serv()
+        carregar_pac_serv_reserva()
+        carregar_parcela()
+        carregar_quartos()
+        carregar_quartos_reserva()
+        carregar_reserva()
+        carregar_status_conta()
+        carregar_tipo_conta()
+        carregar_tipo_pacote()
+        carregar_tipo_quarto()
+        cmb_cargo.Text = ""
+        cmb_status_conta.Text = ""
+        cmb_tipo_conta.Text = ""
+    End Sub
+
+    Private Sub CheckoutToolStripMenuItem_Click_1(sender As Object, e As EventArgs)
         Me.Hide()
         frm_reserva.Visible = True
     End Sub

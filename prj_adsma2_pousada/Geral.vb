@@ -2,8 +2,8 @@
     Public usuario, senha, status, aux As String
     Public diretorio, sql, resp, type_login As String
     Public db As New ADODB.Connection
-    Public rs As New ADODB.Recordset
-    Public dir_foto As String
+    Public rs, rs_aux As New ADODB.Recordset
+    Public dir_foto, email_func, categ As String
     Public dirbanco = Application.StartupPath & "\banco\adsma2_banco_pousada.mdb"
     Public cont As Integer
 
@@ -42,6 +42,7 @@
             .txt_descricao.Clear()
             .txt_preco.Clear()
             .cmb_tipo.Text = ""
+            .txt_cod_pac_serv.Text = ""
             .img_foto.Load(Application.StartupPath & "\icons\Add-Basket-icon-big.png")
             .txt_nome.Focus()
         End With
@@ -57,6 +58,55 @@
             .txt_num.Focus()
         End With
     End Sub
+
+    Sub limpar_reserva()
+        With frm_reserva
+            .txt_celular_cli.Clear()
+            .txt_cpf_acomp.Clear()
+            .txt_cpf_acomp_cadastrado.Clear()
+            .txt_cpf_cli.Clear()
+            .txt_nome_acomp.Clear()
+            .txt_nome_cli.Clear()
+            .txt_num_reserva.Clear()
+            .txt_valor_parcela.Clear()
+            .cmb_cpf_acomp.Text = ""
+            .cmb_cpf_acomp.Items.Clear()
+            .txt_cpf_cli.Focus()
+        End With
+    End Sub
+
+    Sub limpar_checkin()
+        With frm_checkin
+            .txt_cpf.Clear()
+            .txt_num_reserva.Clear()
+            .txt_nome.Clear()
+            .txt_celular.Clear()
+            .txt_nome_acomp.Clear()
+            .txt_num_quarto.Clear()
+            .txt_pac_serv.Clear()
+            .cmb_cpf_acomp.Items.Clear()
+            .cmb_num_reserva.Items.Clear()
+            .cmb_cpf_acomp.Text = ""
+            .cmb_num_reserva.Text = ""
+        End With
+    End Sub
+
+    Sub limpar_checkout()
+        With frm_checkout
+            .txt_cpf.Clear()
+            .txt_num_reserva.Clear()
+            .txt_nome.Clear()
+            .txt_celular.Clear()
+            .txt_nome_acomp.Clear()
+            .txt_num_quarto.Clear()
+            .txt_pac_serv.Clear()
+            .cmb_cpf_acomp.Items.Clear()
+            .cmb_num_reserva.Items.Clear()
+            .cmb_cpf_acomp.Text = ""
+            .cmb_num_reserva.Text = ""
+        End With
+    End Sub
+
 
     Sub carregar_dados_func()
         Try
@@ -112,9 +162,117 @@
         End Try
     End Sub
 
+    Sub carregar_pac_serv_reserva()
+        Try
+            sql = "select * from tb_pacote_servico"
+            rs = db.Execute(sql)
+
+            With frm_reserva
+                .cmb_pacote_serv.Items.Clear()
+                Do While rs.EOF = False
+                    .cmb_pacote_serv.Items.Add(rs.Fields(0).Value)
+                    rs.MoveNext()
+                Loop
+
+                If .cmb_pacote_serv.Items.Count <> 0 Then
+                    .cmb_pacote_serv.SelectedIndex = 0
+                End If
+            End With
+
+        Catch ex As Exception
+            MsgBox("Erro de Processamento", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ATENÇÃO")
+        End Try
+    End Sub
+
+    Sub carregar_quartos_reserva()
+        Try
+            sql = "select * from tb_quartos"
+            rs = db.Execute(sql)
+
+            With frm_reserva
+                .cmb_quarto.Items.Clear()
+                Do While rs.EOF = False
+                    .cmb_quarto.Items.Add(rs.Fields(0).Value)
+                    rs.MoveNext()
+                Loop
+                If .cmb_quarto.Items.Count <> 0 Then
+                    .cmb_quarto.SelectedIndex = 0
+                End If
+
+            End With
+
+        Catch ex As Exception
+            MsgBox("Erro de Processamento", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ATENÇÃO")
+        End Try
+    End Sub
+
+    Sub carregar_acompanhante()
+        Try
+
+
+            With frm_reserva
+
+                If .txt_cpf_cli.Text <> "" And .txt_num_reserva.Text <> "" Then
+                    sql = "select * from tb_acompanhante where (num_reserva=" & .txt_num_reserva.Text & " and cpf_cliente='" & .txt_cpf_cli.Text & "')"
+                    rs = db.Execute(sql)
+
+                    .cmb_cpf_acomp.Text = ""
+                    .txt_cpf_acomp_cadastrado.Text = ""
+                    .cmb_cpf_acomp.Items.Clear()
+                    Do While rs.EOF = False
+                        .cmb_cpf_acomp.Items.Add(rs.Fields(0).Value)
+                        rs.MoveNext()
+                    Loop
+                    If .cmb_cpf_acomp.Items.Count <> 0 Then
+                        .cmb_cpf_acomp.SelectedIndex = 0
+                    End If
+                End If
+
+            End With
+
+
+        Catch ex As Exception
+            MsgBox("Erro de Processamento", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ATENÇÃO")
+        End Try
+
+
+    End Sub
+
+    Sub carregar_num_reserva()
+        With frm_reserva
+            cont = 1
+            sql = "select * from tb_reserva"
+            rs = db.Execute(sql)
+
+            Do While rs.EOF = False
+                cont += 1
+                rs.MoveNext()
+            Loop
+
+            .txt_num_reserva.Text = cont
+        End With
+    End Sub
+
+    Sub carregar_reserva()
+        Try
+            sql = "select * from tb_reserva order by num_reserva asc"
+            rs = db.Execute(sql)
+            With frm_reserva.dgv_reserva
+                .Rows.Clear()
+                Do While rs.EOF = False
+                    .Rows.Add(rs.Fields(0).Value, rs.Fields(9).Value, rs.Fields(8).Value, rs.Fields(11).Value, rs.Fields(1).Value, rs.Fields(3).Value, rs.Fields(10).Value, Nothing, Nothing)
+                    rs.MoveNext()
+                Loop
+            End With
+        Catch ex As Exception
+            MsgBox("Erro de Processamento", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ATENÇÃO")
+        End Try
+    End Sub
+
     Sub carregar_tipo_conta()
         Try
             With frm_funcionarios.cmb_tipo_conta.Items
+                .Clear()
                 .Add("user")
                 .Add("admin")
             End With
@@ -127,6 +285,7 @@
     Sub carregar_status_conta()
         Try
             With frm_funcionarios.cmb_status_conta.Items
+                .Clear
                 .Add("Ativa")
                 .Add("Bloqueada")
             End With
@@ -139,6 +298,7 @@
     Sub carregar_cargo()
         Try
             With frm_funcionarios.cmb_cargo.Items
+                .Clear()
                 .Add("Gerente")
                 .Add("Atendente")
                 .Add("Caixa")
@@ -154,7 +314,8 @@
     Sub carregar_tipo_pacote()
         Try
             With frm_pacote_servico.cmb_tipo.Items
-                .Add("Basic")
+                .Clear()
+                .Add("Basico")
                 .Add("Normal")
                 .Add("Plus")
                 .Add("Premium")
@@ -163,5 +324,109 @@
         Catch ex As Exception
             MsgBox("Erro ao processar", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ATENÇÃO")
         End Try
+    End Sub
+
+    Sub carregar_tipo_quarto()
+        Try
+            With frm_quartos.cmb_tipo.Items
+                .Clear()
+                .Add("Basico")
+                .Add("Normal")
+                .Add("Plus")
+                .Add("Premium")
+            End With
+            frm_quartos.cmb_tipo.SelectedIndex = 0
+        Catch ex As Exception
+            MsgBox("Erro ao processar", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ATENÇÃO")
+        End Try
+    End Sub
+
+    Sub carregar_forma_pagamanto()
+        Try
+            With frm_reserva.cmb_forma_pagamento.Items
+                .Clear()
+                .Add("Dinheiro")
+                .Add("Cartão de Crédito")
+                .Add("PIX")
+            End With
+            frm_reserva.cmb_forma_pagamento.SelectedIndex = 0
+        Catch ex As Exception
+            MsgBox("Erro ao processar", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ATENÇÃO")
+        End Try
+    End Sub
+
+    Sub carregar_parcela()
+        Try
+            With frm_reserva.cmb_parcela.Items
+                .Clear()
+                .Add("1")
+                .Add("2")
+                .Add("4")
+                .Add("6")
+                .Add("12")
+                .Add("24")
+            End With
+            frm_reserva.cmb_forma_pagamento.SelectedIndex = 0
+        Catch ex As Exception
+            MsgBox("Erro ao processar", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ATENÇÃO")
+        End Try
+    End Sub
+
+    Sub carregar_catergoria_pesquisa()
+        Try
+            With frm_reserva.cmb_categoria.Items
+                .Clear()
+                .Add("Número da Reserva")
+                .Add("CPF do Cliente")
+                .Add("Código do Pacote de Serviço")
+                .Add("Número do Quarto")
+                .Add("E-mail do Funcionário")
+            End With
+            frm_reserva.cmb_categoria.SelectedIndex = 0
+        Catch ex As Exception
+            MsgBox("Erro ao processar", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ATENÇÃO")
+        End Try
+    End Sub
+
+    Sub carregar_cliente()
+        Try
+            With frm_reserva
+                If .txt_cpf_cli.Text <> "" Then
+                    sql = "select * from tb_cliente where cpf_cliente='" & .txt_cpf_cli.Text & "'"
+                    rs = db.Execute(sql)
+
+                    If rs.EOF = False Then
+                        .txt_nome_cli.Text = rs.Fields(1).Value
+                        .txt_celular_cli.Text = rs.Fields(2).Value
+                    End If
+                End If
+            End With
+
+        Catch ex As Exception
+            MsgBox("Erro de processamento!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ATENÇÃO")
+        End Try
+    End Sub
+
+    Sub Calcula_parcela()
+        Dim num As String
+        With frm_reserva
+            If .txt_total.Text <> "" And .cmb_parcela.Text <> "" Then
+                num = .txt_total.Text.Remove(0, 3)
+                '.txt_total.Text = .txt_total.Text.Replace(".", "")
+                '.txt_total.Text = .txt_total.Text.Replace(",", ".")
+                .txt_valor_parcela.Text = FormatCurrency((Convert.ToDecimal(num) / Convert.ToDecimal(.cmb_parcela.Text)))
+            End If
+        End With
+    End Sub
+
+    Sub Calcula_total()
+        Dim num1, num2 As String
+        With frm_reserva
+            If .txt_preco_pac_serv.Text <> "" And .txt_preco_quarto.Text <> "" Then
+                num1 = .txt_preco_quarto.Text.Remove(0, 3)
+                num2 = .txt_preco_pac_serv.Text.Remove(0, 3)
+                .txt_total.Text = FormatCurrency((Convert.ToDecimal(num1) + Convert.ToDecimal(num2)))
+            End If
+        End With
     End Sub
 End Module
