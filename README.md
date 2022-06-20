@@ -22,4 +22,4 @@ Pousada é um software com objetivo de ajudar no gerenciamento de Pousadas. Pous
 
 
 ## Modelagem do Banco de Dados
-<img src="https://github.com/Everton-Victor/Projeto_ADSAMA2_Pousada/blob/main/modelo_banco/foto_modelo_bd.png" >
+<img src="https://github.com/Everton-Victor/Projeto_ADSAMA2_Pousada/blob/Change/modelo_banco/foto_modelo_bd.png" >
