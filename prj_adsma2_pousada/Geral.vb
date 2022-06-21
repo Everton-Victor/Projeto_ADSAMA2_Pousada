@@ -3,7 +3,7 @@
     Public diretorio, sql, resp, type_login As String
     Public db As New ADODB.Connection
     Public rs, rs_aux As New ADODB.Recordset
-    Public dir_foto, email_func, categ As String
+    Public dir_foto, email_func, categ, email_func_g As String
     Public dirbanco = Application.StartupPath & "\banco\adsma2_banco_pousada.mdb"
     Public cont As Integer
 
@@ -40,7 +40,7 @@
         With frm_pacote_servico
             .txt_nome.Clear()
             .txt_descricao.Clear()
-            .txt_preco.Clear()
+            .txt_preco.Text = "R$ "
             .cmb_tipo.Text = ""
             .txt_cod_pac_serv.Text = ""
             .img_foto.Load(Application.StartupPath & "\icons\Add-Basket-icon-big.png")
@@ -53,6 +53,7 @@
             .txt_num.Clear()
             .txt_desc.Clear()
             .txt_preco.Clear()
+            .txt_preco.Text = "R$ "
             .cmb_tipo.Text = ""
             .img_foto.Load(Application.StartupPath & "\icons\room-big.png")
             .txt_num.Focus()

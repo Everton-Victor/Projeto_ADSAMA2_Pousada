@@ -19,7 +19,7 @@
         carregar_tipo_quarto()
 
         cmb_tipo.Text = ""
-
+        type_login = "admin"
         If type_login = "admin" Then
             FuncionáriosToolStripMenuItem.Visible = True
             btn_entrar.Visible = True
@@ -127,17 +127,25 @@
                  txt_desc.Text = "" Or cmb_tipo.Text = "" Or img_foto.ImageLocation = "" Then
                 MsgBox("Preencha todos os campos!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "ATENÇÃO")
             Else
+                Dim num1 As String
                 sql = "select * from tb_quartos where num_quarto=" & txt_num.Text & ""
                 rs = db.Execute(sql)
-                txt_preco.Text = txt_preco.Text.Remove(0, 3)
-                txt_preco.Text = txt_preco.Text.Replace(".", "")
-                txt_preco.Text = txt_preco.Text.Replace(",", ".")
+
+                If txt_preco.Text.Contains("R$ ") Then
+                    num1 = txt_preco.Text.Remove(0, 3)
+                Else
+                    num1 = txt_preco.Text
+                End If
+
+                num1 = num1.Replace(".", "")
+                num1 = num1.Replace(",", ".")
+
 
                 If rs.EOF = False Then
                     resp = MsgBox("Deseja atualizar as informações do Quarto Nº" & rs.Fields(0).Value & "?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "ATENÇÃO")
                     If resp = vbYes Then
                         sql = "update tb_quartos set tipo_quarto='" & cmb_tipo.Text & "', desc_quarto='" & txt_desc.Text & "', foto_quarto='" & img_foto.ImageLocation & "', " &
-                        "preco_quarto=" & txt_preco.Text & " where num_quarto=" & txt_num.Text & ""
+                        "preco_quarto=" & num1 & " where num_quarto=" & txt_num.Text & ""
                         rs = db.Execute(sql)
                         aux = txt_num.Text
                         limpar_quarto()
@@ -146,7 +154,7 @@
                     End If
                 Else
                     sql = "insert into tb_quartos values (" & txt_num.Text & ", '" & cmb_tipo.Text & "', '" & txt_desc.Text & "', '" & img_foto.ImageLocation & "'," &
-                        " " & txt_preco.Text & ")"
+                        " " & num1 & ")"
 
                     rs = db.Execute(sql)
                     limpar_quarto()
@@ -192,5 +200,11 @@
     Private Sub CheckoutToolStripMenuItem_Click_1(sender As Object, e As EventArgs)
         Me.Hide()
         frm_reserva.Visible = True
+    End Sub
+
+    Private Sub txt_preco_LostFocus(sender As Object, e As EventArgs) Handles txt_preco.LostFocus
+        If txt_preco.Text = "" Then
+            txt_preco.Text = "R$ "
+        End If
     End Sub
 End Class

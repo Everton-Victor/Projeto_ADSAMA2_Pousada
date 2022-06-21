@@ -232,6 +232,7 @@
                         sql = "insert into tb_checkout (data_checkout, hora_checkout, num_reserva) values ('" & txt_data.Text & "', '" & txt_hora.Text & "', '" & txt_num_reserva.Text & "')"
                         rs = db.Execute(sql)
                         MsgBox("Checkout efetuado!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "ATENÇÃO")
+                        limpar_checkout()
                     Else
                         MsgBox("A Reserva Nº" & txt_num_reserva.Text & " já efetuou checkout " & vbNewLine &
                                "Data: " & rs.Fields(1).Value & " - Hora: " & rs.Fields(2).Value & "", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "ALERTA")

@@ -130,9 +130,19 @@
 
             Else
                 If txt_cod_pac_serv.Text = "" Then
+                    Dim num1 As String
+                    If txt_preco.Text.Contains("R$ ") Then
+                        num1 = txt_preco.Text.Remove(0, 3)
+                    Else
+                        num1 = txt_preco.Text
+                    End If
+
+                    num1 = num1.Replace(".", "")
+                    num1 = num1.Replace(",", ".")
+
                     sql = "insert into tb_pacote_servico (nome_pac_serv, foto_pac_serv, desc_pac_serv, tipo_pac_serv, preco_pac_serv) " &
                     "values ('" & txt_nome.Text & "', '" & img_foto.ImageLocation & "', '" & txt_descricao.Text & "', '" & cmb_tipo.Text & "', " &
-                    txt_preco.Text & ")"
+                    num1 & ")"
                     rs = db.Execute(sql)
                     carregar_pacote_serv()
                     limpar_pac_serv()
@@ -140,12 +150,18 @@
                 Else
                     resp = MsgBox("Deseja atualizar o Pacote de Serviço?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "ATENÇÃO")
                     If resp = vbYes Then
-                        txt_preco.Text = txt_preco.Text.Remove(0, 3)
-                        txt_preco.Text = txt_preco.Text.Replace(".", "")
-                        txt_preco.Text = txt_preco.Text.Replace(",", ".")
+                        Dim num1 As String
+                        If txt_preco.Text.Contains("R$ ") Then
+                            num1 = txt_preco.Text.Remove(0, 3)
+                        Else
+                            num1 = txt_preco.Text
+                        End If
+
+                        num1 = num1.Replace(".", "")
+                        num1 = num1.Replace(",", ".")
                         sql = "update tb_pacote_servico set nome_pac_serv='" & txt_nome.Text & "', foto_pac_serv='" & img_foto.ImageLocation &
                         "', desc_pac_serv='" & txt_descricao.Text & "', tipo_pac_serv='" & cmb_tipo.Text & "'" &
-                        ", preco_pac_serv=" & txt_preco.Text & " where cod_pac_serv=" & txt_cod_pac_serv.Text & ""
+                        ", preco_pac_serv=" & num1 & " where cod_pac_serv=" & txt_cod_pac_serv.Text & ""
                         rs = db.Execute(sql)
                         carregar_pacote_serv()
                         limpar_pac_serv()
@@ -200,5 +216,10 @@
     Private Sub CheckoutToolStripMenuItem_Click_1(sender As Object, e As EventArgs)
         Me.Hide()
         frm_reserva.Visible = True
+    End Sub
+    Private Sub txt_preco_LostFocus(sender As Object, e As EventArgs) Handles txt_preco.LostFocus
+        If txt_preco.Text = "" Then
+            txt_preco.Text = "R$ "
+        End If
     End Sub
 End Class

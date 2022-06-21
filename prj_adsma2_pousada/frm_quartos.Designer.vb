@@ -45,14 +45,14 @@ Partial Class frm_quartos
         Me.btn_entrar = New System.Windows.Forms.Button()
         Me.img_foto = New System.Windows.Forms.PictureBox()
         Me.cmb_tipo = New System.Windows.Forms.ComboBox()
-        Me.txt_desc = New System.Windows.Forms.TextBox()
-        Me.txt_preco = New System.Windows.Forms.TextBox()
         Me.txt_num = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.txt_desc = New System.Windows.Forms.TextBox()
+        Me.txt_preco = New System.Windows.Forms.TextBox()
         CheckoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStrip1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -220,11 +220,11 @@ Partial Class frm_quartos
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.txt_preco)
         Me.TabPage1.Controls.Add(Me.btn_entrar)
         Me.TabPage1.Controls.Add(Me.img_foto)
         Me.TabPage1.Controls.Add(Me.cmb_tipo)
         Me.TabPage1.Controls.Add(Me.txt_desc)
-        Me.TabPage1.Controls.Add(Me.txt_preco)
         Me.TabPage1.Controls.Add(Me.txt_num)
         Me.TabPage1.Controls.Add(Me.Label4)
         Me.TabPage1.Controls.Add(Me.Label3)
@@ -271,22 +271,6 @@ Partial Class frm_quartos
         Me.cmb_tipo.Size = New System.Drawing.Size(193, 33)
         Me.cmb_tipo.TabIndex = 8
         '
-        'txt_desc
-        '
-        Me.txt_desc.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_desc.Location = New System.Drawing.Point(30, 295)
-        Me.txt_desc.Name = "txt_desc"
-        Me.txt_desc.Size = New System.Drawing.Size(378, 32)
-        Me.txt_desc.TabIndex = 7
-        '
-        'txt_preco
-        '
-        Me.txt_preco.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_preco.Location = New System.Drawing.Point(494, 191)
-        Me.txt_preco.Name = "txt_preco"
-        Me.txt_preco.Size = New System.Drawing.Size(193, 32)
-        Me.txt_preco.TabIndex = 6
-        '
         'txt_num
         '
         Me.txt_num.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -309,7 +293,7 @@ Partial Class frm_quartos
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Cambria", 18.0!)
-        Me.Label3.Location = New System.Drawing.Point(410, 191)
+        Me.Label3.Location = New System.Drawing.Point(411, 186)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(78, 28)
         Me.Label3.TabIndex = 2
@@ -345,6 +329,23 @@ Partial Class frm_quartos
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(738, 407)
         Me.TabControl1.TabIndex = 78
+        '
+        'txt_desc
+        '
+        Me.txt_desc.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_desc.Location = New System.Drawing.Point(30, 295)
+        Me.txt_desc.Name = "txt_desc"
+        Me.txt_desc.Size = New System.Drawing.Size(378, 32)
+        Me.txt_desc.TabIndex = 7
+        '
+        'txt_preco
+        '
+        Me.txt_preco.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_preco.Location = New System.Drawing.Point(495, 186)
+        Me.txt_preco.Name = "txt_preco"
+        Me.txt_preco.Size = New System.Drawing.Size(192, 32)
+        Me.txt_preco.TabIndex = 80
+        Me.txt_preco.Text = "R$ "
         '
         'frm_quartos
         '
@@ -390,12 +391,12 @@ Partial Class frm_quartos
     Friend WithEvents btn_entrar As Button
     Friend WithEvents img_foto As PictureBox
     Friend WithEvents cmb_tipo As ComboBox
-    Friend WithEvents txt_desc As TextBox
-    Friend WithEvents txt_preco As TextBox
     Friend WithEvents txt_num As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents txt_preco As TextBox
+    Friend WithEvents txt_desc As TextBox
 End Class

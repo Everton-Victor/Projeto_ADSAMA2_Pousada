@@ -22,7 +22,6 @@ Partial Class frm_checkin
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim CheckoutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_checkin))
         Me.txt_num_reserva = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -54,26 +53,18 @@ Partial Class frm_checkin
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripDropDownButton1 = New System.Windows.Forms.ToolStripDropDownButton()
         Me.ReservaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CheckoutToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.PacoteDeServiçosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.QuartosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FuncionáriosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EncerrarSessToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        CheckoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReservaToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CheckoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'CheckoutToolStripMenuItem
-        '
-        CheckoutToolStripMenuItem.Image = CType(resources.GetObject("CheckoutToolStripMenuItem.Image"), System.Drawing.Image)
-        CheckoutToolStripMenuItem.Name = "CheckoutToolStripMenuItem"
-        CheckoutToolStripMenuItem.Size = New System.Drawing.Size(145, 26)
-        CheckoutToolStripMenuItem.Text = "Reserva"
-        AddHandler CheckoutToolStripMenuItem.Click, AddressOf Me.CheckoutToolStripMenuItem_Click_1
         '
         'txt_num_reserva
         '
@@ -375,26 +366,19 @@ Partial Class frm_checkin
         '
         'ReservaToolStripMenuItem
         '
-        Me.ReservaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {CheckoutToolStripMenuItem, Me.CheckoutToolStripMenuItem1})
+        Me.ReservaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReservaToolStripMenuItem1, Me.CheckoutToolStripMenuItem})
         Me.ReservaToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ReservaToolStripMenuItem.Image = CType(resources.GetObject("ReservaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ReservaToolStripMenuItem.Name = "ReservaToolStripMenuItem"
-        Me.ReservaToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
+        Me.ReservaToolStripMenuItem.Size = New System.Drawing.Size(222, 42)
         Me.ReservaToolStripMenuItem.Text = "Cliente"
-        '
-        'CheckoutToolStripMenuItem1
-        '
-        Me.CheckoutToolStripMenuItem1.Image = CType(resources.GetObject("CheckoutToolStripMenuItem1.Image"), System.Drawing.Image)
-        Me.CheckoutToolStripMenuItem1.Name = "CheckoutToolStripMenuItem1"
-        Me.CheckoutToolStripMenuItem1.Size = New System.Drawing.Size(145, 26)
-        Me.CheckoutToolStripMenuItem1.Text = "Checkout"
         '
         'PacoteDeServiçosToolStripMenuItem
         '
         Me.PacoteDeServiçosToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PacoteDeServiçosToolStripMenuItem.Image = CType(resources.GetObject("PacoteDeServiçosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.PacoteDeServiçosToolStripMenuItem.Name = "PacoteDeServiçosToolStripMenuItem"
-        Me.PacoteDeServiçosToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
+        Me.PacoteDeServiçosToolStripMenuItem.Size = New System.Drawing.Size(222, 42)
         Me.PacoteDeServiçosToolStripMenuItem.Text = "Pacote de serviços"
         '
         'QuartosToolStripMenuItem
@@ -402,7 +386,7 @@ Partial Class frm_checkin
         Me.QuartosToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.QuartosToolStripMenuItem.Image = CType(resources.GetObject("QuartosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.QuartosToolStripMenuItem.Name = "QuartosToolStripMenuItem"
-        Me.QuartosToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
+        Me.QuartosToolStripMenuItem.Size = New System.Drawing.Size(222, 42)
         Me.QuartosToolStripMenuItem.Text = "Quartos"
         '
         'FuncionáriosToolStripMenuItem
@@ -410,7 +394,7 @@ Partial Class frm_checkin
         Me.FuncionáriosToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.FuncionáriosToolStripMenuItem.Image = CType(resources.GetObject("FuncionáriosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.FuncionáriosToolStripMenuItem.Name = "FuncionáriosToolStripMenuItem"
-        Me.FuncionáriosToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
+        Me.FuncionáriosToolStripMenuItem.Size = New System.Drawing.Size(222, 42)
         Me.FuncionáriosToolStripMenuItem.Text = "Funcionários"
         '
         'EncerrarSessToolStripMenuItem
@@ -418,8 +402,22 @@ Partial Class frm_checkin
         Me.EncerrarSessToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.EncerrarSessToolStripMenuItem.Image = CType(resources.GetObject("EncerrarSessToolStripMenuItem.Image"), System.Drawing.Image)
         Me.EncerrarSessToolStripMenuItem.Name = "EncerrarSessToolStripMenuItem"
-        Me.EncerrarSessToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
+        Me.EncerrarSessToolStripMenuItem.Size = New System.Drawing.Size(222, 42)
         Me.EncerrarSessToolStripMenuItem.Text = "Encerrar sessão"
+        '
+        'ReservaToolStripMenuItem1
+        '
+        Me.ReservaToolStripMenuItem1.Image = CType(resources.GetObject("ReservaToolStripMenuItem1.Image"), System.Drawing.Image)
+        Me.ReservaToolStripMenuItem1.Name = "ReservaToolStripMenuItem1"
+        Me.ReservaToolStripMenuItem1.Size = New System.Drawing.Size(199, 42)
+        Me.ReservaToolStripMenuItem1.Text = "Reserva"
+        '
+        'CheckoutToolStripMenuItem
+        '
+        Me.CheckoutToolStripMenuItem.Image = CType(resources.GetObject("CheckoutToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.CheckoutToolStripMenuItem.Name = "CheckoutToolStripMenuItem"
+        Me.CheckoutToolStripMenuItem.Size = New System.Drawing.Size(199, 42)
+        Me.CheckoutToolStripMenuItem.Text = "Checkout"
         '
         'frm_checkin
         '
@@ -484,11 +482,12 @@ Partial Class frm_checkin
     Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents ToolStripDropDownButton1 As ToolStripDropDownButton
     Friend WithEvents ReservaToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents CheckoutToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents PacoteDeServiçosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents QuartosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents FuncionáriosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EncerrarSessToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents txt_hora As TextBox
     Friend WithEvents txt_data As TextBox
+    Friend WithEvents ReservaToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents CheckoutToolStripMenuItem As ToolStripMenuItem
 End Class

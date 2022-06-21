@@ -69,8 +69,8 @@
     End Sub
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_reserva.CellContentClick
-        'Try
-        With dgv_reserva
+        Try
+            With dgv_reserva
                 'Editar
                 If .CurrentRow.Cells(7).Selected Then
                     aux = .CurrentRow.Cells(0).Value
@@ -78,31 +78,31 @@
                     rs = db.Execute(sql)
 
                     If rs.EOF = False Then
-                    TabControl1.SelectTab(0)
-                    txt_data_entrada.Text = rs.Fields(1).Value
+                        TabControl1.SelectTab(0)
+                        txt_data_entrada.Text = rs.Fields(1).Value
                         txt_hora_entrada.Text = rs.Fields(2).Value
                         txt_data_saida.Text = rs.Fields(3).Value
                         txt_hora_saida.Text = rs.Fields(4).Value
-                    cmb_quarto.Text = rs.Fields(9).Value
-                    txt_num_reserva.Text = rs.Fields(0).Value
+                        cmb_quarto.Text = rs.Fields(9).Value
+                        txt_num_reserva.Text = rs.Fields(0).Value
 
-                    sql = "select * from tb_reserva where num_reserva=" & txt_num_reserva.Text & ""
-                    rs = db.Execute(sql)
-                    If rs.EOF = False Then
-                        txt_cpf_cli.Text = rs.Fields(11).Value
-                        cmb_forma_pagamento.Text = rs.Fields(6).Value
-                        cmb_parcela.Text = rs.Fields(7).Value
-                        If rs.Fields(8).Value <> 0 Then
-                            cmb_pacote_serv.Text = rs.Fields(8).Value
-                        Else
-                            cmb_pacote_serv.SelectedIndex = 0
+                        sql = "select * from tb_reserva where num_reserva=" & txt_num_reserva.Text & ""
+                        rs = db.Execute(sql)
+                        If rs.EOF = False Then
+                            txt_cpf_cli.Text = rs.Fields(11).Value
+                            cmb_forma_pagamento.Text = rs.Fields(6).Value
+                            cmb_parcela.Text = rs.Fields(7).Value
+                            If rs.Fields(8).Value <> 0 Then
+                                cmb_pacote_serv.Text = rs.Fields(8).Value
+                            Else
+                                cmb_pacote_serv.SelectedIndex = 0
+                            End If
+
+
+                            txt_total.Text = rs.Fields(5).Value
                         End If
 
-
-                        txt_total.Text = rs.Fields(5).Value
-                    End If
-
-                    Calcula_total()
+                        Calcula_total()
                         Calcula_parcela()
                         carregar_cliente()
                         carregar_acompanhante()
@@ -130,9 +130,9 @@
 
                 End If
             End With
-        '  Catch ex As Exception
-        'MsgBox("Erro de processamento!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ATENÇÃO")
-        ' End Try
+        Catch ex As Exception
+            MsgBox("Erro de processamento!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ATENÇÃO")
+        End Try
     End Sub
 
     Private Sub frm_reserva_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
@@ -257,12 +257,12 @@
 
     Private Sub btn_cadastrar_Click(sender As Object, e As EventArgs) Handles btn_cadastrar.Click
         Dim num As String
-        'Try
-        Calcula_total()
-        If txt_cpf_cli.Text = "" Or txt_nome_cli.Text = "" Or txt_celular_cli.Text = "" Then
-            MsgBox("Preencha todos os campos!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "ATENÇÃO")
-        ElseIf cmb_pacote_serv.Text <> "" Then
-            sql = "Select * from tb_reserva where num_reserva=" & txt_num_reserva.Text & ""
+        Try
+            Calcula_total()
+            If txt_cpf_cli.Text = "" Or txt_nome_cli.Text = "" Or txt_celular_cli.Text = "" Then
+                MsgBox("Preencha todos os campos!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "ATENÇÃO")
+            ElseIf cmb_pacote_serv.Text <> "" Then
+                sql = "Select * from tb_reserva where num_reserva=" & txt_num_reserva.Text & ""
                 rs = db.Execute(sql)
                 If rs.EOF = False Then
                     resp = MsgBox("Deseja atualizar As informações da reserva com Nº" & txt_num_reserva.Text & "?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "ALERTA")
@@ -315,60 +315,60 @@
             Else
                 sql = "Select * from tb_reserva where num_reserva=" & txt_num_reserva.Text & ""
                 rs = db.Execute(sql)
-            If rs.EOF = False Then
-                resp = MsgBox("Deseja atualizar As informações da reserva com Nº" & txt_num_reserva.Text & "?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "ALERTA")
-                If resp = vbYes Then
-                    num = txt_total.Text.Remove(0, 3)
-                    num = num.Replace(".", "")
-                    num = num.Replace(",", ".")
-                    sql = "update tb_reserva set data_entrada='" & txt_data_entrada.Text & "', hora_entrada='" & txt_hora_entrada.Text & "', data_saida='" & txt_data_saida.Text & "', " &
+                If rs.EOF = False Then
+                    resp = MsgBox("Deseja atualizar As informações da reserva com Nº" & txt_num_reserva.Text & "?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "ALERTA")
+                    If resp = vbYes Then
+                        num = txt_total.Text.Remove(0, 3)
+                        num = num.Replace(".", "")
+                        num = num.Replace(",", ".")
+                        sql = "update tb_reserva set data_entrada='" & txt_data_entrada.Text & "', hora_entrada='" & txt_hora_entrada.Text & "', data_saida='" & txt_data_saida.Text & "', " &
                     "hora_saida='" & txt_hora_saida.Text & "', preco_reserva=" & num & ", forma_pagamento_reserva='" & cmb_forma_pagamento.Text & "', " &
                     "parcelas='" & cmb_parcela.Text & "', cod_pac_serv=0, num_quarto=" & cmb_quarto.Text & ", email_func='" & email_func & "', " &
                     "cpf_cliente='" & txt_cpf_cli.Text & "' where num_reserva=" & txt_num_reserva.Text & ""
-                    rs = db.Execute(sql)
+                        rs = db.Execute(sql)
 
-                    sql = "update tb_cliente set nome_cliente='" & txt_nome_cli.Text & "', celular_cliente='" & txt_celular_cli.Text & "' where cpf_cliente='" & txt_cpf_cli.Text & "'"
-                    rs = db.Execute(sql)
-                    limpar_reserva()
-                    carregar_reserva()
-                    carregar_num_reserva()
-                    MsgBox("Reserva atualizada com sucesso!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "ATENÇÃO")
-                End If
-            Else
-                num = txt_total.Text.Remove(0, 3)
-                num = num.Replace(".", "")
-                num = num.Replace(",", ".")
-                sql = "insert into tb_reserva (num_reserva, data_entrada, hora_entrada, data_saida, hora_saida, preco_reserva, forma_pagamento_reserva, parcelas, cod_pac_serv, num_quarto, email_func, cpf_cliente)" &
+                        sql = "update tb_cliente set nome_cliente='" & txt_nome_cli.Text & "', celular_cliente='" & txt_celular_cli.Text & "' where cpf_cliente='" & txt_cpf_cli.Text & "'"
+                        rs = db.Execute(sql)
+                        limpar_reserva()
+                        carregar_reserva()
+                        carregar_num_reserva()
+                        MsgBox("Reserva atualizada com sucesso!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "ATENÇÃO")
+                    End If
+                Else
+                    num = txt_total.Text.Remove(0, 3)
+                    num = num.Replace(".", "")
+                    num = num.Replace(",", ".")
+                    sql = "insert into tb_reserva (num_reserva, data_entrada, hora_entrada, data_saida, hora_saida, preco_reserva, forma_pagamento_reserva, parcelas, cod_pac_serv, num_quarto, email_func, cpf_cliente)" &
                     " values (" & txt_num_reserva.Text & ", '" & txt_data_entrada.Text & "', '" & txt_hora_entrada.Text & "', '" & txt_data_saida.Text & "', '" & txt_hora_saida.Text & "', " & num &
                     ", '" & cmb_forma_pagamento.Text & "', '" & cmb_parcela.Text & "', 0, " & cmb_quarto.Text & ", '" & email_func & "', '" & txt_cpf_cli.Text & "')"
-                rs = db.Execute(sql)
-
-                sql = "select * from tb_cliente where cpf_cliente='" & txt_cpf_cli.Text & "'"
-                rs = db.Execute(sql)
-
-                If rs.EOF = True Then
-                    sql = "insert into tb_cliente values ('" & txt_cpf_cli.Text & "', '" & txt_nome_cli.Text & "', '" & txt_celular_cli.Text & "')"
                     rs = db.Execute(sql)
-                    carregar_reserva()
-                    limpar_reserva()
-                    carregar_num_reserva()
-                    MsgBox("Reserva cadastrada com sucesso!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "ATENÇÃO")
-                Else
-                    sql = "update tb_cliente set nome_cliente='" & txt_nome_cli.Text & "', celular_cliente='" & txt_celular_cli.Text & "' where cpf_cliente='" & txt_cpf_cli.Text & "'"
+
+                    sql = "select * from tb_cliente where cpf_cliente='" & txt_cpf_cli.Text & "'"
                     rs = db.Execute(sql)
-                    carregar_reserva()
-                    limpar_reserva()
-                    carregar_num_reserva()
-                    MsgBox("Reserva cadastrada com sucesso!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "ATENÇÃO")
+
+                    If rs.EOF = True Then
+                        sql = "insert into tb_cliente values ('" & txt_cpf_cli.Text & "', '" & txt_nome_cli.Text & "', '" & txt_celular_cli.Text & "')"
+                        rs = db.Execute(sql)
+                        carregar_reserva()
+                        limpar_reserva()
+                        carregar_num_reserva()
+                        MsgBox("Reserva cadastrada com sucesso!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "ATENÇÃO")
+                    Else
+                        sql = "update tb_cliente set nome_cliente='" & txt_nome_cli.Text & "', celular_cliente='" & txt_celular_cli.Text & "' where cpf_cliente='" & txt_cpf_cli.Text & "'"
+                        rs = db.Execute(sql)
+                        carregar_reserva()
+                        limpar_reserva()
+                        carregar_num_reserva()
+                        MsgBox("Reserva cadastrada com sucesso!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "ATENÇÃO")
+                    End If
+
                 End If
-
+                Calcula_total()
+                Calcula_parcela()
             End If
-            Calcula_total()
-            Calcula_parcela()
-        End If
-        'Catch ex As Exception
-        'MsgBox("Erro de processamento!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ATENÇÃO")
-        'End Try
+        Catch ex As Exception
+            MsgBox("Erro de processamento!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ATENÇÃO")
+        End Try
 
     End Sub
 
@@ -417,6 +417,22 @@
     End Sub
 
     Private Sub btn_refresh_Click(sender As Object, e As EventArgs) Handles btn_refresh.Click
+        Calcula_total()
+    End Sub
+
+    Private Sub txt_data_entrada_TextChanged(sender As Object, e As EventArgs) Handles txt_data_entrada.TextChanged
+        Calcula_total()
+    End Sub
+
+    Private Sub txt_data_saida_TextChanged(sender As Object, e As EventArgs) Handles txt_data_saida.TextChanged
+        Calcula_total()
+    End Sub
+
+    Private Sub txt_hora_entrada_TextChanged(sender As Object, e As EventArgs) Handles txt_hora_entrada.TextChanged
+        Calcula_total()
+    End Sub
+
+    Private Sub txt_hora_saida_TextChanged(sender As Object, e As EventArgs) Handles txt_hora_saida.TextChanged
         Calcula_total()
     End Sub
 End Class

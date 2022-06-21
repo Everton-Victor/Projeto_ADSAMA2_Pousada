@@ -30,6 +30,7 @@
 
                 If rs.EOF = False Then
                     email_func = txt_email.Text
+                    email_func_g = txt_email.Text
 
                     If rs.Fields(5).Value = "Ativa" Then
                         type_login = rs.Fields(4).Value

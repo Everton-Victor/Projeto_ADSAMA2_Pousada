@@ -34,16 +34,6 @@
     End Sub
 
 
-    Private Sub CheckoutToolStripMenuItem_Click_1(sender As Object, e As EventArgs)
-        Me.Hide()
-        frm_reserva.Visible = True
-    End Sub
-
-    Private Sub CheckoutToolStripMenuItem1_Click_1(sender As Object, e As EventArgs) Handles CheckoutToolStripMenuItem1.Click
-        Me.Hide()
-        frm_checkout.Visible = True
-    End Sub
-
     Private Sub PacoteDeServiçosToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles PacoteDeServiçosToolStripMenuItem.Click
         Me.Hide()
         frm_pacote_servico.Visible = True
@@ -225,6 +215,7 @@
                         sql = "insert into tb_checkin (data_checkin, hora_checkin, num_reserva) values ('" & txt_data.Text & "', '" & txt_hora.Text & "', '" & txt_num_reserva.Text & "')"
                         rs = db.Execute(sql)
                         MsgBox("Check-in efetuado!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "ATENÇÃO")
+                        limpar_checkin()
                     Else
                         MsgBox("A Reserva Nº" & txt_num_reserva.Text & " já efetuou check-in " & vbNewLine &
                                "Data: " & rs.Fields(1).Value & " - Hora: " & rs.Fields(2).Value & "", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "ALERTA")
@@ -271,5 +262,15 @@
         Catch ex As Exception
             MsgBox("Erro de processamento!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ALERTA")
         End Try
+    End Sub
+
+    Private Sub ReservaToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ReservaToolStripMenuItem1.Click
+        Me.Hide()
+        frm_reserva.Visible = True
+    End Sub
+
+    Private Sub CheckoutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CheckoutToolStripMenuItem.Click
+        Me.Hide()
+        frm_checkout.Visible = True
     End Sub
 End Class

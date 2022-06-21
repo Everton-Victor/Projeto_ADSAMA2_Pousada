@@ -24,6 +24,11 @@ Partial Class frm_pacote_servico
     Private Sub InitializeComponent()
         Dim CheckoutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_pacote_servico))
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
@@ -85,7 +90,7 @@ Partial Class frm_pacote_servico
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Padding = New System.Windows.Forms.Padding(0, 0, 2, 0)
-        Me.ToolStrip1.Size = New System.Drawing.Size(727, 42)
+        Me.ToolStrip1.Size = New System.Drawing.Size(847, 42)
         Me.ToolStrip1.TabIndex = 79
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -150,11 +155,11 @@ Partial Class frm_pacote_servico
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Font = New System.Drawing.Font("Segoe UI", 14.25!)
+        Me.TabControl1.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TabControl1.Location = New System.Drawing.Point(12, 52)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(690, 435)
+        Me.TabControl1.Size = New System.Drawing.Size(823, 435)
         Me.TabControl1.TabIndex = 78
         '
         'TabPage1
@@ -174,7 +179,7 @@ Partial Class frm_pacote_servico
         Me.TabPage1.Location = New System.Drawing.Point(4, 34)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(682, 397)
+        Me.TabPage1.Size = New System.Drawing.Size(815, 397)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Cadastro"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -183,7 +188,7 @@ Partial Class frm_pacote_servico
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Cambria", 18.0!)
-        Me.Label1.Location = New System.Drawing.Point(522, 108)
+        Me.Label1.Location = New System.Drawing.Point(610, 96)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(90, 28)
         Me.Label1.TabIndex = 14
@@ -193,27 +198,28 @@ Partial Class frm_pacote_servico
         '
         Me.txt_cod_pac_serv.Enabled = False
         Me.txt_cod_pac_serv.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_cod_pac_serv.Location = New System.Drawing.Point(527, 139)
+        Me.txt_cod_pac_serv.Location = New System.Drawing.Point(615, 127)
         Me.txt_cod_pac_serv.Name = "txt_cod_pac_serv"
-        Me.txt_cod_pac_serv.Size = New System.Drawing.Size(100, 35)
+        Me.txt_cod_pac_serv.Size = New System.Drawing.Size(115, 35)
         Me.txt_cod_pac_serv.TabIndex = 13
         '
         'txt_preco
         '
         Me.txt_preco.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_preco.Location = New System.Drawing.Point(288, 139)
+        Me.txt_preco.Location = New System.Drawing.Point(391, 127)
         Me.txt_preco.Name = "txt_preco"
         Me.txt_preco.Size = New System.Drawing.Size(158, 32)
         Me.txt_preco.TabIndex = 12
+        Me.txt_preco.Text = "R$ "
         '
         'img_foto
         '
         Me.img_foto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.img_foto.Image = CType(resources.GetObject("img_foto.Image"), System.Drawing.Image)
-        Me.img_foto.Location = New System.Drawing.Point(23, 30)
+        Me.img_foto.Location = New System.Drawing.Point(23, 19)
         Me.img_foto.Margin = New System.Windows.Forms.Padding(2)
         Me.img_foto.Name = "img_foto"
-        Me.img_foto.Size = New System.Drawing.Size(224, 225)
+        Me.img_foto.Size = New System.Drawing.Size(294, 245)
         Me.img_foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.img_foto.TabIndex = 11
         Me.img_foto.TabStop = False
@@ -223,9 +229,9 @@ Partial Class frm_pacote_servico
         Me.btn_cadastrar.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
         Me.btn_cadastrar.Font = New System.Drawing.Font("Cambria", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_cadastrar.ForeColor = System.Drawing.Color.White
-        Me.btn_cadastrar.Location = New System.Drawing.Point(473, 330)
+        Me.btn_cadastrar.Location = New System.Drawing.Point(569, 288)
         Me.btn_cadastrar.Name = "btn_cadastrar"
-        Me.btn_cadastrar.Size = New System.Drawing.Size(155, 61)
+        Me.btn_cadastrar.Size = New System.Drawing.Size(161, 61)
         Me.btn_cadastrar.TabIndex = 9
         Me.btn_cadastrar.Text = "Cadastrar"
         Me.btn_cadastrar.UseVisualStyleBackColor = False
@@ -234,7 +240,7 @@ Partial Class frm_pacote_servico
         '
         Me.cmb_tipo.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmb_tipo.FormattingEnabled = True
-        Me.cmb_tipo.Location = New System.Drawing.Point(291, 220)
+        Me.cmb_tipo.Location = New System.Drawing.Point(394, 218)
         Me.cmb_tipo.Name = "cmb_tipo"
         Me.cmb_tipo.Size = New System.Drawing.Size(155, 33)
         Me.cmb_tipo.TabIndex = 8
@@ -244,13 +250,13 @@ Partial Class frm_pacote_servico
         Me.txt_descricao.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_descricao.Location = New System.Drawing.Point(23, 306)
         Me.txt_descricao.Name = "txt_descricao"
-        Me.txt_descricao.Size = New System.Drawing.Size(365, 32)
+        Me.txt_descricao.Size = New System.Drawing.Size(369, 32)
         Me.txt_descricao.TabIndex = 7
         '
         'txt_nome
         '
         Me.txt_nome.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_nome.Location = New System.Drawing.Point(288, 61)
+        Me.txt_nome.Location = New System.Drawing.Point(391, 50)
         Me.txt_nome.Name = "txt_nome"
         Me.txt_nome.Size = New System.Drawing.Size(339, 32)
         Me.txt_nome.TabIndex = 5
@@ -259,7 +265,7 @@ Partial Class frm_pacote_servico
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Cambria", 18.0!)
-        Me.Label5.Location = New System.Drawing.Point(285, 189)
+        Me.Label5.Location = New System.Drawing.Point(388, 187)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(65, 28)
         Me.Label5.TabIndex = 3
@@ -269,7 +275,7 @@ Partial Class frm_pacote_servico
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Cambria", 18.0!)
-        Me.Label6.Location = New System.Drawing.Point(286, 108)
+        Me.Label6.Location = New System.Drawing.Point(389, 96)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(78, 28)
         Me.Label6.TabIndex = 2
@@ -289,7 +295,7 @@ Partial Class frm_pacote_servico
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Cambria", 18.0!)
-        Me.Label8.Location = New System.Drawing.Point(285, 30)
+        Me.Label8.Location = New System.Drawing.Point(388, 19)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(79, 28)
         Me.Label8.TabIndex = 0
@@ -302,7 +308,7 @@ Partial Class frm_pacote_servico
         Me.TabPage2.Location = New System.Drawing.Point(4, 34)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(682, 397)
+        Me.TabPage2.Size = New System.Drawing.Size(815, 397)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Lista"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -318,11 +324,13 @@ Partial Class frm_pacote_servico
         Me.dgv_pac_serv.Location = New System.Drawing.Point(6, 0)
         Me.dgv_pac_serv.Name = "dgv_pac_serv"
         Me.dgv_pac_serv.ReadOnly = True
-        Me.dgv_pac_serv.Size = New System.Drawing.Size(702, 409)
+        Me.dgv_pac_serv.Size = New System.Drawing.Size(806, 391)
         Me.dgv_pac_serv.TabIndex = 0
         '
         'DataGridViewTextBoxColumn1
         '
+        DataGridViewCellStyle16.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataGridViewTextBoxColumn1.DefaultCellStyle = DataGridViewCellStyle16
         Me.DataGridViewTextBoxColumn1.HeaderText = "Código"
         Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
         Me.DataGridViewTextBoxColumn1.ReadOnly = True
@@ -330,6 +338,8 @@ Partial Class frm_pacote_servico
         '
         'DataGridViewTextBoxColumn2
         '
+        DataGridViewCellStyle17.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle17
         Me.DataGridViewTextBoxColumn2.HeaderText = "Nome"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         Me.DataGridViewTextBoxColumn2.ReadOnly = True
@@ -337,6 +347,8 @@ Partial Class frm_pacote_servico
         '
         'DataGridViewTextBoxColumn3
         '
+        DataGridViewCellStyle18.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataGridViewTextBoxColumn3.DefaultCellStyle = DataGridViewCellStyle18
         Me.DataGridViewTextBoxColumn3.HeaderText = "Descrição"
         Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
         Me.DataGridViewTextBoxColumn3.ReadOnly = True
@@ -344,6 +356,8 @@ Partial Class frm_pacote_servico
         '
         'DataGridViewTextBoxColumn4
         '
+        DataGridViewCellStyle19.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataGridViewTextBoxColumn4.DefaultCellStyle = DataGridViewCellStyle19
         Me.DataGridViewTextBoxColumn4.HeaderText = "Tipo"
         Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
         Me.DataGridViewTextBoxColumn4.ReadOnly = True
@@ -351,6 +365,8 @@ Partial Class frm_pacote_servico
         '
         'DataGridViewTextBoxColumn5
         '
+        DataGridViewCellStyle20.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataGridViewTextBoxColumn5.DefaultCellStyle = DataGridViewCellStyle20
         Me.DataGridViewTextBoxColumn5.HeaderText = "Preço"
         Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
         Me.DataGridViewTextBoxColumn5.ReadOnly = True
@@ -377,7 +393,7 @@ Partial Class frm_pacote_servico
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(187, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(727, 499)
+        Me.ClientSize = New System.Drawing.Size(847, 520)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.TabControl1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -419,6 +435,8 @@ Partial Class frm_pacote_servico
     Friend WithEvents Label8 As Label
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents dgv_pac_serv As DataGridView
+    Friend WithEvents txt_cod_pac_serv As TextBox
+    Friend WithEvents Label1 As Label
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
@@ -426,6 +444,4 @@ Partial Class frm_pacote_servico
     Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
     Friend WithEvents DataGridViewImageColumn2 As DataGridViewImageColumn
-    Friend WithEvents txt_cod_pac_serv As TextBox
-    Friend WithEvents Label1 As Label
 End Class
