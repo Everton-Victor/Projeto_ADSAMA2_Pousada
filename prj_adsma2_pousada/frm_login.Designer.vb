@@ -47,7 +47,7 @@ Partial Class frm_login
         Me.txt_senha.Name = "txt_senha"
         Me.txt_senha.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txt_senha.Size = New System.Drawing.Size(421, 36)
-        Me.txt_senha.TabIndex = 20
+        Me.txt_senha.TabIndex = 2
         '
         'btn_entrar
         '
@@ -57,7 +57,7 @@ Partial Class frm_login
         Me.btn_entrar.Location = New System.Drawing.Point(328, 234)
         Me.btn_entrar.Name = "btn_entrar"
         Me.btn_entrar.Size = New System.Drawing.Size(135, 60)
-        Me.btn_entrar.TabIndex = 19
+        Me.btn_entrar.TabIndex = 3
         Me.btn_entrar.Text = "Entrar"
         Me.btn_entrar.UseVisualStyleBackColor = False
         '
@@ -77,7 +77,7 @@ Partial Class frm_login
         Me.txt_email.Location = New System.Drawing.Point(42, 60)
         Me.txt_email.Name = "txt_email"
         Me.txt_email.Size = New System.Drawing.Size(421, 36)
-        Me.txt_email.TabIndex = 17
+        Me.txt_email.TabIndex = 1
         '
         'frm_login
         '

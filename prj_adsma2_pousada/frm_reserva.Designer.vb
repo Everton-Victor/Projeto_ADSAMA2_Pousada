@@ -262,7 +262,7 @@ Partial Class frm_reserva
         Me.cmb_cpf_acomp.Margin = New System.Windows.Forms.Padding(2)
         Me.cmb_cpf_acomp.Name = "cmb_cpf_acomp"
         Me.cmb_cpf_acomp.Size = New System.Drawing.Size(209, 28)
-        Me.cmb_cpf_acomp.TabIndex = 32
+        Me.cmb_cpf_acomp.TabIndex = 5
         '
         'Label18
         '
@@ -291,7 +291,7 @@ Partial Class frm_reserva
         Me.txt_cpf_acomp_cadastrado.Location = New System.Drawing.Point(87, 51)
         Me.txt_cpf_acomp_cadastrado.Name = "txt_cpf_acomp_cadastrado"
         Me.txt_cpf_acomp_cadastrado.Size = New System.Drawing.Size(209, 28)
-        Me.txt_cpf_acomp_cadastrado.TabIndex = 30
+        Me.txt_cpf_acomp_cadastrado.TabIndex = 6
         '
         'btn_inserir
         '
@@ -320,7 +320,7 @@ Partial Class frm_reserva
         Me.txt_nome_acomp.Location = New System.Drawing.Point(110, 58)
         Me.txt_nome_acomp.Name = "txt_nome_acomp"
         Me.txt_nome_acomp.Size = New System.Drawing.Size(209, 28)
-        Me.txt_nome_acomp.TabIndex = 24
+        Me.txt_nome_acomp.TabIndex = 4
         '
         'Label23
         '
@@ -338,7 +338,7 @@ Partial Class frm_reserva
         Me.txt_cpf_acomp.Location = New System.Drawing.Point(110, 21)
         Me.txt_cpf_acomp.Name = "txt_cpf_acomp"
         Me.txt_cpf_acomp.Size = New System.Drawing.Size(210, 28)
-        Me.txt_cpf_acomp.TabIndex = 20
+        Me.txt_cpf_acomp.TabIndex = 3
         '
         'GroupBox8
         '
@@ -376,7 +376,7 @@ Partial Class frm_reserva
         Me.txt_nome_cli.Location = New System.Drawing.Point(34, 104)
         Me.txt_nome_cli.Name = "txt_nome_cli"
         Me.txt_nome_cli.Size = New System.Drawing.Size(285, 28)
-        Me.txt_nome_cli.TabIndex = 24
+        Me.txt_nome_cli.TabIndex = 1
         '
         'Label25
         '
@@ -394,7 +394,7 @@ Partial Class frm_reserva
         Me.txt_celular_cli.Location = New System.Drawing.Point(34, 168)
         Me.txt_celular_cli.Name = "txt_celular_cli"
         Me.txt_celular_cli.Size = New System.Drawing.Size(285, 28)
-        Me.txt_celular_cli.TabIndex = 22
+        Me.txt_celular_cli.TabIndex = 2
         '
         'Label26
         '
@@ -412,7 +412,7 @@ Partial Class frm_reserva
         Me.txt_cpf_cli.Location = New System.Drawing.Point(34, 47)
         Me.txt_cpf_cli.Name = "txt_cpf_cli"
         Me.txt_cpf_cli.Size = New System.Drawing.Size(285, 28)
-        Me.txt_cpf_cli.TabIndex = 20
+        Me.txt_cpf_cli.TabIndex = 0
         '
         'GroupBox9
         '
@@ -452,7 +452,7 @@ Partial Class frm_reserva
         Me.txt_hora_saida.Location = New System.Drawing.Point(510, 65)
         Me.txt_hora_saida.Name = "txt_hora_saida"
         Me.txt_hora_saida.Size = New System.Drawing.Size(169, 26)
-        Me.txt_hora_saida.TabIndex = 89
+        Me.txt_hora_saida.TabIndex = 10
         Me.txt_hora_saida.Value = New Date(2022, 6, 19, 19, 38, 0, 0)
         '
         'txt_data_saida
@@ -462,7 +462,7 @@ Partial Class frm_reserva
         Me.txt_data_saida.Location = New System.Drawing.Point(510, 34)
         Me.txt_data_saida.Name = "txt_data_saida"
         Me.txt_data_saida.Size = New System.Drawing.Size(169, 26)
-        Me.txt_data_saida.TabIndex = 88
+        Me.txt_data_saida.TabIndex = 8
         Me.txt_data_saida.Value = New Date(2022, 6, 19, 0, 0, 0, 0)
         '
         'txt_hora_entrada
@@ -473,7 +473,7 @@ Partial Class frm_reserva
         Me.txt_hora_entrada.Location = New System.Drawing.Point(172, 67)
         Me.txt_hora_entrada.Name = "txt_hora_entrada"
         Me.txt_hora_entrada.Size = New System.Drawing.Size(169, 26)
-        Me.txt_hora_entrada.TabIndex = 87
+        Me.txt_hora_entrada.TabIndex = 9
         Me.txt_hora_entrada.Value = New Date(2022, 6, 19, 19, 27, 0, 0)
         '
         'txt_data_entrada
@@ -483,7 +483,7 @@ Partial Class frm_reserva
         Me.txt_data_entrada.Location = New System.Drawing.Point(172, 34)
         Me.txt_data_entrada.Name = "txt_data_entrada"
         Me.txt_data_entrada.Size = New System.Drawing.Size(169, 26)
-        Me.txt_data_entrada.TabIndex = 86
+        Me.txt_data_entrada.TabIndex = 7
         Me.txt_data_entrada.Value = New Date(2022, 6, 19, 0, 0, 0, 0)
         '
         'txt_num_reserva
@@ -512,7 +512,7 @@ Partial Class frm_reserva
         Me.cmb_pacote_serv.Margin = New System.Windows.Forms.Padding(2)
         Me.cmb_pacote_serv.Name = "cmb_pacote_serv"
         Me.cmb_pacote_serv.Size = New System.Drawing.Size(143, 28)
-        Me.cmb_pacote_serv.TabIndex = 74
+        Me.cmb_pacote_serv.TabIndex = 12
         '
         'Label27
         '
@@ -585,7 +585,7 @@ Partial Class frm_reserva
         Me.cmb_quarto.Margin = New System.Windows.Forms.Padding(2)
         Me.cmb_quarto.Name = "cmb_quarto"
         Me.cmb_quarto.Size = New System.Drawing.Size(183, 28)
-        Me.cmb_quarto.TabIndex = 64
+        Me.cmb_quarto.TabIndex = 11
         '
         'GroupBox10
         '
@@ -642,7 +642,7 @@ Partial Class frm_reserva
         Me.cmb_parcela.Margin = New System.Windows.Forms.Padding(2)
         Me.cmb_parcela.Name = "cmb_parcela"
         Me.cmb_parcela.Size = New System.Drawing.Size(100, 28)
-        Me.cmb_parcela.TabIndex = 56
+        Me.cmb_parcela.TabIndex = 15
         '
         'Label32
         '
@@ -661,7 +661,7 @@ Partial Class frm_reserva
         Me.txt_total.Location = New System.Drawing.Point(96, 34)
         Me.txt_total.Name = "txt_total"
         Me.txt_total.Size = New System.Drawing.Size(137, 28)
-        Me.txt_total.TabIndex = 54
+        Me.txt_total.TabIndex = 13
         '
         'cmb_forma_pagamento
         '
@@ -671,7 +671,7 @@ Partial Class frm_reserva
         Me.cmb_forma_pagamento.Margin = New System.Windows.Forms.Padding(2)
         Me.cmb_forma_pagamento.Name = "cmb_forma_pagamento"
         Me.cmb_forma_pagamento.Size = New System.Drawing.Size(137, 28)
-        Me.cmb_forma_pagamento.TabIndex = 37
+        Me.cmb_forma_pagamento.TabIndex = 13
         '
         'Label33
         '
@@ -702,7 +702,7 @@ Partial Class frm_reserva
         Me.btn_cadastrar.Location = New System.Drawing.Point(622, 294)
         Me.btn_cadastrar.Name = "btn_cadastrar"
         Me.btn_cadastrar.Size = New System.Drawing.Size(143, 59)
-        Me.btn_cadastrar.TabIndex = 48
+        Me.btn_cadastrar.TabIndex = 14
         Me.btn_cadastrar.Text = "Cadastrar"
         Me.btn_cadastrar.UseVisualStyleBackColor = False
         '
@@ -831,7 +831,7 @@ Partial Class frm_reserva
         Me.Column7.HeaderText = "E-mail Funcionário"
         Me.Column7.Name = "Column7"
         Me.Column7.ReadOnly = True
-        Me.Column7.Width = 150
+        Me.Column7.Width = 151
         '
         'Column13
         '
@@ -865,7 +865,7 @@ Partial Class frm_reserva
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(187, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(825, 753)
+        Me.ClientSize = New System.Drawing.Size(825, 749)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.ToolStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle

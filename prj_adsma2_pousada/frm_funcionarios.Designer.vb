@@ -121,7 +121,7 @@ Partial Class frm_funcionarios
         Me.cmb_status_conta.Location = New System.Drawing.Point(697, 64)
         Me.cmb_status_conta.Name = "cmb_status_conta"
         Me.cmb_status_conta.Size = New System.Drawing.Size(193, 36)
-        Me.cmb_status_conta.TabIndex = 33
+        Me.cmb_status_conta.TabIndex = 4
         '
         'Label7
         '
@@ -140,7 +140,7 @@ Partial Class frm_funcionarios
         Me.cmb_cargo.Location = New System.Drawing.Point(697, 233)
         Me.cmb_cargo.Name = "cmb_cargo"
         Me.cmb_cargo.Size = New System.Drawing.Size(193, 36)
-        Me.cmb_cargo.TabIndex = 30
+        Me.cmb_cargo.TabIndex = 6
         '
         'Label2
         '
@@ -158,7 +158,7 @@ Partial Class frm_funcionarios
         Me.txt_nome.Location = New System.Drawing.Point(172, 114)
         Me.txt_nome.Name = "txt_nome"
         Me.txt_nome.Size = New System.Drawing.Size(428, 36)
-        Me.txt_nome.TabIndex = 25
+        Me.txt_nome.TabIndex = 1
         '
         'btn_entrar
         '
@@ -168,7 +168,7 @@ Partial Class frm_funcionarios
         Me.btn_entrar.Location = New System.Drawing.Point(721, 315)
         Me.btn_entrar.Name = "btn_entrar"
         Me.btn_entrar.Size = New System.Drawing.Size(169, 59)
-        Me.btn_entrar.TabIndex = 24
+        Me.btn_entrar.TabIndex = 7
         Me.btn_entrar.Text = "Confirmar"
         Me.btn_entrar.UseVisualStyleBackColor = False
         '
@@ -179,7 +179,7 @@ Partial Class frm_funcionarios
         Me.cmb_tipo_conta.Location = New System.Drawing.Point(697, 152)
         Me.cmb_tipo_conta.Name = "cmb_tipo_conta"
         Me.cmb_tipo_conta.Size = New System.Drawing.Size(193, 36)
-        Me.cmb_tipo_conta.TabIndex = 23
+        Me.cmb_tipo_conta.TabIndex = 5
         '
         'Label6
         '
@@ -217,7 +217,7 @@ Partial Class frm_funcionarios
         Me.txt_email.Location = New System.Drawing.Point(172, 50)
         Me.txt_email.Name = "txt_email"
         Me.txt_email.Size = New System.Drawing.Size(428, 36)
-        Me.txt_email.TabIndex = 18
+        Me.txt_email.TabIndex = 0
         '
         'Label3
         '
@@ -236,7 +236,7 @@ Partial Class frm_funcionarios
         Me.txt_confirmar_senha.Name = "txt_confirmar_senha"
         Me.txt_confirmar_senha.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txt_confirmar_senha.Size = New System.Drawing.Size(428, 36)
-        Me.txt_confirmar_senha.TabIndex = 16
+        Me.txt_confirmar_senha.TabIndex = 3
         '
         'Label1
         '
@@ -255,7 +255,7 @@ Partial Class frm_funcionarios
         Me.txt_senha.Name = "txt_senha"
         Me.txt_senha.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txt_senha.Size = New System.Drawing.Size(428, 36)
-        Me.txt_senha.TabIndex = 14
+        Me.txt_senha.TabIndex = 2
         '
         'tab_lista
         '
@@ -291,7 +291,7 @@ Partial Class frm_funcionarios
         Me.Column2.MinimumWidth = 8
         Me.Column2.Name = "Column2"
         Me.Column2.ReadOnly = True
-        Me.Column2.Width = 73
+        Me.Column2.Width = 72
         '
         'Column1
         '
@@ -299,7 +299,7 @@ Partial Class frm_funcionarios
         Me.Column1.MinimumWidth = 8
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
-        Me.Column1.Width = 69
+        Me.Column1.Width = 68
         '
         'Column3
         '
@@ -307,7 +307,7 @@ Partial Class frm_funcionarios
         Me.Column3.MinimumWidth = 8
         Me.Column3.Name = "Column3"
         Me.Column3.ReadOnly = True
-        Me.Column3.Width = 68
+        Me.Column3.Width = 67
         '
         'Column7
         '
@@ -315,7 +315,7 @@ Partial Class frm_funcionarios
         Me.Column7.MinimumWidth = 8
         Me.Column7.Name = "Column7"
         Me.Column7.ReadOnly = True
-        Me.Column7.Width = 68
+        Me.Column7.Width = 67
         '
         'Column8
         '
@@ -323,7 +323,7 @@ Partial Class frm_funcionarios
         Me.Column8.MinimumWidth = 8
         Me.Column8.Name = "Column8"
         Me.Column8.ReadOnly = True
-        Me.Column8.Width = 71
+        Me.Column8.Width = 70
         '
         'Column9
         '
@@ -339,7 +339,7 @@ Partial Class frm_funcionarios
         Me.Column10.MinimumWidth = 8
         Me.Column10.Name = "Column10"
         Me.Column10.ReadOnly = True
-        Me.Column10.Width = 145
+        Me.Column10.Width = 144
         '
         'Column4
         '
@@ -348,7 +348,7 @@ Partial Class frm_funcionarios
         Me.Column4.MinimumWidth = 8
         Me.Column4.Name = "Column4"
         Me.Column4.ReadOnly = True
-        Me.Column4.Width = 52
+        Me.Column4.Width = 51
         '
         'Column5
         '
@@ -357,7 +357,7 @@ Partial Class frm_funcionarios
         Me.Column5.MinimumWidth = 8
         Me.Column5.Name = "Column5"
         Me.Column5.ReadOnly = True
-        Me.Column5.Width = 57
+        Me.Column5.Width = 56
         '
         'ToolStrip1
         '

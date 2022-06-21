@@ -42,17 +42,17 @@ Partial Class frm_quartos
         Me.Column7 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Column8 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.txt_preco = New System.Windows.Forms.TextBox()
         Me.btn_entrar = New System.Windows.Forms.Button()
         Me.img_foto = New System.Windows.Forms.PictureBox()
         Me.cmb_tipo = New System.Windows.Forms.ComboBox()
+        Me.txt_desc = New System.Windows.Forms.TextBox()
         Me.txt_num = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.txt_desc = New System.Windows.Forms.TextBox()
-        Me.txt_preco = New System.Windows.Forms.TextBox()
         CheckoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStrip1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -238,6 +238,15 @@ Partial Class frm_quartos
         Me.TabPage1.Text = "Cadastro"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'txt_preco
+        '
+        Me.txt_preco.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_preco.Location = New System.Drawing.Point(495, 186)
+        Me.txt_preco.Name = "txt_preco"
+        Me.txt_preco.Size = New System.Drawing.Size(192, 32)
+        Me.txt_preco.TabIndex = 3
+        Me.txt_preco.Text = "R$ "
+        '
         'btn_entrar
         '
         Me.btn_entrar.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
@@ -246,7 +255,7 @@ Partial Class frm_quartos
         Me.btn_entrar.Location = New System.Drawing.Point(519, 295)
         Me.btn_entrar.Name = "btn_entrar"
         Me.btn_entrar.Size = New System.Drawing.Size(169, 59)
-        Me.btn_entrar.TabIndex = 79
+        Me.btn_entrar.TabIndex = 5
         Me.btn_entrar.Text = "Cadastrar"
         Me.btn_entrar.UseVisualStyleBackColor = False
         '
@@ -269,7 +278,15 @@ Partial Class frm_quartos
         Me.cmb_tipo.Location = New System.Drawing.Point(495, 106)
         Me.cmb_tipo.Name = "cmb_tipo"
         Me.cmb_tipo.Size = New System.Drawing.Size(193, 33)
-        Me.cmb_tipo.TabIndex = 8
+        Me.cmb_tipo.TabIndex = 2
+        '
+        'txt_desc
+        '
+        Me.txt_desc.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_desc.Location = New System.Drawing.Point(30, 295)
+        Me.txt_desc.Name = "txt_desc"
+        Me.txt_desc.Size = New System.Drawing.Size(378, 32)
+        Me.txt_desc.TabIndex = 4
         '
         'txt_num
         '
@@ -277,7 +294,7 @@ Partial Class frm_quartos
         Me.txt_num.Location = New System.Drawing.Point(494, 22)
         Me.txt_num.Name = "txt_num"
         Me.txt_num.Size = New System.Drawing.Size(193, 32)
-        Me.txt_num.TabIndex = 5
+        Me.txt_num.TabIndex = 1
         '
         'Label4
         '
@@ -329,23 +346,6 @@ Partial Class frm_quartos
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(738, 407)
         Me.TabControl1.TabIndex = 78
-        '
-        'txt_desc
-        '
-        Me.txt_desc.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_desc.Location = New System.Drawing.Point(30, 295)
-        Me.txt_desc.Name = "txt_desc"
-        Me.txt_desc.Size = New System.Drawing.Size(378, 32)
-        Me.txt_desc.TabIndex = 7
-        '
-        'txt_preco
-        '
-        Me.txt_preco.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_preco.Location = New System.Drawing.Point(495, 186)
-        Me.txt_preco.Name = "txt_preco"
-        Me.txt_preco.Size = New System.Drawing.Size(192, 32)
-        Me.txt_preco.TabIndex = 80
-        Me.txt_preco.Text = "R$ "
         '
         'frm_quartos
         '
