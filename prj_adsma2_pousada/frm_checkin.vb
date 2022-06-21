@@ -106,23 +106,25 @@
                     txt_num_quarto.Text = rs.Fields(9).Value
                     txt_cpf.Text = rs.Fields(11).Value
                 End If
+
+                sql = "select * from tb_cliente where cpf_cliente='" & txt_cpf.Text & "'"
+                rs = db.Execute(sql)
+
+                If rs.EOF = False Then
+                    txt_nome.Text = rs.Fields(1).Value
+                    txt_celular.Text = rs.Fields(2).Value
+                End If
+
+                sql = "select * from tb_acompanhante where (cpf_cliente='" & txt_cpf.Text & "' and num_reserva=" & cmb_num_reserva.Text & ")"
+                rs = db.Execute(sql)
+
+                Do While rs.EOF = False
+                    cmb_cpf_acomp.Items.Add(rs.Fields(0).Value)
+                    rs.MoveNext()
+                Loop
             End If
 
-            sql = "select * from tb_cliente where cpf_cliente='" & txt_cpf.Text & "'"
-            rs = db.Execute(sql)
 
-            If rs.EOF = False Then
-                txt_nome.Text = rs.Fields(1).Value
-                txt_celular.Text = rs.Fields(2).Value
-            End If
-
-            sql = "select * from tb_acompanhante where (cpf_cliente='" & txt_cpf.Text & "' and num_reserva=" & cmb_num_reserva.Text & ")"
-            rs = db.Execute(sql)
-
-            Do While rs.EOF = False
-                cmb_cpf_acomp.Items.Add(rs.Fields(0).Value)
-                rs.MoveNext()
-            Loop
 
         Catch ex As Exception
             MsgBox("Erro de processamento!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ALERTA")
@@ -275,4 +277,5 @@
         Me.Hide()
         frm_checkout.Visible = True
     End Sub
+
 End Class
