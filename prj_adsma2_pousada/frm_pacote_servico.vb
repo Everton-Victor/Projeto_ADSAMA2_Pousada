@@ -62,30 +62,38 @@
     Private Sub dgv_pac_serv_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_pac_serv.CellContentClick, dgv_pac_serv.CellContentClick
         Try
             With dgv_pac_serv
-                If .CurrentRow.Cells(5).Selected Then
-                    aux = .CurrentRow.Cells(0).Value
-                    sql = "select * from tb_pacote_servico where cod_pac_serv=" & aux & ""
-                    rs = db.Execute(sql)
-
-                    If rs.EOF = False Then
-                        TabControl1.SelectTab(0)
-                        txt_cod_pac_serv.text = rs.Fields(0).Value
-                        txt_nome.Text = rs.Fields(1).Value
-                        img_foto.Load(rs.Fields(2).Value)
-                        txt_descricao.Text = rs.Fields(3).Value
-                        cmb_tipo.Text = rs.Fields(4).Value
-                        txt_preco.Text = FormatCurrency(rs.Fields(5).Value)
-                    End If
-                ElseIf .CurrentRow.Cells(6).Selected And type_login = "admin" Then
-                    aux = .CurrentRow.Cells(0).Value
-                    resp = MsgBox("Deseja realmente excluir" + vbNewLine &
-                            "Pacote de Serviço: " & aux & "?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "ATENÇÃO")
-                    If resp = MsgBoxResult.Yes Then
-                        sql = "delete * from tb_pacote_servico where cod_pac_serv=" & aux & ""
+                If dgv_pac_serv.Rows.Count <> 0 Then
+                    If .CurrentRow.Cells(5).Selected Then
+                        aux = .CurrentRow.Cells(0).Value
+                        sql = "select * from tb_pacote_servico where cod_pac_serv=" & aux & ""
                         rs = db.Execute(sql)
-                        carregar_pacote_serv()
+
+                        If rs.EOF = False Then
+                            TabControl1.SelectTab(0)
+                            txt_cod_pac_serv.Text = rs.Fields(0).Value
+                            txt_nome.Text = rs.Fields(1).Value
+                            If rs.Fields(2).Value <> "" And rs.Fields(2).Value <> "OpenFileDialog1" Then
+                                img_foto.Load(rs.Fields(2).Value)
+                            Else
+                                img_foto.Load(Application.StartupPath & "\icons\Add-Basket-icon-big.png")
+                            End If
+
+                            txt_descricao.Text = rs.Fields(3).Value
+                            cmb_tipo.Text = rs.Fields(4).Value
+                            txt_preco.Text = FormatCurrency(rs.Fields(5).Value)
+                        End If
+                    ElseIf .CurrentRow.Cells(6).Selected And type_login = "admin" Then
+                        aux = .CurrentRow.Cells(0).Value
+                        resp = MsgBox("Deseja realmente excluir" + vbNewLine &
+                                "Pacote de Serviço: " & aux & "?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "ATENÇÃO")
+                        If resp = MsgBoxResult.Yes Then
+                            sql = "delete * from tb_pacote_servico where cod_pac_serv=" & aux & ""
+                            rs = db.Execute(sql)
+                            carregar_pacote_serv()
+                        End If
                     End If
                 End If
+
             End With
         Catch ex As Exception
             MsgBox("Erro de processamento!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ATENÇÃO")
@@ -140,15 +148,19 @@
                     num1 = num1.Replace(".", "")
                     num1 = num1.Replace(",", ".")
 
+                    If img_foto.ImageLocation = "OpenFileDialog1" Then
+                        img_foto.ImageLocation = ""
+                    End If
+
                     sql = "insert into tb_pacote_servico (nome_pac_serv, foto_pac_serv, desc_pac_serv, tipo_pac_serv, preco_pac_serv) " &
                     "values ('" & txt_nome.Text & "', '" & img_foto.ImageLocation & "', '" & txt_descricao.Text & "', '" & cmb_tipo.Text & "', " &
                     num1 & ")"
-                    rs = db.Execute(sql)
-                    carregar_pacote_serv()
-                    limpar_pac_serv()
-                    MsgBox("Pacote de Serviço Cadastrado!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "ATENÇÃO")
-                Else
-                    resp = MsgBox("Deseja atualizar o Pacote de Serviço?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "ATENÇÃO")
+                        rs = db.Execute(sql)
+                        carregar_pacote_serv()
+                        limpar_pac_serv()
+                        MsgBox("Pacote de Serviço Cadastrado!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "ATENÇÃO")
+                    Else
+                        resp = MsgBox("Deseja atualizar o Pacote de Serviço?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "ATENÇÃO")
                     If resp = vbYes Then
                         Dim num1 As String
                         If txt_preco.Text.Contains("R$ ") Then

@@ -42,29 +42,36 @@
     Private Sub dgv_quartos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_quartos.CellContentClick
         Try
             With dgv_quartos
-                If .CurrentRow.Cells(4).Selected Then
-                    aux = .CurrentRow.Cells(0).Value
-                    sql = "select * from tb_quartos where num_quarto=" & aux & ""
-                    rs = db.Execute(sql)
-
-                    If rs.EOF = False Then
-                        TabControl1.SelectTab(0)
-                        txt_num.Text = rs.Fields(0).Value
-                        cmb_tipo.Text = rs.Fields(1).Value
-                        txt_desc.Text = rs.Fields(2).Value
-                        img_foto.Load(rs.Fields(3).Value)
-                        txt_preco.Text = FormatCurrency(rs.Fields(4).Value)
-                    End If
-                ElseIf .CurrentRow.Cells(5).Selected And type_login = "admin" Then
-                    aux = .CurrentRow.Cells(0).Value
-                    resp = MsgBox("Deseja realmente excluir" + vbNewLine &
-                            "Quarto: " & aux & "?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "ATENÇÃO")
-                    If resp = MsgBoxResult.Yes Then
-                        sql = "delete * from tb_quartos where num_quarto=" & aux & ""
+                If dgv_quartos.Rows.Count <> 0 Then
+                    If .CurrentRow.Cells(4).Selected Then
+                        aux = .CurrentRow.Cells(0).Value
+                        sql = "select * from tb_quartos where num_quarto=" & aux & ""
                         rs = db.Execute(sql)
-                        carregar_quartos()
+
+                        If rs.EOF = False Then
+                            TabControl1.SelectTab(0)
+                            txt_num.Text = rs.Fields(0).Value
+                            cmb_tipo.Text = rs.Fields(1).Value
+                            txt_desc.Text = rs.Fields(2).Value
+                            If rs.Fields(3).Value <> "" Then
+                                img_foto.Load(rs.Fields(3).Value)
+                            Else
+                                img_foto.Load(Application.StartupPath & "\icons\room-big.png")
+                            End If
+                            txt_preco.Text = FormatCurrency(rs.Fields(4).Value)
+                        End If
+                    ElseIf .CurrentRow.Cells(5).Selected And type_login = "admin" Then
+                        aux = .CurrentRow.Cells(0).Value
+                        resp = MsgBox("Deseja realmente excluir" + vbNewLine &
+                                "Quarto: " & aux & "?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "ATENÇÃO")
+                        If resp = MsgBoxResult.Yes Then
+                            sql = "delete * from tb_quartos where num_quarto=" & aux & ""
+                            rs = db.Execute(sql)
+                            carregar_quartos()
+                        End If
                     End If
                 End If
+
             End With
         Catch ex As Exception
             MsgBox("Erro de processamento!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ATENÇÃO")
@@ -124,7 +131,7 @@
     Private Sub btn_entrar_Click(sender As Object, e As EventArgs) Handles btn_entrar.Click
         Try
             If txt_num.Text = "" Or txt_preco.Text = "" Or
-                 txt_desc.Text = "" Or cmb_tipo.Text = "" Or img_foto.ImageLocation = "" Then
+                 txt_desc.Text = "" Or cmb_tipo.Text = "" Then
                 MsgBox("Preencha todos os campos!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "ATENÇÃO")
             Else
                 Dim num1 As String

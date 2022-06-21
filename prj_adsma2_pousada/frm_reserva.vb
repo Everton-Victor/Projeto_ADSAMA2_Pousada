@@ -72,62 +72,63 @@
         Try
             With dgv_reserva
                 'Editar
-                If .CurrentRow.Cells(7).Selected Then
-                    aux = .CurrentRow.Cells(0).Value
-                    sql = "select * from tb_reserva where num_reserva=" & aux & ""
-                    rs = db.Execute(sql)
-
-                    If rs.EOF = False Then
-                        TabControl1.SelectTab(0)
-                        txt_data_entrada.Text = rs.Fields(1).Value
-                        txt_hora_entrada.Text = rs.Fields(2).Value
-                        txt_data_saida.Text = rs.Fields(3).Value
-                        txt_hora_saida.Text = rs.Fields(4).Value
-                        cmb_quarto.Text = rs.Fields(9).Value
-                        txt_num_reserva.Text = rs.Fields(0).Value
-
-                        sql = "select * from tb_reserva where num_reserva=" & txt_num_reserva.Text & ""
+                If dgv_reserva.Rows.Count <> 0 Then
+                    If .CurrentRow.Cells(7).Selected Then
+                        aux = .CurrentRow.Cells(0).Value
+                        sql = "select * from tb_reserva where num_reserva=" & aux & ""
                         rs = db.Execute(sql)
+
                         If rs.EOF = False Then
-                            txt_cpf_cli.Text = rs.Fields(11).Value
-                            cmb_forma_pagamento.Text = rs.Fields(6).Value
-                            cmb_parcela.Text = rs.Fields(7).Value
-                            If rs.Fields(8).Value <> 0 Then
-                                cmb_pacote_serv.Text = rs.Fields(8).Value
-                            Else
-                                cmb_pacote_serv.SelectedIndex = 0
+                            TabControl1.SelectTab(0)
+                            txt_data_entrada.Text = rs.Fields(1).Value
+                            txt_hora_entrada.Text = rs.Fields(2).Value
+                            txt_data_saida.Text = rs.Fields(3).Value
+                            txt_hora_saida.Text = rs.Fields(4).Value
+                            cmb_quarto.Text = rs.Fields(9).Value
+                            txt_num_reserva.Text = rs.Fields(0).Value
+
+                            sql = "select * from tb_reserva where num_reserva=" & txt_num_reserva.Text & ""
+                            rs = db.Execute(sql)
+                            If rs.EOF = False Then
+                                txt_cpf_cli.Text = rs.Fields(11).Value
+                                cmb_forma_pagamento.Text = rs.Fields(6).Value
+                                cmb_parcela.Text = rs.Fields(7).Value
+                                If rs.Fields(8).Value <> 0 Then
+                                    cmb_pacote_serv.Text = rs.Fields(8).Value
+                                Else
+                                    cmb_pacote_serv.SelectedIndex = 0
+                                End If
+
+
+                                txt_total.Text = rs.Fields(5).Value
                             End If
 
-
-                            txt_total.Text = rs.Fields(5).Value
+                            Calcula_total()
+                            Calcula_parcela()
+                            carregar_cliente()
+                            carregar_acompanhante()
                         End If
-
-                        Calcula_total()
-                        Calcula_parcela()
-                        carregar_cliente()
-                        carregar_acompanhante()
-                    End If
-                ElseIf .CurrentRow.Cells(8).Selected Then
-                    aux = .CurrentRow.Cells(0).Value
-                    resp = MsgBox("Deseja realmente excluir" + vbNewLine &
+                    ElseIf .CurrentRow.Cells(8).Selected Then
+                        aux = .CurrentRow.Cells(0).Value
+                        resp = MsgBox("Deseja realmente excluir" + vbNewLine &
                             "Reserva: " & aux & "?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "ATENÇÃO")
-                    If resp = MsgBoxResult.Yes Then
-                        sql = "delete * from tb_reserva where num_reserva=" & aux & ""
-                        rs = db.Execute(sql)
+                        If resp = MsgBoxResult.Yes Then
+                            sql = "delete * from tb_reserva where num_reserva=" & aux & ""
+                            rs = db.Execute(sql)
 
-                        sql = "delete * from tb_checkin where num_reserva=" & aux & ""
-                        rs = db.Execute(sql)
+                            sql = "delete * from tb_checkin where num_reserva=" & aux & ""
+                            rs = db.Execute(sql)
 
-                        sql = "delete * from tb_checkout where num_reserva=" & aux & ""
-                        rs = db.Execute(sql)
+                            sql = "delete * from tb_checkout where num_reserva=" & aux & ""
+                            rs = db.Execute(sql)
 
-                        sql = "delete * from tb_acompanhante where (cpf_cliente='" & .CurrentRow.Cells(3).Value & "' and num_reserva=" & aux & ")"
-                        rs = db.Execute(sql)
+                            sql = "delete * from tb_acompanhante where (cpf_cliente='" & .CurrentRow.Cells(3).Value & "' and num_reserva=" & aux & ")"
+                            rs = db.Execute(sql)
 
-                        carregar_acompanhante()
-                        carregar_reserva()
+                            carregar_acompanhante()
+                            carregar_reserva()
+                        End If
                     End If
-
                 End If
             End With
         Catch ex As Exception

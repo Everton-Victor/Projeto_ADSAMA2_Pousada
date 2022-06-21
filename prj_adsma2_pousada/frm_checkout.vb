@@ -175,6 +175,8 @@
         Try
             If cmb_num_reserva.Text <> "" Then
                 cmb_cpf_acomp.Items.Clear()
+                txt_nome_acomp.Text = ""
+                cmb_cpf_acomp.Text = ""
                 sql = "select * from tb_reserva where num_reserva=" & cmb_num_reserva.Text & ""
                 rs = db.Execute(sql)
 
