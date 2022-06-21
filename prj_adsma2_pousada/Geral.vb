@@ -71,6 +71,10 @@
             .txt_valor_parcela.Clear()
             .cmb_cpf_acomp.Text = ""
             .cmb_cpf_acomp.Items.Clear()
+
+            .cmb_pacote_serv.SelectedIndex = 0
+            .txt_total.Text = ""
+
             .txt_cpf_cli.Focus()
         End With
     End Sub
@@ -169,8 +173,11 @@
 
             With frm_reserva
                 .cmb_pacote_serv.Items.Clear()
+                .cmb_pacote_serv.Items.Add("")
                 Do While rs.EOF = False
-                    .cmb_pacote_serv.Items.Add(rs.Fields(0).Value)
+                    If rs.Fields(0).Value <> 0 Then
+                        .cmb_pacote_serv.Items.Add(rs.Fields(0).Value)
+                    End If
                     rs.MoveNext()
                 Loop
 
@@ -195,6 +202,8 @@
                     .cmb_quarto.Items.Add(rs.Fields(0).Value)
                     rs.MoveNext()
                 Loop
+
+
                 If .cmb_quarto.Items.Count <> 0 Then
                     .cmb_quarto.SelectedIndex = 0
                 End If
@@ -255,12 +264,17 @@
 
     Sub carregar_reserva()
         Try
-            sql = "select * from tb_reserva order by num_reserva asc"
+            sql = "select * from tb_reserva order by num_reserva desc"
             rs = db.Execute(sql)
             With frm_reserva.dgv_reserva
                 .Rows.Clear()
                 Do While rs.EOF = False
-                    .Rows.Add(rs.Fields(0).Value, rs.Fields(9).Value, rs.Fields(8).Value, rs.Fields(11).Value, rs.Fields(1).Value, rs.Fields(3).Value, rs.Fields(10).Value, Nothing, Nothing)
+                    If rs.Fields(8).Value <> 0 Then
+                        .Rows.Add(rs.Fields(0).Value, rs.Fields(9).Value, rs.Fields(8).Value, rs.Fields(11).Value, rs.Fields(1).Value, rs.Fields(3).Value, rs.Fields(10).Value, Nothing, Nothing)
+                    Else
+                        .Rows.Add(rs.Fields(0).Value, rs.Fields(9).Value, Nothing, rs.Fields(11).Value, rs.Fields(1).Value, rs.Fields(3).Value, rs.Fields(10).Value, Nothing, Nothing)
+
+                    End If
                     rs.MoveNext()
                 Loop
             End With
@@ -420,12 +434,25 @@
     End Sub
 
     Sub Calcula_total()
-        Dim num1, num2 As String
+
         With frm_reserva
+            Dim num1, num2 As String
+            Dim dtini As DateTime = .txt_data_entrada.Value
+            Dim dtfim As DateTime = .txt_data_saida.Value
+            Dim num3 As Integer
+
+            If DateDiff(DateInterval.Day, dtini, dtfim) <= 0 Then
+                num3 = 1
+            Else
+                num3 = DateDiff(DateInterval.Day, dtini, dtfim)
+            End If
+
             If .txt_preco_pac_serv.Text <> "" And .txt_preco_quarto.Text <> "" Then
                 num1 = .txt_preco_quarto.Text.Remove(0, 3)
                 num2 = .txt_preco_pac_serv.Text.Remove(0, 3)
-                .txt_total.Text = FormatCurrency((Convert.ToDecimal(num1) + Convert.ToDecimal(num2)))
+                .txt_total.Text = FormatCurrency((Convert.ToDecimal(num1) + Convert.ToDecimal(num2)) * num3)
+
+                'CALCULAR DATA E INSERIR NO .TXT_TOTAL
             End If
         End With
     End Sub

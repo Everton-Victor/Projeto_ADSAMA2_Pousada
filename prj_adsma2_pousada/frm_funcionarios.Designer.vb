@@ -436,10 +436,11 @@ Partial Class frm_funcionarios
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.TabControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "frm_funcionarios"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Funcionários"
+        Me.Text = "FUNCIONÁRIOS - FSHM"
         Me.TabControl1.ResumeLayout(False)
         Me.tab_cadastro.ResumeLayout(False)
         Me.tab_cadastro.PerformLayout()

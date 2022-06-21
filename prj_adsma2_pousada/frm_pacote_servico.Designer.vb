@@ -380,8 +380,9 @@ Partial Class frm_pacote_servico
         Me.ClientSize = New System.Drawing.Size(727, 499)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.TabControl1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frm_pacote_servico"
-        Me.Text = "PACOTE DE SERVIÇOS"
+        Me.Text = "PACOTE DE SERVIÇOS - FSHM"
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         Me.TabControl1.ResumeLayout(False)

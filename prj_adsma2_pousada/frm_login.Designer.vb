@@ -22,6 +22,7 @@ Partial Class frm_login
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_login))
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txt_senha = New System.Windows.Forms.TextBox()
         Me.btn_entrar = New System.Windows.Forms.Button()
@@ -90,10 +91,11 @@ Partial Class frm_login
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txt_email)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "frm_login"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Login"
+        Me.Text = "LOGIN - FSHM"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

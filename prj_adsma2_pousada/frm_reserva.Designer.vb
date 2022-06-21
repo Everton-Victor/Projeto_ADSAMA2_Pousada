@@ -69,6 +69,7 @@ Partial Class frm_reserva
         Me.txt_preco_quarto = New System.Windows.Forms.TextBox()
         Me.cmb_quarto = New System.Windows.Forms.ComboBox()
         Me.GroupBox10 = New System.Windows.Forms.GroupBox()
+        Me.btn_refresh = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txt_valor_parcela = New System.Windows.Forms.TextBox()
         Me.cmb_parcela = New System.Windows.Forms.ComboBox()
@@ -588,6 +589,7 @@ Partial Class frm_reserva
         '
         'GroupBox10
         '
+        Me.GroupBox10.Controls.Add(Me.btn_refresh)
         Me.GroupBox10.Controls.Add(Me.Label1)
         Me.GroupBox10.Controls.Add(Me.txt_valor_parcela)
         Me.GroupBox10.Controls.Add(Me.cmb_parcela)
@@ -602,6 +604,16 @@ Partial Class frm_reserva
         Me.GroupBox10.TabIndex = 61
         Me.GroupBox10.TabStop = False
         Me.GroupBox10.Text = "Pagamento"
+        '
+        'btn_refresh
+        '
+        Me.btn_refresh.BackColor = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(187, Byte), Integer))
+        Me.btn_refresh.Image = CType(resources.GetObject("btn_refresh.Image"), System.Drawing.Image)
+        Me.btn_refresh.Location = New System.Drawing.Point(242, 34)
+        Me.btn_refresh.Name = "btn_refresh"
+        Me.btn_refresh.Size = New System.Drawing.Size(35, 28)
+        Me.btn_refresh.TabIndex = 59
+        Me.btn_refresh.UseVisualStyleBackColor = False
         '
         'Label1
         '
@@ -777,49 +789,49 @@ Partial Class frm_reserva
         Me.Column1.HeaderText = "Núm - Reserva"
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
-        Me.Column1.Width = 146
+        Me.Column1.Width = 127
         '
         'Column6
         '
         Me.Column6.HeaderText = "Núm - Quarto"
         Me.Column6.Name = "Column6"
         Me.Column6.ReadOnly = True
-        Me.Column6.Width = 141
+        Me.Column6.Width = 122
         '
         'Column10
         '
         Me.Column10.HeaderText = "Cód - Pacote Serviço"
         Me.Column10.Name = "Column10"
         Me.Column10.ReadOnly = True
-        Me.Column10.Width = 192
+        Me.Column10.Width = 161
         '
         'Column8
         '
         Me.Column8.HeaderText = "CPF - Cliente"
         Me.Column8.Name = "Column8"
         Me.Column8.ReadOnly = True
-        Me.Column8.Width = 133
+        Me.Column8.Width = 114
         '
         'Column2
         '
         Me.Column2.HeaderText = "Data - Entrada"
         Me.Column2.Name = "Column2"
         Me.Column2.ReadOnly = True
-        Me.Column2.Width = 145
+        Me.Column2.Width = 123
         '
         'Column4
         '
         Me.Column4.HeaderText = "Data - Saída"
         Me.Column4.Name = "Column4"
         Me.Column4.ReadOnly = True
-        Me.Column4.Width = 128
+        Me.Column4.Width = 109
         '
         'Column7
         '
         Me.Column7.HeaderText = "E-mail Funcionário"
         Me.Column7.Name = "Column7"
         Me.Column7.ReadOnly = True
-        Me.Column7.Width = 178
+        Me.Column7.Width = 150
         '
         'Column13
         '
@@ -828,7 +840,7 @@ Partial Class frm_reserva
         Me.Column13.Name = "Column13"
         Me.Column13.ReadOnly = True
         Me.Column13.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Column13.Width = 67
+        Me.Column13.Width = 56
         '
         'Column14
         '
@@ -837,7 +849,7 @@ Partial Class frm_reserva
         Me.Column14.Name = "Column14"
         Me.Column14.ReadOnly = True
         Me.Column14.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Column14.Width = 91
+        Me.Column14.Width = 79
         '
         'txt_pesquisa
         '
@@ -857,11 +869,12 @@ Partial Class frm_reserva
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.ToolStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.MaximizeBox = False
         Me.Name = "frm_reserva"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "RESERVA"
+        Me.Text = "RESERVA - FSHM"
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         Me.TabControl1.ResumeLayout(False)
@@ -956,4 +969,5 @@ Partial Class frm_reserva
     Friend WithEvents txt_data_saida As DateTimePicker
     Friend WithEvents txt_hora_entrada As DateTimePicker
     Friend WithEvents txt_data_entrada As DateTimePicker
+    Friend WithEvents btn_refresh As Button
 End Class
