@@ -77,23 +77,29 @@
             If txt_cpf.Text <> "" Then
                 sql = "select num_reserva from tb_reserva where cpf_cliente='" & txt_cpf.Text & "'"
                 rs = db.Execute(sql)
-                cmb_num_reserva.Items.Clear()
-
-                Do While rs.EOF = False
-                    cmb_num_reserva.Items.Add(rs.Fields(0).Value)
-                    rs.MoveNext()
-                Loop
-
-                If cmb_num_reserva.Items.Count <> 0 Then
-                    cmb_num_reserva.SelectedIndex = 0
-                End If
-
-                sql = "select * from tb_cliente where cpf_cliente='" & txt_cpf.Text & "'"
-                rs = db.Execute(sql)
 
                 If rs.EOF = False Then
-                    txt_nome.Text = rs.Fields(1).Value
-                    txt_celular.Text = rs.Fields(2).Value
+                    sql = "select * from tb_checkin where num_reserva=" & rs.Fields(0).Value & ""
+                    rs = db.Execute(sql)
+                    If rs.EOF = False Then
+                        cmb_num_reserva.Items.Clear()
+                        Do While rs.EOF = False
+                            cmb_num_reserva.Items.Add(rs.Fields(3).Value)
+                            rs.MoveNext()
+                        Loop
+                        If cmb_num_reserva.Items.Count <> 0 Then
+                            cmb_num_reserva.SelectedIndex = 0
+                        End If
+                        sql = "select * from tb_cliente where cpf_cliente='" & txt_cpf.Text & "'"
+                        rs = db.Execute(sql)
+
+                        If rs.EOF = False Then
+                            txt_nome.Text = rs.Fields(1).Value
+                            txt_celular.Text = rs.Fields(2).Value
+                        End If
+                    Else
+                        MsgBox("Esse CPF: " & txt_cpf.Text & " não realizou check-in!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ALERTA")
+                    End If
                 End If
 
             End If
@@ -111,33 +117,44 @@
             txt_hora.Text = datahoraAtual.ToShortTimeString
 
             If txt_num_reserva.Text <> "" Then
-                cmb_cpf_acomp.Items.Clear()
-                sql = "select * from tb_reserva where num_reserva=" & txt_num_reserva.Text & ""
+                sql = "select * from tb_checkin where num_reserva=" & txt_num_reserva.Text & ""
                 rs = db.Execute(sql)
 
                 If rs.EOF = False Then
-                    cmb_num_reserva.Text = rs.Fields(0).Value
-                    txt_pac_serv.Text = rs.Fields(8).Value
-                    txt_num_quarto.Text = rs.Fields(9).Value
-                    txt_cpf.Text = rs.Fields(11).Value
+                    cmb_cpf_acomp.Items.Clear()
+                    sql = "select * from tb_reserva where num_reserva=" & txt_num_reserva.Text & ""
+                    rs = db.Execute(sql)
 
+                    If rs.EOF = False Then
+                        cmb_num_reserva.Text = rs.Fields(0).Value
+                        If rs.Fields(8).Value <> 0 Then
+                            txt_pac_serv.Text = rs.Fields(8).Value
+                        End If
+
+                        txt_num_quarto.Text = rs.Fields(9).Value
+                        txt_cpf.Text = rs.Fields(11).Value
+
+                    End If
+
+                    sql = "select * from tb_cliente where cpf_cliente='" & txt_cpf.Text & "'"
+                    rs = db.Execute(sql)
+
+                    If rs.EOF = False Then
+                        txt_nome.Text = rs.Fields(1).Value
+                        txt_celular.Text = rs.Fields(2).Value
+                    End If
+
+                    sql = "select * from tb_acompanhante where (cpf_cliente='" & txt_cpf.Text & "' and num_reserva=" & cmb_num_reserva.Text & ")"
+                    rs = db.Execute(sql)
+
+                    Do While rs.EOF = False
+                        cmb_cpf_acomp.Items.Add(rs.Fields(0).Value)
+                        rs.MoveNext()
+                    Loop
+                Else
+                    MsgBox("A reserva sob o Nº" & txt_num_reserva.Text & " não realizou check-in!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ALERTA")
                 End If
 
-                sql = "select * from tb_cliente where cpf_cliente='" & txt_cpf.Text & "'"
-                rs = db.Execute(sql)
-
-                If rs.EOF = False Then
-                    txt_nome.Text = rs.Fields(1).Value
-                    txt_celular.Text = rs.Fields(2).Value
-                End If
-
-                sql = "select * from tb_acompanhante where (cpf_cliente='" & txt_cpf.Text & "' and num_reserva=" & cmb_num_reserva.Text & ")"
-                rs = db.Execute(sql)
-
-                Do While rs.EOF = False
-                    cmb_cpf_acomp.Items.Add(rs.Fields(0).Value)
-                    rs.MoveNext()
-                Loop
             End If
 
 
@@ -182,7 +199,10 @@
 
                 If rs.EOF = False Then
                     txt_num_reserva.Text = rs.Fields(0).Value
-                    txt_pac_serv.Text = rs.Fields(8).Value
+                    If rs.Fields(8).Value <> 0 Then
+                        txt_pac_serv.Text = rs.Fields(8).Value
+                    End If
+
                     txt_num_quarto.Text = rs.Fields(9).Value
                     txt_cpf.Text = rs.Fields(11).Value
 
@@ -281,4 +301,5 @@
             MsgBox("Erro de processamento!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ALERTA")
         End Try
     End Sub
+
 End Class

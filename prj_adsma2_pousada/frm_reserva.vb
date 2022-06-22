@@ -2,35 +2,41 @@
 
 
     Private Sub frm_reversa_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        conectar_banco()
-        carregar_acompanhante()
-        carregar_cargo()
-        carregar_catergoria_pesquisa()
-        carregar_cliente()
-        carregar_dados_func()
-        carregar_forma_pagamanto()
-        carregar_pacote_serv()
-        carregar_pac_serv_reserva()
-        carregar_parcela()
-        carregar_quartos()
-        carregar_quartos_reserva()
-        carregar_reserva()
-        carregar_status_conta()
-        carregar_tipo_conta()
-        carregar_tipo_pacote()
-        carregar_tipo_quarto()
-        carregar_num_reserva()
+        Try
+            conectar_banco()
+            carregar_acompanhante()
+            carregar_cargo()
+            carregar_catergoria_pesquisa()
+            carregar_cliente()
+            carregar_dados_func()
+            carregar_forma_pagamanto()
+            carregar_pacote_serv()
+            carregar_pac_serv_reserva()
+            carregar_parcela()
+            carregar_quartos()
+            carregar_quartos_reserva()
+            carregar_reserva()
+            carregar_status_conta()
+            carregar_tipo_conta()
+            carregar_tipo_pacote()
+            carregar_tipo_quarto()
+            carregar_num_reserva()
 
-        txt_data_entrada.CustomFormat = "dd/MM/yyyy"
-        txt_data_saida.CustomFormat = "dd/MM/yyyy"
-        txt_hora_entrada.CustomFormat = "HH:mm"
-        txt_hora_saida.CustomFormat = "HH:mm"
+            txt_data_entrada.CustomFormat = "dd/MM/yyyy"
+            txt_data_saida.CustomFormat = "dd/MM/yyyy"
+            txt_hora_entrada.CustomFormat = "HH:mm"
+            txt_hora_saida.CustomFormat = "HH:mm"
 
-        If type_login = "admin" Then
-            FuncionáriosToolStripMenuItem.Visible = True
-        Else
-            FuncionáriosToolStripMenuItem.Visible = False
-        End If
+            If type_login = "admin" Then
+                FuncionáriosToolStripMenuItem.Visible = True
+            Else
+                FuncionáriosToolStripMenuItem.Visible = False
+            End If
+        Catch ex As Exception
+            MsgBox("Erro de processamento!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ATENÇÃO")
+
+        End Try
+
     End Sub
 
     Private Sub CheckinToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CheckinToolStripMenuItem.Click
@@ -74,16 +80,17 @@
                 'Editar
                 If dgv_reserva.Rows.Count <> 0 Then
                     If .CurrentRow.Cells(7).Selected Then
+                        limpar_reserva()
                         aux = .CurrentRow.Cells(0).Value
                         sql = "select * from tb_reserva where num_reserva=" & aux & ""
                         rs = db.Execute(sql)
 
                         If rs.EOF = False Then
                             TabControl1.SelectTab(0)
-                            txt_data_entrada.Text = rs.Fields(1).Value
-                            txt_hora_entrada.Text = rs.Fields(2).Value
                             txt_data_saida.Text = rs.Fields(3).Value
                             txt_hora_saida.Text = rs.Fields(4).Value
+                            txt_data_entrada.Text = rs.Fields(1).Value
+                            txt_hora_entrada.Text = rs.Fields(2).Value
                             cmb_quarto.Text = rs.Fields(9).Value
                             txt_num_reserva.Text = rs.Fields(0).Value
 
@@ -98,8 +105,6 @@
                                 Else
                                     cmb_pacote_serv.SelectedIndex = 0
                                 End If
-
-
                                 txt_total.Text = rs.Fields(5).Value
                             End If
 
@@ -137,38 +142,45 @@
     End Sub
 
     Private Sub frm_reserva_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
-        conectar_banco()
-        carregar_acompanhante()
-        carregar_cargo()
-        carregar_catergoria_pesquisa()
-        carregar_cliente()
-        carregar_dados_func()
-        carregar_forma_pagamanto()
-        carregar_pacote_serv()
-        carregar_pac_serv_reserva()
-        carregar_parcela()
-        carregar_quartos()
-        carregar_quartos_reserva()
-        carregar_reserva()
-        carregar_status_conta()
-        carregar_tipo_conta()
-        carregar_tipo_pacote()
-        carregar_tipo_quarto()
-        carregar_num_reserva()
+        Try
+            conectar_banco()
+            carregar_acompanhante()
+            carregar_cargo()
+            carregar_catergoria_pesquisa()
+            carregar_cliente()
+            carregar_dados_func()
+            carregar_forma_pagamanto()
+            carregar_pacote_serv()
+            carregar_pac_serv_reserva()
+            carregar_parcela()
+            carregar_quartos()
+            carregar_quartos_reserva()
+            carregar_reserva()
+            carregar_status_conta()
+            carregar_tipo_conta()
+            carregar_tipo_pacote()
+            carregar_tipo_quarto()
+            carregar_num_reserva()
 
 
-        txt_data_entrada.CustomFormat = "dd/MM/yyyy"
-        txt_data_saida.CustomFormat = "dd/MM/yyyy"
-        txt_hora_entrada.CustomFormat = "HH:mm"
-        txt_hora_saida.CustomFormat = "HH:mm"
+            txt_data_entrada.CustomFormat = "dd/MM/yyyy"
+            txt_data_saida.CustomFormat = "dd/MM/yyyy"
+            txt_hora_entrada.CustomFormat = "HH:mm"
+            txt_hora_saida.CustomFormat = "HH:mm"
 
 
 
-        If type_login = "admin" Then
-            FuncionáriosToolStripMenuItem.Visible = True
-        Else
-            FuncionáriosToolStripMenuItem.Visible = False
-        End If
+            If type_login = "admin" Then
+                FuncionáriosToolStripMenuItem.Visible = True
+            Else
+                FuncionáriosToolStripMenuItem.Visible = False
+            End If
+        Catch ex As Exception
+            MsgBox("Erro de processamento!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ATENÇÃO")
+
+        End Try
+
+
     End Sub
 
     Private Sub cmb_pacote_serv_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_pacote_serv.SelectedIndexChanged
@@ -260,7 +272,7 @@
         Dim num As String
         Try
             Calcula_total()
-            If txt_cpf_cli.Text = "" Or txt_nome_cli.Text = "" Or txt_celular_cli.Text = "" Then
+            If txt_cpf_cli.Text = "" Or txt_nome_cli.Text = "" Or txt_celular_cli.Text = "" Or txt_total.Text = "" Then
                 MsgBox("Preencha todos os campos!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "ATENÇÃO")
             ElseIf cmb_pacote_serv.Text <> "" Then
                 sql = "Select * from tb_reserva where num_reserva=" & txt_num_reserva.Text & ""

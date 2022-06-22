@@ -102,12 +102,15 @@
 
                 If rs.EOF = False Then
                     cmb_num_reserva.Text = rs.Fields(0).Value
-                    txt_pac_serv.Text = rs.Fields(8).Value
-                    txt_num_quarto.Text = rs.Fields(9).Value
-                    txt_cpf.Text = rs.Fields(11).Value
-                End If
+                    If rs.Fields(8).Value <> 0 Then
+                        txt_pac_serv.Text = rs.Fields(8).Value
+                    End If
 
-                sql = "select * from tb_cliente where cpf_cliente='" & txt_cpf.Text & "'"
+                    txt_num_quarto.Text = rs.Fields(9).Value
+                        txt_cpf.Text = rs.Fields(11).Value
+                    End If
+
+                    sql = "select * from tb_cliente where cpf_cliente='" & txt_cpf.Text & "'"
                 rs = db.Execute(sql)
 
                 If rs.EOF = False Then
@@ -167,7 +170,10 @@
 
                 If rs.EOF = False Then
                     txt_num_reserva.Text = rs.Fields(0).Value
-                    txt_pac_serv.Text = rs.Fields(8).Value
+                    If rs.Fields(8).Value <> 0 Then
+                        txt_pac_serv.Text = rs.Fields(8).Value
+                    End If
+
                     txt_num_quarto.Text = rs.Fields(9).Value
                     txt_cpf.Text = rs.Fields(11).Value
 
@@ -221,7 +227,7 @@
                         MsgBox("Check-in efetuado!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "ATENÇÃO")
                         limpar_checkin()
                     Else
-                        MsgBox("A Reserva Nº" & txt_num_reserva.Text & " já efetuou check-in " & vbNewLine &
+                        MsgBox("A Reserva sob o Nº" & txt_num_reserva.Text & " já efetuou check-in " & vbNewLine &
                                "Data: " & rs.Fields(1).Value & " - Hora: " & rs.Fields(2).Value & "", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "ALERTA")
                     End If
                 Else

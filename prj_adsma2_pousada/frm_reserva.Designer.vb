@@ -448,7 +448,7 @@ Partial Class frm_reserva
         'txt_hora_saida
         '
         Me.txt_hora_saida.CalendarFont = New System.Drawing.Font("Cambria", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_hora_saida.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.txt_hora_saida.Format = System.Windows.Forms.DateTimePickerFormat.Time
         Me.txt_hora_saida.Location = New System.Drawing.Point(510, 65)
         Me.txt_hora_saida.Name = "txt_hora_saida"
         Me.txt_hora_saida.Size = New System.Drawing.Size(169, 26)
@@ -463,18 +463,18 @@ Partial Class frm_reserva
         Me.txt_data_saida.Name = "txt_data_saida"
         Me.txt_data_saida.Size = New System.Drawing.Size(169, 26)
         Me.txt_data_saida.TabIndex = 8
-        Me.txt_data_saida.Value = New Date(2022, 6, 19, 0, 0, 0, 0)
+        Me.txt_data_saida.Value = New Date(2022, 6, 21, 0, 0, 0, 0)
         '
         'txt_hora_entrada
         '
         Me.txt_hora_entrada.AccessibleRole = System.Windows.Forms.AccessibleRole.Grip
         Me.txt_hora_entrada.CalendarFont = New System.Drawing.Font("Cambria", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_hora_entrada.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.txt_hora_entrada.Format = System.Windows.Forms.DateTimePickerFormat.Time
         Me.txt_hora_entrada.Location = New System.Drawing.Point(172, 67)
         Me.txt_hora_entrada.Name = "txt_hora_entrada"
         Me.txt_hora_entrada.Size = New System.Drawing.Size(169, 26)
         Me.txt_hora_entrada.TabIndex = 9
-        Me.txt_hora_entrada.Value = New Date(2022, 6, 19, 19, 27, 0, 0)
+        Me.txt_hora_entrada.Value = New Date(2022, 6, 19, 19, 38, 0, 0)
         '
         'txt_data_entrada
         '
@@ -484,7 +484,7 @@ Partial Class frm_reserva
         Me.txt_data_entrada.Name = "txt_data_entrada"
         Me.txt_data_entrada.Size = New System.Drawing.Size(169, 26)
         Me.txt_data_entrada.TabIndex = 7
-        Me.txt_data_entrada.Value = New Date(2022, 6, 19, 0, 0, 0, 0)
+        Me.txt_data_entrada.Value = New Date(2021, 2, 10, 0, 0, 0, 0)
         '
         'txt_num_reserva
         '
@@ -831,7 +831,7 @@ Partial Class frm_reserva
         Me.Column7.HeaderText = "E-mail Funcionário"
         Me.Column7.Name = "Column7"
         Me.Column7.ReadOnly = True
-        Me.Column7.Width = 151
+        Me.Column7.Width = 150
         '
         'Column13
         '

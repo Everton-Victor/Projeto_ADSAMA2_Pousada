@@ -1,42 +1,49 @@
 ﻿Public Class frm_quartos
     Private Sub frm_quartos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        conectar_banco()
-        carregar_acompanhante()
-        carregar_cargo()
-        carregar_catergoria_pesquisa()
-        carregar_cliente()
-        carregar_dados_func()
-        carregar_forma_pagamanto()
-        carregar_pacote_serv()
-        carregar_pac_serv_reserva()
-        carregar_parcela()
-        carregar_quartos()
-        carregar_quartos_reserva()
-        carregar_reserva()
-        carregar_status_conta()
-        carregar_tipo_conta()
-        carregar_tipo_pacote()
-        carregar_tipo_quarto()
+        Try
+            conectar_banco()
+            carregar_acompanhante()
+            carregar_cargo()
+            carregar_catergoria_pesquisa()
+            carregar_cliente()
+            carregar_dados_func()
+            carregar_forma_pagamanto()
+            carregar_pacote_serv()
+            carregar_pac_serv_reserva()
+            carregar_parcela()
+            carregar_quartos()
+            carregar_quartos_reserva()
+            carregar_reserva()
+            carregar_status_conta()
+            carregar_tipo_conta()
+            carregar_tipo_pacote()
+            carregar_tipo_quarto()
+            carregar_type_login()
 
-        cmb_tipo.Text = ""
-        type_login = "admin"
-        If type_login = "admin" Then
-            FuncionáriosToolStripMenuItem.Visible = True
-            btn_entrar.Visible = True
-            txt_num.Enabled = True
-            txt_desc.Enabled = True
-            txt_preco.Enabled = True
-            cmb_tipo.Enabled = True
-            img_foto.Enabled = True
-        Else
-            FuncionáriosToolStripMenuItem.Visible = False
-            btn_entrar.Visible = False
-            txt_num.Enabled = False
-            txt_desc.Enabled = False
-            txt_preco.Enabled = False
-            cmb_tipo.Enabled = False
-            img_foto.Enabled = False
-        End If
+
+
+            cmb_tipo.Text = ""
+            If type_login = "admin" Then
+                FuncionáriosToolStripMenuItem.Visible = True
+                btn_entrar.Visible = True
+                txt_num.Enabled = True
+                txt_desc.Enabled = True
+                txt_preco.Enabled = True
+                cmb_tipo.Enabled = True
+                img_foto.Enabled = True
+            Else
+                FuncionáriosToolStripMenuItem.Visible = False
+                btn_entrar.Visible = False
+                txt_num.Enabled = False
+                txt_desc.Enabled = False
+                txt_preco.Enabled = False
+                cmb_tipo.Enabled = False
+                img_foto.Enabled = False
+            End If
+        Catch ex As Exception
+            MsgBox("Erro de processamento!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ATENÇÃO")
+        End Try
+
     End Sub
 
     Private Sub dgv_quartos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_quartos.CellContentClick
@@ -177,31 +184,47 @@
     End Sub
 
     Private Sub frm_quartos_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
-        conectar_banco()
-        carregar_acompanhante()
-        carregar_cargo()
-        carregar_catergoria_pesquisa()
-        carregar_cliente()
-        carregar_dados_func()
-        carregar_forma_pagamanto()
-        carregar_pacote_serv()
-        carregar_pac_serv_reserva()
-        carregar_parcela()
-        carregar_quartos()
-        carregar_quartos_reserva()
-        carregar_reserva()
-        carregar_status_conta()
-        carregar_tipo_conta()
-        carregar_tipo_pacote()
-        carregar_tipo_quarto()
+        Try
+            conectar_banco()
+            carregar_acompanhante()
+            carregar_cargo()
+            carregar_catergoria_pesquisa()
+            carregar_cliente()
+            carregar_dados_func()
+            carregar_forma_pagamanto()
+            carregar_pacote_serv()
+            carregar_pac_serv_reserva()
+            carregar_parcela()
+            carregar_quartos()
+            carregar_quartos_reserva()
+            carregar_reserva()
+            carregar_status_conta()
+            carregar_tipo_conta()
+            carregar_tipo_pacote()
+            carregar_tipo_quarto()
+            carregar_type_login()
 
-        cmb_tipo.Text = ""
-
-        If type_login = "admin" Then
-            FuncionáriosToolStripMenuItem.Visible = True
-        Else
-            FuncionáriosToolStripMenuItem.Visible = False
-        End If
+            cmb_tipo.Text = ""
+            If type_login = "admin" Then
+                FuncionáriosToolStripMenuItem.Visible = True
+                btn_entrar.Visible = True
+                txt_num.Enabled = True
+                txt_desc.Enabled = True
+                txt_preco.Enabled = True
+                cmb_tipo.Enabled = True
+                img_foto.Enabled = True
+            Else
+                FuncionáriosToolStripMenuItem.Visible = False
+                btn_entrar.Visible = False
+                txt_num.Enabled = False
+                txt_desc.Enabled = False
+                txt_preco.Enabled = False
+                cmb_tipo.Enabled = False
+                img_foto.Enabled = False
+            End If
+        Catch ex As Exception
+            MsgBox("Erro de processamento!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ATENÇÃO")
+        End Try
     End Sub
 
     Private Sub CheckoutToolStripMenuItem_Click_1(sender As Object, e As EventArgs)

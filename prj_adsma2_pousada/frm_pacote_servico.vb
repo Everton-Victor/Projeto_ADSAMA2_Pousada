@@ -1,25 +1,25 @@
 ﻿Public Class frm_pacote_servico
     Private Sub Frm_pacote_servico_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        conectar_banco()
-        carregar_acompanhante()
-        carregar_cargo()
-        carregar_catergoria_pesquisa()
-        carregar_cliente()
-        carregar_dados_func()
-        carregar_forma_pagamanto()
-        carregar_pacote_serv()
-        carregar_pac_serv_reserva()
-        carregar_parcela()
-        carregar_quartos()
-        carregar_quartos_reserva()
-        carregar_reserva()
-        carregar_status_conta()
-        carregar_tipo_conta()
-        carregar_tipo_pacote()
-        carregar_tipo_quarto()
+
         Try
-            cmb_tipo.Text = ""
-            txt_cod_pac_serv.Text = ""
+            conectar_banco()
+            carregar_acompanhante()
+            carregar_cargo()
+            carregar_catergoria_pesquisa()
+            carregar_cliente()
+            carregar_dados_func()
+            carregar_forma_pagamanto()
+            carregar_pacote_serv()
+            carregar_pac_serv_reserva()
+            carregar_parcela()
+            carregar_quartos()
+            carregar_quartos_reserva()
+            carregar_reserva()
+            carregar_status_conta()
+            carregar_tipo_conta()
+            carregar_tipo_pacote()
+            carregar_tipo_quarto()
+            carregar_type_login()
 
             If type_login = "admin" Then
                 FuncionáriosToolStripMenuItem.Visible = True
@@ -188,31 +188,46 @@
     End Sub
 
     Private Sub frm_pacote_servico_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
-        conectar_banco()
-        carregar_acompanhante()
-        carregar_cargo()
-        carregar_catergoria_pesquisa()
-        carregar_cliente()
-        carregar_dados_func()
-        carregar_forma_pagamanto()
-        carregar_pacote_serv()
-        carregar_pac_serv_reserva()
-        carregar_parcela()
-        carregar_quartos()
-        carregar_quartos_reserva()
-        carregar_reserva()
-        carregar_status_conta()
-        carregar_tipo_conta()
-        carregar_tipo_pacote()
-        carregar_tipo_quarto()
+
         Try
+            conectar_banco()
+            carregar_acompanhante()
+            carregar_cargo()
+            carregar_catergoria_pesquisa()
+            carregar_cliente()
+            carregar_dados_func()
+            carregar_forma_pagamanto()
+            carregar_pacote_serv()
+            carregar_pac_serv_reserva()
+            carregar_parcela()
+            carregar_quartos()
+            carregar_quartos_reserva()
+            carregar_reserva()
+            carregar_status_conta()
+            carregar_tipo_conta()
+            carregar_tipo_pacote()
+            carregar_tipo_quarto()
+            carregar_type_login()
+
             cmb_tipo.Text = ""
             txt_cod_pac_serv.Text = ""
 
             If type_login = "admin" Then
                 FuncionáriosToolStripMenuItem.Visible = True
+                txt_nome.Enabled = True
+                txt_preco.Enabled = True
+                txt_descricao.Enabled = True
+                btn_cadastrar.Visible = True
+                cmb_tipo.Enabled = True
+                img_foto.Enabled = True
             Else
                 FuncionáriosToolStripMenuItem.Visible = False
+                txt_nome.Enabled = False
+                txt_preco.Enabled = False
+                txt_descricao.Enabled = False
+                btn_cadastrar.Visible = False
+                cmb_tipo.Enabled = False
+                img_foto.Enabled = False
             End If
         Catch ex As Exception
             MsgBox("Erro de processamento!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ATENÇÃO")

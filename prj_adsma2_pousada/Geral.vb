@@ -72,7 +72,8 @@
             .txt_valor_parcela.Clear()
             .cmb_cpf_acomp.Text = ""
             .cmb_cpf_acomp.Items.Clear()
-
+            .txt_data_entrada.Value = "20/01/2022"
+            .txt_data_saida.Value = "20/06/2022"
             .cmb_pacote_serv.SelectedIndex = 0
             .txt_total.Text = ""
 
@@ -110,6 +111,26 @@
             .cmb_cpf_acomp.Text = ""
             .cmb_num_reserva.Text = ""
         End With
+    End Sub
+
+    Sub carregar_type_login()
+        Try
+            sql = "select * from tb_funcionario where email_func='" & email_func_g & "'"
+            rs = db.Execute(sql)
+            If rs.EOF = False Then
+                If rs.Fields(4).Value = "admin" Then
+                    type_login = "admin"
+                Else
+                    type_login = "user"
+                End If
+            Else
+
+            End If
+        Catch ex As Exception
+            MsgBox("Erro de Processamento", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ATENÇÃO")
+        End Try
+
+
     End Sub
 
 
@@ -435,26 +456,31 @@
     End Sub
 
     Sub Calcula_total()
+        Try
+            With frm_reserva
+                Dim num1, num2 As String
+                Dim dtini As DateTime = .txt_data_entrada.Value
+                Dim dtfim As DateTime = .txt_data_saida.Value
+                Dim num3 As Integer
 
-        With frm_reserva
-            Dim num1, num2 As String
-            Dim dtini As DateTime = .txt_data_entrada.Value
-            Dim dtfim As DateTime = .txt_data_saida.Value
-            Dim num3 As Integer
-
-            If DateDiff(DateInterval.Day, dtini, dtfim) <= 0 Then
-                num3 = 1
-            Else
-                num3 = DateDiff(DateInterval.Day, dtini, dtfim)
-            End If
-
-            If .txt_preco_pac_serv.Text <> "" And .txt_preco_quarto.Text <> "" Then
-                num1 = .txt_preco_quarto.Text.Remove(0, 3)
-                num2 = .txt_preco_pac_serv.Text.Remove(0, 3)
-                .txt_total.Text = FormatCurrency((Convert.ToDecimal(num1) + Convert.ToDecimal(num2)) * num3)
-
-                'CALCULAR DATA E INSERIR NO .TXT_TOTAL
-            End If
-        End With
+                If DateDiff(DateInterval.Day, dtini, dtfim) < 0 Then
+                    MsgBox("Datas inválidas!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "ALERTA")
+                    .txt_total.Text = ""
+                Else
+                    If DateDiff(DateInterval.Day, dtini, dtfim) = 0 Then
+                        num3 = 1
+                    Else
+                        num3 = DateDiff(DateInterval.Day, dtini, dtfim)
+                    End If
+                    If .txt_preco_pac_serv.Text <> "" And .txt_preco_quarto.Text <> "" Then
+                        num1 = .txt_preco_quarto.Text.Remove(0, 3)
+                        num2 = .txt_preco_pac_serv.Text.Remove(0, 3)
+                        .txt_total.Text = FormatCurrency((Convert.ToDecimal(num1) + Convert.ToDecimal(num2)) * num3)
+                    End If
+                End If
+            End With
+        Catch ex As Exception
+            MsgBox("Erro de processamento!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ATENÇÃO")
+        End Try
     End Sub
 End Module

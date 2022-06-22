@@ -1,22 +1,28 @@
 ﻿Public Class frm_login
     Private Sub Frm_login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        conectar_banco()
-        carregar_acompanhante()
-        carregar_cargo()
-        carregar_catergoria_pesquisa()
-        carregar_cliente()
-        carregar_dados_func()
-        carregar_forma_pagamanto()
-        carregar_pacote_serv()
-        carregar_pac_serv_reserva()
-        carregar_parcela()
-        carregar_quartos()
-        carregar_quartos_reserva()
-        carregar_reserva()
-        carregar_status_conta()
-        carregar_tipo_conta()
-        carregar_tipo_pacote()
-        carregar_tipo_quarto()
+        Try
+            conectar_banco()
+            carregar_acompanhante()
+            carregar_cargo()
+            carregar_catergoria_pesquisa()
+            carregar_cliente()
+            carregar_dados_func()
+            carregar_forma_pagamanto()
+            carregar_pacote_serv()
+            carregar_pac_serv_reserva()
+            carregar_parcela()
+            carregar_quartos()
+            carregar_quartos_reserva()
+            carregar_reserva()
+            carregar_status_conta()
+            carregar_tipo_conta()
+            carregar_tipo_pacote()
+            carregar_tipo_quarto()
+        Catch ex As Exception
+            MsgBox("Erro de processamento!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ALERTA")
+
+        End Try
+
     End Sub
 
     Private Sub btn_entrar_Click(sender As Object, e As EventArgs) Handles btn_entrar.Click
@@ -66,22 +72,29 @@
     End Sub
 
     Private Sub frm_login_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
-        conectar_banco()
-        carregar_acompanhante()
-        carregar_cargo()
-        carregar_catergoria_pesquisa()
-        carregar_cliente()
-        carregar_dados_func()
-        carregar_forma_pagamanto()
-        carregar_pacote_serv()
-        carregar_pac_serv_reserva()
-        carregar_parcela()
-        carregar_quartos()
-        carregar_quartos_reserva()
-        carregar_reserva()
-        carregar_status_conta()
-        carregar_tipo_conta()
-        carregar_tipo_pacote()
-        carregar_tipo_quarto()
+        Try
+            conectar_banco()
+            carregar_acompanhante()
+            carregar_cargo()
+            carregar_catergoria_pesquisa()
+            carregar_cliente()
+            carregar_dados_func()
+            carregar_forma_pagamanto()
+            carregar_pacote_serv()
+            carregar_pac_serv_reserva()
+            carregar_parcela()
+            carregar_quartos()
+            carregar_quartos_reserva()
+            carregar_reserva()
+            carregar_status_conta()
+            carregar_tipo_conta()
+            carregar_tipo_pacote()
+            carregar_tipo_quarto()
+        Catch ex As Exception
+            MsgBox("Erro de processamento!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ALERTA")
+
+        End Try
+
+
     End Sub
 End Class
