@@ -42,6 +42,8 @@ Partial Class frm_funcionarios
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txt_senha = New System.Windows.Forms.TextBox()
         Me.tab_lista = New System.Windows.Forms.TabPage()
+        Me.cmb_categoria = New System.Windows.Forms.ComboBox()
+        Me.txt_pesquisa = New System.Windows.Forms.TextBox()
         Me.dgv_fun = New System.Windows.Forms.DataGridView()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -61,21 +63,21 @@ Partial Class frm_funcionarios
         Me.PacoteDeServiçosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.QuartosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EncerrarSessToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.cmb_categoria = New System.Windows.Forms.ComboBox()
-        Me.txt_pesquisa = New System.Windows.Forms.TextBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CheckoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TabControl1.SuspendLayout()
         Me.tab_cadastro.SuspendLayout()
         Me.tab_lista.SuspendLayout()
         CType(Me.dgv_fun, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'CheckoutToolStripMenuItem
         '
         CheckoutToolStripMenuItem.Image = CType(resources.GetObject("CheckoutToolStripMenuItem.Image"), System.Drawing.Image)
         CheckoutToolStripMenuItem.Name = "CheckoutToolStripMenuItem"
-        CheckoutToolStripMenuItem.Size = New System.Drawing.Size(199, 42)
+        CheckoutToolStripMenuItem.Size = New System.Drawing.Size(145, 26)
         CheckoutToolStripMenuItem.Text = "Reserva"
         AddHandler CheckoutToolStripMenuItem.Click, AddressOf Me.CheckoutToolStripMenuItem_Click_1
         '
@@ -274,6 +276,23 @@ Partial Class frm_funcionarios
         Me.tab_lista.Text = "Lista"
         Me.tab_lista.UseVisualStyleBackColor = True
         '
+        'cmb_categoria
+        '
+        Me.cmb_categoria.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmb_categoria.FormattingEnabled = True
+        Me.cmb_categoria.Location = New System.Drawing.Point(214, 5)
+        Me.cmb_categoria.Name = "cmb_categoria"
+        Me.cmb_categoria.Size = New System.Drawing.Size(249, 32)
+        Me.cmb_categoria.TabIndex = 97
+        '
+        'txt_pesquisa
+        '
+        Me.txt_pesquisa.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_pesquisa.Location = New System.Drawing.Point(6, 6)
+        Me.txt_pesquisa.Name = "txt_pesquisa"
+        Me.txt_pesquisa.Size = New System.Drawing.Size(202, 31)
+        Me.txt_pesquisa.TabIndex = 96
+        '
         'dgv_fun
         '
         Me.dgv_fun.AllowUserToAddRows = False
@@ -391,7 +410,7 @@ Partial Class frm_funcionarios
         Me.ReservaToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ReservaToolStripMenuItem.Image = CType(resources.GetObject("ReservaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ReservaToolStripMenuItem.Name = "ReservaToolStripMenuItem"
-        Me.ReservaToolStripMenuItem.Size = New System.Drawing.Size(222, 42)
+        Me.ReservaToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
         Me.ReservaToolStripMenuItem.Text = "Cliente"
         '
         'CheckinToolStripMenuItem
@@ -412,7 +431,7 @@ Partial Class frm_funcionarios
         '
         Me.RegistroToolStripMenuItem.Image = CType(resources.GetObject("RegistroToolStripMenuItem.Image"), System.Drawing.Image)
         Me.RegistroToolStripMenuItem.Name = "RegistroToolStripMenuItem"
-        Me.RegistroToolStripMenuItem.Size = New System.Drawing.Size(199, 42)
+        Me.RegistroToolStripMenuItem.Size = New System.Drawing.Size(145, 26)
         Me.RegistroToolStripMenuItem.Text = "Registro"
         '
         'PacoteDeServiçosToolStripMenuItem
@@ -439,22 +458,16 @@ Partial Class frm_funcionarios
         Me.EncerrarSessToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
         Me.EncerrarSessToolStripMenuItem.Text = "Encerrar sessão"
         '
-        'cmb_categoria
+        'PictureBox1
         '
-        Me.cmb_categoria.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmb_categoria.FormattingEnabled = True
-        Me.cmb_categoria.Location = New System.Drawing.Point(214, 5)
-        Me.cmb_categoria.Name = "cmb_categoria"
-        Me.cmb_categoria.Size = New System.Drawing.Size(249, 32)
-        Me.cmb_categoria.TabIndex = 97
-        '
-        'txt_pesquisa
-        '
-        Me.txt_pesquisa.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_pesquisa.Location = New System.Drawing.Point(6, 6)
-        Me.txt_pesquisa.Name = "txt_pesquisa"
-        Me.txt_pesquisa.Size = New System.Drawing.Size(202, 31)
-        Me.txt_pesquisa.TabIndex = 96
+        Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(895, 0)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(117, 42)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 104
+        Me.PictureBox1.TabStop = False
         '
         'frm_funcionarios
         '
@@ -462,6 +475,7 @@ Partial Class frm_funcionarios
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(187, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(998, 585)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.TabControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -478,6 +492,7 @@ Partial Class frm_funcionarios
         CType(Me.dgv_fun, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -522,4 +537,5 @@ Partial Class frm_funcionarios
     Friend WithEvents RegistroToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents cmb_categoria As ComboBox
     Friend WithEvents txt_pesquisa As TextBox
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

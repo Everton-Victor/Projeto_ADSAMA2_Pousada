@@ -97,6 +97,7 @@ Partial Class frm_reserva
         Me.Column13 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Column14 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.txt_pesquisa = New System.Windows.Forms.TextBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ToolStrip1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -107,6 +108,7 @@ Partial Class frm_reserva
         Me.GroupBox10.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         CType(Me.dgv_reserva, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ToolStrip1
@@ -243,7 +245,7 @@ Partial Class frm_reserva
         Me.txt_cpf_acomp.Mask = "000,000,000-00"
         Me.txt_cpf_acomp.Name = "txt_cpf_acomp"
         Me.txt_cpf_acomp.Size = New System.Drawing.Size(210, 28)
-        Me.txt_cpf_acomp.TabIndex = 27
+        Me.txt_cpf_acomp.TabIndex = 3
         '
         'GroupBox7
         '
@@ -318,7 +320,7 @@ Partial Class frm_reserva
         Me.btn_inserir.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_inserir.Name = "btn_inserir"
         Me.btn_inserir.Size = New System.Drawing.Size(30, 30)
-        Me.btn_inserir.TabIndex = 26
+        Me.btn_inserir.TabIndex = 5
         Me.btn_inserir.UseVisualStyleBackColor = True
         '
         'Label22
@@ -376,7 +378,7 @@ Partial Class frm_reserva
         Me.txt_celular_cli.Mask = "(00) 99999-9999"
         Me.txt_celular_cli.Name = "txt_celular_cli"
         Me.txt_celular_cli.Size = New System.Drawing.Size(285, 28)
-        Me.txt_celular_cli.TabIndex = 27
+        Me.txt_celular_cli.TabIndex = 2
         '
         'txt_cpf_cli
         '
@@ -385,7 +387,7 @@ Partial Class frm_reserva
         Me.txt_cpf_cli.Mask = "000,000,000-00"
         Me.txt_cpf_cli.Name = "txt_cpf_cli"
         Me.txt_cpf_cli.Size = New System.Drawing.Size(285, 28)
-        Me.txt_cpf_cli.TabIndex = 26
+        Me.txt_cpf_cli.TabIndex = 0
         '
         'Label24
         '
@@ -523,7 +525,7 @@ Partial Class frm_reserva
         Me.cmb_pacote_serv.Margin = New System.Windows.Forms.Padding(2)
         Me.cmb_pacote_serv.Name = "cmb_pacote_serv"
         Me.cmb_pacote_serv.Size = New System.Drawing.Size(156, 28)
-        Me.cmb_pacote_serv.TabIndex = 12
+        Me.cmb_pacote_serv.TabIndex = 11
         '
         'Label27
         '
@@ -596,7 +598,7 @@ Partial Class frm_reserva
         Me.cmb_quarto.Margin = New System.Windows.Forms.Padding(2)
         Me.cmb_quarto.Name = "cmb_quarto"
         Me.cmb_quarto.Size = New System.Drawing.Size(84, 28)
-        Me.cmb_quarto.TabIndex = 11
+        Me.cmb_quarto.TabIndex = 12
         '
         'GroupBox10
         '
@@ -870,6 +872,17 @@ Partial Class frm_reserva
         Me.txt_pesquisa.Size = New System.Drawing.Size(202, 31)
         Me.txt_pesquisa.TabIndex = 81
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(722, 0)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(117, 42)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 104
+        Me.PictureBox1.TabStop = False
+        '
         'frm_reserva
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -877,6 +890,7 @@ Partial Class frm_reserva
         Me.AutoSize = True
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(187, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(825, 749)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.ToolStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -904,6 +918,7 @@ Partial Class frm_reserva
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         CType(Me.dgv_reserva, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -982,4 +997,5 @@ Partial Class frm_reserva
     Friend WithEvents txt_cpf_cli As MaskedTextBox
     Friend WithEvents RegistroToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents txt_celular_cli As MaskedTextBox
+    Friend WithEvents PictureBox1 As PictureBox
 End Class
