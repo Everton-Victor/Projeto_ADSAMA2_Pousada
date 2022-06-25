@@ -28,6 +28,7 @@ Partial Class frm_reserva
         Me.ReservaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CheckinToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CheckoutToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RegistroToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PacoteDeServiçosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.QuartosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FuncionáriosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -35,6 +36,7 @@ Partial Class frm_reserva
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.txt_cpf_acomp = New System.Windows.Forms.MaskedTextBox()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
         Me.btn_remover = New System.Windows.Forms.Button()
         Me.cmb_cpf_acomp = New System.Windows.Forms.ComboBox()
@@ -45,14 +47,13 @@ Partial Class frm_reserva
         Me.Label22 = New System.Windows.Forms.Label()
         Me.txt_nome_acomp = New System.Windows.Forms.TextBox()
         Me.Label23 = New System.Windows.Forms.Label()
-        Me.txt_cpf_acomp = New System.Windows.Forms.TextBox()
         Me.GroupBox8 = New System.Windows.Forms.GroupBox()
+        Me.txt_celular_cli = New System.Windows.Forms.MaskedTextBox()
+        Me.txt_cpf_cli = New System.Windows.Forms.MaskedTextBox()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.txt_nome_cli = New System.Windows.Forms.TextBox()
         Me.Label25 = New System.Windows.Forms.Label()
-        Me.txt_celular_cli = New System.Windows.Forms.TextBox()
         Me.Label26 = New System.Windows.Forms.Label()
-        Me.txt_cpf_cli = New System.Windows.Forms.TextBox()
         Me.GroupBox9 = New System.Windows.Forms.GroupBox()
         Me.txt_hora_saida = New System.Windows.Forms.DateTimePicker()
         Me.txt_data_saida = New System.Windows.Forms.DateTimePicker()
@@ -131,33 +132,40 @@ Partial Class frm_reserva
         '
         'ReservaToolStripMenuItem
         '
-        Me.ReservaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CheckinToolStripMenuItem, Me.CheckoutToolStripMenuItem1})
+        Me.ReservaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CheckinToolStripMenuItem, Me.CheckoutToolStripMenuItem1, Me.RegistroToolStripMenuItem})
         Me.ReservaToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ReservaToolStripMenuItem.Image = CType(resources.GetObject("ReservaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ReservaToolStripMenuItem.Name = "ReservaToolStripMenuItem"
-        Me.ReservaToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
+        Me.ReservaToolStripMenuItem.Size = New System.Drawing.Size(222, 42)
         Me.ReservaToolStripMenuItem.Text = "Cliente"
         '
         'CheckinToolStripMenuItem
         '
         Me.CheckinToolStripMenuItem.Image = CType(resources.GetObject("CheckinToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CheckinToolStripMenuItem.Name = "CheckinToolStripMenuItem"
-        Me.CheckinToolStripMenuItem.Size = New System.Drawing.Size(145, 26)
+        Me.CheckinToolStripMenuItem.Size = New System.Drawing.Size(199, 42)
         Me.CheckinToolStripMenuItem.Text = "Check-in"
         '
         'CheckoutToolStripMenuItem1
         '
         Me.CheckoutToolStripMenuItem1.Image = CType(resources.GetObject("CheckoutToolStripMenuItem1.Image"), System.Drawing.Image)
         Me.CheckoutToolStripMenuItem1.Name = "CheckoutToolStripMenuItem1"
-        Me.CheckoutToolStripMenuItem1.Size = New System.Drawing.Size(145, 26)
+        Me.CheckoutToolStripMenuItem1.Size = New System.Drawing.Size(199, 42)
         Me.CheckoutToolStripMenuItem1.Text = "Checkout"
+        '
+        'RegistroToolStripMenuItem
+        '
+        Me.RegistroToolStripMenuItem.Image = CType(resources.GetObject("RegistroToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.RegistroToolStripMenuItem.Name = "RegistroToolStripMenuItem"
+        Me.RegistroToolStripMenuItem.Size = New System.Drawing.Size(199, 42)
+        Me.RegistroToolStripMenuItem.Text = "Registro"
         '
         'PacoteDeServiçosToolStripMenuItem
         '
         Me.PacoteDeServiçosToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PacoteDeServiçosToolStripMenuItem.Image = CType(resources.GetObject("PacoteDeServiçosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.PacoteDeServiçosToolStripMenuItem.Name = "PacoteDeServiçosToolStripMenuItem"
-        Me.PacoteDeServiçosToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
+        Me.PacoteDeServiçosToolStripMenuItem.Size = New System.Drawing.Size(222, 42)
         Me.PacoteDeServiçosToolStripMenuItem.Text = "Pacote de serviços"
         '
         'QuartosToolStripMenuItem
@@ -165,7 +173,7 @@ Partial Class frm_reserva
         Me.QuartosToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.QuartosToolStripMenuItem.Image = CType(resources.GetObject("QuartosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.QuartosToolStripMenuItem.Name = "QuartosToolStripMenuItem"
-        Me.QuartosToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
+        Me.QuartosToolStripMenuItem.Size = New System.Drawing.Size(222, 42)
         Me.QuartosToolStripMenuItem.Text = "Quartos"
         '
         'FuncionáriosToolStripMenuItem
@@ -173,7 +181,7 @@ Partial Class frm_reserva
         Me.FuncionáriosToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.FuncionáriosToolStripMenuItem.Image = CType(resources.GetObject("FuncionáriosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.FuncionáriosToolStripMenuItem.Name = "FuncionáriosToolStripMenuItem"
-        Me.FuncionáriosToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
+        Me.FuncionáriosToolStripMenuItem.Size = New System.Drawing.Size(222, 42)
         Me.FuncionáriosToolStripMenuItem.Text = "Funcionários"
         '
         'EncerrarSessToolStripMenuItem
@@ -181,7 +189,7 @@ Partial Class frm_reserva
         Me.EncerrarSessToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.EncerrarSessToolStripMenuItem.Image = CType(resources.GetObject("EncerrarSessToolStripMenuItem.Image"), System.Drawing.Image)
         Me.EncerrarSessToolStripMenuItem.Name = "EncerrarSessToolStripMenuItem"
-        Me.EncerrarSessToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
+        Me.EncerrarSessToolStripMenuItem.Size = New System.Drawing.Size(222, 42)
         Me.EncerrarSessToolStripMenuItem.Text = "Encerrar sessão"
         '
         'TabControl1
@@ -212,12 +220,12 @@ Partial Class frm_reserva
         '
         Me.GroupBox6.AutoSize = True
         Me.GroupBox6.BackColor = System.Drawing.Color.White
+        Me.GroupBox6.Controls.Add(Me.txt_cpf_acomp)
         Me.GroupBox6.Controls.Add(Me.GroupBox7)
         Me.GroupBox6.Controls.Add(Me.btn_inserir)
         Me.GroupBox6.Controls.Add(Me.Label22)
         Me.GroupBox6.Controls.Add(Me.txt_nome_acomp)
         Me.GroupBox6.Controls.Add(Me.Label23)
-        Me.GroupBox6.Controls.Add(Me.txt_cpf_acomp)
         Me.GroupBox6.Font = New System.Drawing.Font("Cambria", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox6.Location = New System.Drawing.Point(373, 17)
         Me.GroupBox6.Margin = New System.Windows.Forms.Padding(2)
@@ -227,6 +235,15 @@ Partial Class frm_reserva
         Me.GroupBox6.TabIndex = 57
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Acompanhante"
+        '
+        'txt_cpf_acomp
+        '
+        Me.txt_cpf_acomp.Font = New System.Drawing.Font("Cambria", 13.0!)
+        Me.txt_cpf_acomp.Location = New System.Drawing.Point(110, 21)
+        Me.txt_cpf_acomp.Mask = "000,000,000-00"
+        Me.txt_cpf_acomp.Name = "txt_cpf_acomp"
+        Me.txt_cpf_acomp.Size = New System.Drawing.Size(210, 28)
+        Me.txt_cpf_acomp.TabIndex = 27
         '
         'GroupBox7
         '
@@ -332,24 +349,16 @@ Partial Class frm_reserva
         Me.Label23.TabIndex = 21
         Me.Label23.Text = "CPF:"
         '
-        'txt_cpf_acomp
-        '
-        Me.txt_cpf_acomp.Font = New System.Drawing.Font("Cambria", 13.0!)
-        Me.txt_cpf_acomp.Location = New System.Drawing.Point(110, 21)
-        Me.txt_cpf_acomp.Name = "txt_cpf_acomp"
-        Me.txt_cpf_acomp.Size = New System.Drawing.Size(210, 28)
-        Me.txt_cpf_acomp.TabIndex = 3
-        '
         'GroupBox8
         '
         Me.GroupBox8.AutoSize = True
         Me.GroupBox8.BackColor = System.Drawing.Color.White
+        Me.GroupBox8.Controls.Add(Me.txt_celular_cli)
+        Me.GroupBox8.Controls.Add(Me.txt_cpf_cli)
         Me.GroupBox8.Controls.Add(Me.Label24)
         Me.GroupBox8.Controls.Add(Me.txt_nome_cli)
         Me.GroupBox8.Controls.Add(Me.Label25)
-        Me.GroupBox8.Controls.Add(Me.txt_celular_cli)
         Me.GroupBox8.Controls.Add(Me.Label26)
-        Me.GroupBox8.Controls.Add(Me.txt_cpf_cli)
         Me.GroupBox8.Font = New System.Drawing.Font("Cambria", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox8.Location = New System.Drawing.Point(14, 17)
         Me.GroupBox8.Margin = New System.Windows.Forms.Padding(2)
@@ -359,6 +368,24 @@ Partial Class frm_reserva
         Me.GroupBox8.TabIndex = 56
         Me.GroupBox8.TabStop = False
         Me.GroupBox8.Text = "Cliente"
+        '
+        'txt_celular_cli
+        '
+        Me.txt_celular_cli.Font = New System.Drawing.Font("Cambria", 13.0!)
+        Me.txt_celular_cli.Location = New System.Drawing.Point(34, 168)
+        Me.txt_celular_cli.Mask = "(00) 99999-9999"
+        Me.txt_celular_cli.Name = "txt_celular_cli"
+        Me.txt_celular_cli.Size = New System.Drawing.Size(285, 28)
+        Me.txt_celular_cli.TabIndex = 27
+        '
+        'txt_cpf_cli
+        '
+        Me.txt_cpf_cli.Font = New System.Drawing.Font("Cambria", 13.0!)
+        Me.txt_cpf_cli.Location = New System.Drawing.Point(34, 47)
+        Me.txt_cpf_cli.Mask = "000,000,000-00"
+        Me.txt_cpf_cli.Name = "txt_cpf_cli"
+        Me.txt_cpf_cli.Size = New System.Drawing.Size(285, 28)
+        Me.txt_cpf_cli.TabIndex = 26
         '
         'Label24
         '
@@ -388,14 +415,6 @@ Partial Class frm_reserva
         Me.Label25.TabIndex = 23
         Me.Label25.Text = "Celular:"
         '
-        'txt_celular_cli
-        '
-        Me.txt_celular_cli.Font = New System.Drawing.Font("Cambria", 13.0!)
-        Me.txt_celular_cli.Location = New System.Drawing.Point(34, 168)
-        Me.txt_celular_cli.Name = "txt_celular_cli"
-        Me.txt_celular_cli.Size = New System.Drawing.Size(285, 28)
-        Me.txt_celular_cli.TabIndex = 2
-        '
         'Label26
         '
         Me.Label26.AutoSize = True
@@ -405,14 +424,6 @@ Partial Class frm_reserva
         Me.Label26.Size = New System.Drawing.Size(47, 23)
         Me.Label26.TabIndex = 21
         Me.Label26.Text = "CPF:"
-        '
-        'txt_cpf_cli
-        '
-        Me.txt_cpf_cli.Font = New System.Drawing.Font("Cambria", 13.0!)
-        Me.txt_cpf_cli.Location = New System.Drawing.Point(34, 47)
-        Me.txt_cpf_cli.Name = "txt_cpf_cli"
-        Me.txt_cpf_cli.Size = New System.Drawing.Size(285, 28)
-        Me.txt_cpf_cli.TabIndex = 0
         '
         'GroupBox9
         '
@@ -919,14 +930,11 @@ Partial Class frm_reserva
     Friend WithEvents Label22 As Label
     Friend WithEvents txt_nome_acomp As TextBox
     Friend WithEvents Label23 As Label
-    Friend WithEvents txt_cpf_acomp As TextBox
     Friend WithEvents GroupBox8 As GroupBox
     Friend WithEvents Label24 As Label
     Friend WithEvents txt_nome_cli As TextBox
     Friend WithEvents Label25 As Label
-    Friend WithEvents txt_celular_cli As TextBox
     Friend WithEvents Label26 As Label
-    Friend WithEvents txt_cpf_cli As TextBox
     Friend WithEvents GroupBox9 As GroupBox
     Friend WithEvents txt_num_reserva As TextBox
     Friend WithEvents txt_preco_pac_serv As TextBox
@@ -970,4 +978,8 @@ Partial Class frm_reserva
     Friend WithEvents txt_hora_entrada As DateTimePicker
     Friend WithEvents txt_data_entrada As DateTimePicker
     Friend WithEvents btn_refresh As Button
+    Friend WithEvents txt_cpf_acomp As MaskedTextBox
+    Friend WithEvents txt_cpf_cli As MaskedTextBox
+    Friend WithEvents RegistroToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents txt_celular_cli As MaskedTextBox
 End Class

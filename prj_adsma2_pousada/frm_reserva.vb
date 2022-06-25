@@ -385,7 +385,7 @@
 
     End Sub
 
-    Private Sub txt_cpf_cli_DoubleClick(sender As Object, e As EventArgs) Handles txt_cpf_cli.DoubleClick
+    Private Sub txt_cpf_cli_DoubleClick(sender As Object, e As EventArgs) 
         limpar_reserva()
         carregar_num_reserva()
     End Sub
@@ -421,7 +421,7 @@
         End Try
     End Sub
 
-    Private Sub txt_cpf_cli_LostFocus(sender As Object, e As EventArgs) Handles txt_cpf_cli.LostFocus
+    Private Sub txt_cpf_cli_LostFocus(sender As Object, e As EventArgs) 
         carregar_cliente()
     End Sub
 

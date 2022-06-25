@@ -109,6 +109,12 @@
     <Compile Include="frm_quartos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frm_registro.Designer.vb">
+      <DependentUpon>frm_registro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_registro.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frm_reserva.Designer.vb">
       <DependentUpon>frm_reserva.vb</DependentUpon>
     </Compile>
@@ -151,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_quartos.resx">
       <DependentUpon>frm_quartos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_registro.resx">
+      <DependentUpon>frm_registro.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_reserva.resx">
       <DependentUpon>frm_reserva.vb</DependentUpon>
