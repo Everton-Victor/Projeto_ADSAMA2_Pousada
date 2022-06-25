@@ -371,28 +371,28 @@ Partial Class frm_checkin
         Me.ReservaToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ReservaToolStripMenuItem.Image = CType(resources.GetObject("ReservaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ReservaToolStripMenuItem.Name = "ReservaToolStripMenuItem"
-        Me.ReservaToolStripMenuItem.Size = New System.Drawing.Size(222, 42)
+        Me.ReservaToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
         Me.ReservaToolStripMenuItem.Text = "Cliente"
         '
         'ReservaToolStripMenuItem1
         '
         Me.ReservaToolStripMenuItem1.Image = CType(resources.GetObject("ReservaToolStripMenuItem1.Image"), System.Drawing.Image)
         Me.ReservaToolStripMenuItem1.Name = "ReservaToolStripMenuItem1"
-        Me.ReservaToolStripMenuItem1.Size = New System.Drawing.Size(199, 42)
+        Me.ReservaToolStripMenuItem1.Size = New System.Drawing.Size(145, 26)
         Me.ReservaToolStripMenuItem1.Text = "Reserva"
         '
         'CheckoutToolStripMenuItem
         '
         Me.CheckoutToolStripMenuItem.Image = CType(resources.GetObject("CheckoutToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CheckoutToolStripMenuItem.Name = "CheckoutToolStripMenuItem"
-        Me.CheckoutToolStripMenuItem.Size = New System.Drawing.Size(199, 42)
+        Me.CheckoutToolStripMenuItem.Size = New System.Drawing.Size(145, 26)
         Me.CheckoutToolStripMenuItem.Text = "Checkout"
         '
         'RegistroToolStripMenuItem
         '
         Me.RegistroToolStripMenuItem.Image = CType(resources.GetObject("RegistroToolStripMenuItem.Image"), System.Drawing.Image)
         Me.RegistroToolStripMenuItem.Name = "RegistroToolStripMenuItem"
-        Me.RegistroToolStripMenuItem.Size = New System.Drawing.Size(199, 42)
+        Me.RegistroToolStripMenuItem.Size = New System.Drawing.Size(145, 26)
         Me.RegistroToolStripMenuItem.Text = "Registro"
         '
         'PacoteDeServiçosToolStripMenuItem
@@ -400,7 +400,7 @@ Partial Class frm_checkin
         Me.PacoteDeServiçosToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PacoteDeServiçosToolStripMenuItem.Image = CType(resources.GetObject("PacoteDeServiçosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.PacoteDeServiçosToolStripMenuItem.Name = "PacoteDeServiçosToolStripMenuItem"
-        Me.PacoteDeServiçosToolStripMenuItem.Size = New System.Drawing.Size(222, 42)
+        Me.PacoteDeServiçosToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
         Me.PacoteDeServiçosToolStripMenuItem.Text = "Pacote de serviços"
         '
         'QuartosToolStripMenuItem
@@ -408,7 +408,7 @@ Partial Class frm_checkin
         Me.QuartosToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.QuartosToolStripMenuItem.Image = CType(resources.GetObject("QuartosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.QuartosToolStripMenuItem.Name = "QuartosToolStripMenuItem"
-        Me.QuartosToolStripMenuItem.Size = New System.Drawing.Size(222, 42)
+        Me.QuartosToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
         Me.QuartosToolStripMenuItem.Text = "Quartos"
         '
         'FuncionáriosToolStripMenuItem
@@ -416,7 +416,7 @@ Partial Class frm_checkin
         Me.FuncionáriosToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.FuncionáriosToolStripMenuItem.Image = CType(resources.GetObject("FuncionáriosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.FuncionáriosToolStripMenuItem.Name = "FuncionáriosToolStripMenuItem"
-        Me.FuncionáriosToolStripMenuItem.Size = New System.Drawing.Size(222, 42)
+        Me.FuncionáriosToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
         Me.FuncionáriosToolStripMenuItem.Text = "Funcionários"
         '
         'EncerrarSessToolStripMenuItem
@@ -424,7 +424,7 @@ Partial Class frm_checkin
         Me.EncerrarSessToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.EncerrarSessToolStripMenuItem.Image = CType(resources.GetObject("EncerrarSessToolStripMenuItem.Image"), System.Drawing.Image)
         Me.EncerrarSessToolStripMenuItem.Name = "EncerrarSessToolStripMenuItem"
-        Me.EncerrarSessToolStripMenuItem.Size = New System.Drawing.Size(222, 42)
+        Me.EncerrarSessToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
         Me.EncerrarSessToolStripMenuItem.Text = "Encerrar sessão"
         '
         'frm_checkin

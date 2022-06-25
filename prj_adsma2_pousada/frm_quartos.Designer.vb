@@ -35,6 +35,8 @@ Partial Class frm_quartos
         Me.FuncionáriosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EncerrarSessToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.cmb_categoria = New System.Windows.Forms.ComboBox()
+        Me.txt_pesquisa = New System.Windows.Forms.TextBox()
         Me.dgv_quartos = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -152,14 +154,33 @@ Partial Class frm_quartos
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.cmb_categoria)
+        Me.TabPage2.Controls.Add(Me.txt_pesquisa)
         Me.TabPage2.Controls.Add(Me.dgv_quartos)
         Me.TabPage2.Location = New System.Drawing.Point(4, 34)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(730, 369)
+        Me.TabPage2.Size = New System.Drawing.Size(730, 399)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Lista"
         Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'cmb_categoria
+        '
+        Me.cmb_categoria.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmb_categoria.FormattingEnabled = True
+        Me.cmb_categoria.Location = New System.Drawing.Point(214, 5)
+        Me.cmb_categoria.Name = "cmb_categoria"
+        Me.cmb_categoria.Size = New System.Drawing.Size(249, 32)
+        Me.cmb_categoria.TabIndex = 84
+        '
+        'txt_pesquisa
+        '
+        Me.txt_pesquisa.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_pesquisa.Location = New System.Drawing.Point(6, 6)
+        Me.txt_pesquisa.Name = "txt_pesquisa"
+        Me.txt_pesquisa.Size = New System.Drawing.Size(202, 31)
+        Me.txt_pesquisa.TabIndex = 83
         '
         'dgv_quartos
         '
@@ -169,11 +190,11 @@ Partial Class frm_quartos
         Me.dgv_quartos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgv_quartos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_quartos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column4, Me.Column3, Me.Column5, Me.Column7, Me.Column8})
-        Me.dgv_quartos.Location = New System.Drawing.Point(6, 0)
+        Me.dgv_quartos.Location = New System.Drawing.Point(6, 43)
         Me.dgv_quartos.Name = "dgv_quartos"
         Me.dgv_quartos.ReadOnly = True
         Me.dgv_quartos.RowHeadersWidth = 51
-        Me.dgv_quartos.Size = New System.Drawing.Size(744, 367)
+        Me.dgv_quartos.Size = New System.Drawing.Size(724, 349)
         Me.dgv_quartos.TabIndex = 0
         '
         'Column1
@@ -241,7 +262,7 @@ Partial Class frm_quartos
         Me.TabPage1.Location = New System.Drawing.Point(4, 34)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(730, 369)
+        Me.TabPage1.Size = New System.Drawing.Size(730, 399)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Cadastro"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -349,10 +370,10 @@ Partial Class frm_quartos
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Font = New System.Drawing.Font("Segoe UI", 14.25!)
-        Me.TabControl1.Location = New System.Drawing.Point(12, 64)
+        Me.TabControl1.Location = New System.Drawing.Point(12, 45)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(738, 407)
+        Me.TabControl1.Size = New System.Drawing.Size(738, 437)
         Me.TabControl1.TabIndex = 78
         '
         'frm_quartos
@@ -360,7 +381,7 @@ Partial Class frm_quartos
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(187, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(776, 483)
+        Me.ClientSize = New System.Drawing.Size(776, 512)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.TabControl1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -370,6 +391,7 @@ Partial Class frm_quartos
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
+        Me.TabPage2.PerformLayout()
         CType(Me.dgv_quartos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
@@ -409,4 +431,6 @@ Partial Class frm_quartos
     Friend WithEvents txt_preco As TextBox
     Friend WithEvents txt_desc As TextBox
     Friend WithEvents RegistroToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents cmb_categoria As ComboBox
+    Friend WithEvents txt_pesquisa As TextBox
 End Class

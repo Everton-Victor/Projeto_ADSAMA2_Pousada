@@ -55,6 +55,8 @@ Partial Class frm_pacote_servico
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.cmb_categoria = New System.Windows.Forms.ComboBox()
+        Me.txt_pesquisa = New System.Windows.Forms.TextBox()
         Me.dgv_pac_serv = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -76,7 +78,7 @@ Partial Class frm_pacote_servico
         '
         CheckoutToolStripMenuItem.Image = CType(resources.GetObject("CheckoutToolStripMenuItem.Image"), System.Drawing.Image)
         CheckoutToolStripMenuItem.Name = "CheckoutToolStripMenuItem"
-        CheckoutToolStripMenuItem.Size = New System.Drawing.Size(199, 42)
+        CheckoutToolStripMenuItem.Size = New System.Drawing.Size(145, 26)
         CheckoutToolStripMenuItem.Text = "Reserva"
         AddHandler CheckoutToolStripMenuItem.Click, AddressOf Me.CheckoutToolStripMenuItem_Click_1
         '
@@ -111,28 +113,28 @@ Partial Class frm_pacote_servico
         Me.ReservaToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ReservaToolStripMenuItem.Image = CType(resources.GetObject("ReservaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ReservaToolStripMenuItem.Name = "ReservaToolStripMenuItem"
-        Me.ReservaToolStripMenuItem.Size = New System.Drawing.Size(204, 42)
+        Me.ReservaToolStripMenuItem.Size = New System.Drawing.Size(185, 26)
         Me.ReservaToolStripMenuItem.Text = "Cliente"
         '
         'CheckinToolStripMenuItem
         '
         Me.CheckinToolStripMenuItem.Image = CType(resources.GetObject("CheckinToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CheckinToolStripMenuItem.Name = "CheckinToolStripMenuItem"
-        Me.CheckinToolStripMenuItem.Size = New System.Drawing.Size(199, 42)
+        Me.CheckinToolStripMenuItem.Size = New System.Drawing.Size(145, 26)
         Me.CheckinToolStripMenuItem.Text = "Check-in"
         '
         'CheckoutToolStripMenuItem1
         '
         Me.CheckoutToolStripMenuItem1.Image = CType(resources.GetObject("CheckoutToolStripMenuItem1.Image"), System.Drawing.Image)
         Me.CheckoutToolStripMenuItem1.Name = "CheckoutToolStripMenuItem1"
-        Me.CheckoutToolStripMenuItem1.Size = New System.Drawing.Size(199, 42)
+        Me.CheckoutToolStripMenuItem1.Size = New System.Drawing.Size(145, 26)
         Me.CheckoutToolStripMenuItem1.Text = "Checkout"
         '
         'RegistroToolStripMenuItem
         '
         Me.RegistroToolStripMenuItem.Image = CType(resources.GetObject("RegistroToolStripMenuItem.Image"), System.Drawing.Image)
         Me.RegistroToolStripMenuItem.Name = "RegistroToolStripMenuItem"
-        Me.RegistroToolStripMenuItem.Size = New System.Drawing.Size(199, 42)
+        Me.RegistroToolStripMenuItem.Size = New System.Drawing.Size(145, 26)
         Me.RegistroToolStripMenuItem.Text = "Registro"
         '
         'QuartosToolStripMenuItem
@@ -140,7 +142,7 @@ Partial Class frm_pacote_servico
         Me.QuartosToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.QuartosToolStripMenuItem.Image = CType(resources.GetObject("QuartosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.QuartosToolStripMenuItem.Name = "QuartosToolStripMenuItem"
-        Me.QuartosToolStripMenuItem.Size = New System.Drawing.Size(204, 42)
+        Me.QuartosToolStripMenuItem.Size = New System.Drawing.Size(185, 26)
         Me.QuartosToolStripMenuItem.Text = "Quartos"
         '
         'FuncionáriosToolStripMenuItem
@@ -148,7 +150,7 @@ Partial Class frm_pacote_servico
         Me.FuncionáriosToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.FuncionáriosToolStripMenuItem.Image = CType(resources.GetObject("FuncionáriosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.FuncionáriosToolStripMenuItem.Name = "FuncionáriosToolStripMenuItem"
-        Me.FuncionáriosToolStripMenuItem.Size = New System.Drawing.Size(204, 42)
+        Me.FuncionáriosToolStripMenuItem.Size = New System.Drawing.Size(185, 26)
         Me.FuncionáriosToolStripMenuItem.Text = "Funcionários"
         '
         'EncerrarSessToolStripMenuItem
@@ -156,7 +158,7 @@ Partial Class frm_pacote_servico
         Me.EncerrarSessToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.EncerrarSessToolStripMenuItem.Image = CType(resources.GetObject("EncerrarSessToolStripMenuItem.Image"), System.Drawing.Image)
         Me.EncerrarSessToolStripMenuItem.Name = "EncerrarSessToolStripMenuItem"
-        Me.EncerrarSessToolStripMenuItem.Size = New System.Drawing.Size(204, 42)
+        Me.EncerrarSessToolStripMenuItem.Size = New System.Drawing.Size(185, 26)
         Me.EncerrarSessToolStripMenuItem.Text = "Encerrar sessão"
         '
         'TabControl1
@@ -311,6 +313,8 @@ Partial Class frm_pacote_servico
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.cmb_categoria)
+        Me.TabPage2.Controls.Add(Me.txt_pesquisa)
         Me.TabPage2.Controls.Add(Me.dgv_pac_serv)
         Me.TabPage2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TabPage2.Location = New System.Drawing.Point(4, 34)
@@ -321,6 +325,23 @@ Partial Class frm_pacote_servico
         Me.TabPage2.Text = "Lista"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
+        'cmb_categoria
+        '
+        Me.cmb_categoria.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmb_categoria.FormattingEnabled = True
+        Me.cmb_categoria.Location = New System.Drawing.Point(214, 5)
+        Me.cmb_categoria.Name = "cmb_categoria"
+        Me.cmb_categoria.Size = New System.Drawing.Size(249, 32)
+        Me.cmb_categoria.TabIndex = 84
+        '
+        'txt_pesquisa
+        '
+        Me.txt_pesquisa.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_pesquisa.Location = New System.Drawing.Point(6, 6)
+        Me.txt_pesquisa.Name = "txt_pesquisa"
+        Me.txt_pesquisa.Size = New System.Drawing.Size(202, 31)
+        Me.txt_pesquisa.TabIndex = 83
+        '
         'dgv_pac_serv
         '
         Me.dgv_pac_serv.AllowUserToAddRows = False
@@ -329,10 +350,10 @@ Partial Class frm_pacote_servico
         Me.dgv_pac_serv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgv_pac_serv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_pac_serv.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewImageColumn1, Me.DataGridViewImageColumn2})
-        Me.dgv_pac_serv.Location = New System.Drawing.Point(6, 0)
+        Me.dgv_pac_serv.Location = New System.Drawing.Point(6, 41)
         Me.dgv_pac_serv.Name = "dgv_pac_serv"
         Me.dgv_pac_serv.ReadOnly = True
-        Me.dgv_pac_serv.Size = New System.Drawing.Size(806, 391)
+        Me.dgv_pac_serv.Size = New System.Drawing.Size(806, 350)
         Me.dgv_pac_serv.TabIndex = 0
         '
         'DataGridViewTextBoxColumn1
@@ -416,6 +437,7 @@ Partial Class frm_pacote_servico
         Me.TabPage1.PerformLayout()
         CType(Me.img_foto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
+        Me.TabPage2.PerformLayout()
         CType(Me.dgv_pac_serv, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -455,4 +477,6 @@ Partial Class frm_pacote_servico
     Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
     Friend WithEvents DataGridViewImageColumn2 As DataGridViewImageColumn
     Friend WithEvents RegistroToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents cmb_categoria As ComboBox
+    Friend WithEvents txt_pesquisa As TextBox
 End Class

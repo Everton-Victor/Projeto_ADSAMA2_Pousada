@@ -17,6 +17,7 @@
         carregar_tipo_conta()
         carregar_tipo_pacote()
         carregar_tipo_quarto()
+        carregar_catergoria_pesquisa_func()
         cmb_cargo.Text = ""
         cmb_status_conta.Text = ""
         cmb_tipo_conta.Text = ""
@@ -227,6 +228,7 @@
         carregar_tipo_conta()
         carregar_tipo_pacote()
         carregar_tipo_quarto()
+        carregar_catergoria_pesquisa_func()
         cmb_cargo.Text = ""
         cmb_status_conta.Text = ""
         cmb_tipo_conta.Text = ""
@@ -235,6 +237,42 @@
     Private Sub CheckoutToolStripMenuItem_Click_1(sender As Object, e As EventArgs)
         Me.Hide()
         frm_reserva.Visible = True
+    End Sub
+
+    Private Sub RegistroToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RegistroToolStripMenuItem.Click
+        Me.Hide()
+        frm_registro.Visible = True
+    End Sub
+
+    Private Sub txt_pesquisa_TextChanged(sender As Object, e As EventArgs) Handles txt_pesquisa.TextChanged
+        Try
+            If cmb_categoria.Text <> "" Then
+                If cmb_categoria.Text = "E-mail" Then
+                    categ = "email_func"
+                ElseIf cmb_categoria.Text = "Nome" Then
+                    categ = "nome_func"
+                ElseIf cmb_categoria.Text = "Cargo" Then
+                    categ = "cargo_func"
+                ElseIf cmb_categoria.Text = "Conta" Then
+                    categ = "tipo_conta_func"
+                ElseIf cmb_categoria.Text = "Status" Then
+                    categ = "status_conta_func"
+                End If
+
+                sql = "select * from tb_funcionario where " & categ & " like '" & txt_pesquisa.Text & "%'" 'Busca pela letra inicial %
+                rs = db.Execute(sql)
+
+                With dgv_fun
+                    .Rows.Clear()
+                    Do While rs.EOF = False
+                        .Rows.Add(rs.Fields(0).Value, rs.Fields(2).Value, rs.Fields(3).Value, rs.Fields(4).Value, rs.Fields(5).Value, rs.Fields(6).Value, rs.Fields(7).Value, Nothing, Nothing)
+                        rs.MoveNext()
+                    Loop
+                End With
+            End If
+        Catch ex As Exception
+            MsgBox("Erro ao carregar dados!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ATENÇÃO")
+        End Try
     End Sub
 End Class
 

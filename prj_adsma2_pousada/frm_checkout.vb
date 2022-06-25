@@ -302,4 +302,8 @@
         End Try
     End Sub
 
+    Private Sub RegistroToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RegistroToolStripMenuItem.Click
+        Me.Hide()
+        frm_registro.Visible = True
+    End Sub
 End Class

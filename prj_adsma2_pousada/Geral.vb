@@ -1,8 +1,8 @@
 ﻿Module Geral
-    Public usuario, senha, status, aux As String
+    Public usuario, senha, status, aux, aux2 As String
     Public diretorio, sql, resp, type_login As String
     Public db As New ADODB.Connection
-    Public rs, rs_aux As New ADODB.Recordset
+    Public rs, rs_aux, rs2 As New ADODB.Recordset
     Public dir_foto, email_func, categ, email_func_g As String
     Public dirbanco = Application.StartupPath & "\banco\adsma2_banco_pousada.mdb"
     Public cont As Integer
@@ -198,7 +198,7 @@
                 .cmb_pacote_serv.Items.Add("")
                 Do While rs.EOF = False
                     If rs.Fields(0).Value <> 0 Then
-                        .cmb_pacote_serv.Items.Add(rs.Fields(0).Value)
+                        .cmb_pacote_serv.Items.Add(rs.Fields(0).Value & " - " & rs.Fields(1).Value)
                     End If
                     rs.MoveNext()
                 Loop
@@ -239,8 +239,6 @@
 
     Sub carregar_acompanhante()
         Try
-
-
             With frm_reserva
 
                 If .txt_cpf_cli.Text <> "" And .txt_num_reserva.Text <> "" Then
@@ -271,39 +269,86 @@
 
     Sub carregar_num_reserva()
         With frm_reserva
-            cont = 1
-            sql = "select * from tb_reserva"
+            sql = "select * from tb_reserva order by num_reserva asc"
             rs = db.Execute(sql)
 
             Do While rs.EOF = False
-                cont += 1
+                cont = rs.Fields(0).Value
                 rs.MoveNext()
             Loop
 
-            .txt_num_reserva.Text = cont
+            .txt_num_reserva.Text = cont + 1
         End With
     End Sub
 
     Sub carregar_reserva()
         Try
+
             sql = "select * from tb_reserva order by num_reserva desc"
             rs = db.Execute(sql)
+
             With frm_reserva.dgv_reserva
                 .Rows.Clear()
                 Do While rs.EOF = False
-                    If rs.Fields(8).Value <> 0 Then
-                        .Rows.Add(rs.Fields(0).Value, rs.Fields(9).Value, rs.Fields(8).Value, rs.Fields(11).Value, rs.Fields(1).Value, rs.Fields(3).Value, rs.Fields(10).Value, Nothing, Nothing)
-                    Else
-                        .Rows.Add(rs.Fields(0).Value, rs.Fields(9).Value, Nothing, rs.Fields(11).Value, rs.Fields(1).Value, rs.Fields(3).Value, rs.Fields(10).Value, Nothing, Nothing)
+                    aux = "select * from tb_checkin where num_reserva=" & rs.Fields(0).Value & ""
+                    rs_aux = db.Execute(aux)
 
+                    If rs_aux.EOF = True Then
+                        If rs.Fields(8).Value <> 0 Then
+                            .Rows.Add(rs.Fields(0).Value, rs.Fields(9).Value, rs.Fields(8).Value, rs.Fields(11).Value, rs.Fields(1).Value, rs.Fields(3).Value, rs.Fields(10).Value, Nothing, Nothing)
+                        Else
+                            .Rows.Add(rs.Fields(0).Value, rs.Fields(9).Value, Nothing, rs.Fields(11).Value, rs.Fields(1).Value, rs.Fields(3).Value, rs.Fields(10).Value, Nothing, Nothing)
+
+                        End If
                     End If
+
                     rs.MoveNext()
                 Loop
             End With
+
+
+
+
         Catch ex As Exception
             MsgBox("Erro de Processamento", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ATENÇÃO")
         End Try
     End Sub
+
+    Sub carregar_registro()
+        Try
+            sql = "select * from tb_reserva order by num_reserva desc"
+            rs = db.Execute(sql)
+
+            With frm_registro.dgv_registro
+                .Rows.Clear()
+                Do While rs.EOF = False
+                    aux = "select * from tb_checkin where num_reserva=" & rs.Fields(0).Value & ""
+                    rs_aux = db.Execute(aux)
+
+                    aux2 = "select * from tb_checkout where num_reserva=" & rs.Fields(0).Value & ""
+                    rs2 = db.Execute(aux2)
+
+                    If rs_aux.EOF = False Then
+                        If rs2.EOF = False Then
+                            .Rows.Add(rs.Fields(11).Value, rs.Fields(0).Value, rs_aux.Fields(1).Value, rs_aux.Fields(2).Value, rs2.Fields(1).Value, rs2.Fields(2).Value)
+                        ElseIf rs2.EOF = True Then
+                            .Rows.Add(rs.Fields(11).Value, rs.Fields(0).Value, rs_aux.Fields(1).Value, rs_aux.Fields(2).Value, Nothing, Nothing)
+                        End If
+                    End If
+
+                    rs.MoveNext()
+                Loop
+            End With
+
+
+
+
+        Catch ex As Exception
+            MsgBox("Erro de Processamento", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ATENÇÃO")
+        End Try
+    End Sub
+
+
 
     Sub carregar_tipo_conta()
         Try
@@ -424,6 +469,66 @@
         End Try
     End Sub
 
+    Sub carregar_catergoria_pesquisa_pac_serv()
+        Try
+            With frm_pacote_servico.cmb_categoria.Items
+                .Clear()
+                .Add("Código")
+                .Add("Nome")
+                .Add("Descrição")
+                .Add("Tipo")
+                .Add("Preço")
+            End With
+            frm_pacote_servico.cmb_categoria.SelectedIndex = 0
+        Catch ex As Exception
+            MsgBox("Erro ao processar", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ATENÇÃO")
+        End Try
+    End Sub
+
+    Sub carregar_catergoria_pesquisa_func()
+        Try
+            With frm_funcionarios.cmb_categoria.Items
+                .Clear()
+                .Add("E-mail")
+                .Add("Nome")
+                .Add("Cargo")
+                .Add("Conta")
+                .Add("Status")
+            End With
+            frm_funcionarios.cmb_categoria.SelectedIndex = 0
+        Catch ex As Exception
+            MsgBox("Erro ao processar", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ATENÇÃO")
+        End Try
+    End Sub
+
+    Sub carregar_catergoria_pesquisa_registro()
+        Try
+            With frm_registro.cmb_categoria.Items
+                .Clear()
+                .Add("Número da Reserva")
+                .Add("CPF do Cliente")
+            End With
+            frm_registro.cmb_categoria.SelectedIndex = 0
+        Catch ex As Exception
+            MsgBox("Erro ao processar", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ATENÇÃO")
+        End Try
+    End Sub
+
+    Sub carregar_catergoria_pesquisa_quarto()
+        Try
+            With frm_quartos.cmb_categoria.Items
+                .Clear()
+                .Add("Número")
+                .Add("Tipo")
+                .Add("Descrição")
+                .Add("Preço")
+            End With
+            frm_quartos.cmb_categoria.SelectedIndex = 0
+        Catch ex As Exception
+            MsgBox("Erro ao processar", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ATENÇÃO")
+        End Try
+    End Sub
+
     Sub carregar_cliente()
         Try
             With frm_reserva
@@ -470,11 +575,11 @@
                     If DateDiff(DateInterval.Day, dtini, dtfim) = 0 Then
                         num3 = 1
                     Else
-                        num3 = DateDiff(DateInterval.Day, dtini, dtfim)
+                        num3 = Convert.ToDecimal(DateDiff(DateInterval.Day, dtini, dtfim))
                     End If
                     If .txt_preco_pac_serv.Text <> "" And .txt_preco_quarto.Text <> "" Then
-                        num1 = .txt_preco_quarto.Text.Remove(0, 3)
-                        num2 = .txt_preco_pac_serv.Text.Remove(0, 3)
+                        num1 = .txt_preco_quarto.Text.Replace("R$ ", "")
+                        num2 = .txt_preco_pac_serv.Text.Replace("R$ ", "")
                         .txt_total.Text = FormatCurrency((Convert.ToDecimal(num1) + Convert.ToDecimal(num2)) * num3)
                     End If
                 End If

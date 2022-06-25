@@ -70,17 +70,22 @@
                     rs.MoveNext()
                 Loop
 
-                If cmb_num_reserva.Items.Count <> 0 Then
-                    cmb_num_reserva.SelectedIndex = 0
-                End If
-
-                sql = "select * from tb_cliente where cpf_cliente='" & txt_cpf.Text & "'"
-                rs = db.Execute(sql)
-
                 If rs.EOF = False Then
-                    txt_nome.Text = rs.Fields(1).Value
-                    txt_celular.Text = rs.Fields(2).Value
+                    If cmb_num_reserva.Items.Count <> 0 Then
+                        cmb_num_reserva.SelectedIndex = 0
+                    End If
+
+                    sql = "select * from tb_cliente where cpf_cliente='" & txt_cpf.Text & "'"
+                    rs = db.Execute(sql)
+
+                    If rs.EOF = False Then
+                        txt_nome.Text = rs.Fields(1).Value
+                        txt_celular.Text = rs.Fields(2).Value
+                    End If
+                Else
+                    MsgBox("Não existe reservas com esse CPF no Banco de dados!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ALERTA")
                 End If
+
             End If
 
         Catch ex As Exception
@@ -107,28 +112,27 @@
                     End If
 
                     txt_num_quarto.Text = rs.Fields(9).Value
-                        txt_cpf.Text = rs.Fields(11).Value
-                    End If
+                    txt_cpf.Text = rs.Fields(11).Value
 
                     sql = "select * from tb_cliente where cpf_cliente='" & txt_cpf.Text & "'"
-                rs = db.Execute(sql)
+                    rs = db.Execute(sql)
 
-                If rs.EOF = False Then
-                    txt_nome.Text = rs.Fields(1).Value
-                    txt_celular.Text = rs.Fields(2).Value
+                    If rs.EOF = False Then
+                        txt_nome.Text = rs.Fields(1).Value
+                        txt_celular.Text = rs.Fields(2).Value
+                    End If
+
+                    sql = "select * from tb_acompanhante where (cpf_cliente='" & txt_cpf.Text & "' and num_reserva=" & cmb_num_reserva.Text & ")"
+                    rs = db.Execute(sql)
+
+                    Do While rs.EOF = False
+                        cmb_cpf_acomp.Items.Add(rs.Fields(0).Value)
+                        rs.MoveNext()
+                    Loop
+                Else
+                    MsgBox("Não existe essa reserva no Banco de dados!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ALERTA")
                 End If
-
-                sql = "select * from tb_acompanhante where (cpf_cliente='" & txt_cpf.Text & "' and num_reserva=" & cmb_num_reserva.Text & ")"
-                rs = db.Execute(sql)
-
-                Do While rs.EOF = False
-                    cmb_cpf_acomp.Items.Add(rs.Fields(0).Value)
-                    rs.MoveNext()
-                Loop
             End If
-
-
-
         Catch ex As Exception
             MsgBox("Erro de processamento!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ALERTA")
         End Try
@@ -282,6 +286,11 @@
     Private Sub CheckoutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CheckoutToolStripMenuItem.Click
         Me.Hide()
         frm_checkout.Visible = True
+    End Sub
+
+    Private Sub RegistroToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RegistroToolStripMenuItem.Click
+        Me.Hide()
+        frm_registro.Visible = True
     End Sub
 
 End Class

@@ -202,3 +202,4 @@ C:\Users\Notebook\Desktop\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\bin\Debug\p
 C:\Users\Notebook\Desktop\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\bin\Debug\prj_adsma2_pousada.exe
 C:\Users\Notebook\Desktop\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\bin\Debug\prj_adsma2_pousada.pdb
 C:\Users\Notebook\Desktop\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\bin\Debug\prj_adsma2_pousada.xml
+D:\Projeto\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\obj\Debug\prj_adsma2_pousada.frm_registro.resources

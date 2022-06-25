@@ -20,6 +20,8 @@
             carregar_tipo_pacote()
             carregar_tipo_quarto()
             carregar_type_login()
+            carregar_catergoria_pesquisa_pac_serv()
+
 
             If type_login = "admin" Then
                 FuncionáriosToolStripMenuItem.Visible = True
@@ -140,7 +142,7 @@
                 If txt_cod_pac_serv.Text = "" Then
                     Dim num1 As String
                     If txt_preco.Text.Contains("R$ ") Then
-                        num1 = txt_preco.Text.Remove(0, 3)
+                        num1 = txt_preco.Text.Replace("R$ ", "")
                     Else
                         num1 = txt_preco.Text
                     End If
@@ -152,32 +154,57 @@
                         img_foto.ImageLocation = ""
                     End If
 
-                    sql = "insert into tb_pacote_servico (nome_pac_serv, foto_pac_serv, desc_pac_serv, tipo_pac_serv, preco_pac_serv) " &
-                    "values ('" & txt_nome.Text & "', '" & img_foto.ImageLocation & "', '" & txt_descricao.Text & "', '" & cmb_tipo.Text & "', " &
-                    num1 & ")"
+                    sql = "select * from tb_pacote_servico where (nome_pac_serv='" & txt_nome.Text & "' and desc_pac_serv='" & txt_descricao.Text & "' " &
+                        "and tipo_pac_serv='" & cmb_tipo.Text & "')"
+
+                    rs = db.Execute(sql)
+
+                    If rs.EOF = True Then
+                        sql = "insert into tb_pacote_servico (nome_pac_serv, foto_pac_serv, desc_pac_serv, tipo_pac_serv, preco_pac_serv) " &
+                  "values ('" & txt_nome.Text & "', '" & img_foto.ImageLocation & "', '" & txt_descricao.Text & "', '" & cmb_tipo.Text & "', " &
+                  num1 & ")"
                         rs = db.Execute(sql)
                         carregar_pacote_serv()
                         limpar_pac_serv()
                         MsgBox("Pacote de Serviço Cadastrado!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "ATENÇÃO")
                     Else
+                        MsgBox("Já existe um Cacote de Serviço com essas definições!" + vbNewLine &
+                               "Consulte o Pacote de Serviço com Cód: " & rs.Fields(0).Value & "", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "ATENÇÃO")
+                    End If
+
+
+                Else
                         resp = MsgBox("Deseja atualizar o Pacote de Serviço?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "ATENÇÃO")
                     If resp = vbYes Then
-                        Dim num1 As String
-                        If txt_preco.Text.Contains("R$ ") Then
-                            num1 = txt_preco.Text.Remove(0, 3)
+                        sql = "select * from tb_pacote_servico where (nome_pac_serv='" & txt_nome.Text & "' and desc_pac_serv='" & txt_descricao.Text & "' " &
+                        "and tipo_pac_serv='" & cmb_tipo.Text & "') and cod_pac_serv <> " & txt_cod_pac_serv.Text & ""
+
+                        rs = db.Execute(sql)
+
+                        If rs.EOF = True Then
+                            Dim num1 As String
+                            If txt_preco.Text.Contains("R$ ") Then
+                                num1 = txt_preco.Text.Replace("R$ ", "")
+                            Else
+                                num1 = txt_preco.Text
+                            End If
+
+                            num1 = num1.Replace(".", "")
+                            num1 = num1.Replace(",", ".")
+                            sql = "update tb_pacote_servico set nome_pac_serv='" & txt_nome.Text & "', foto_pac_serv='" & img_foto.ImageLocation &
+                            "', desc_pac_serv='" & txt_descricao.Text & "', tipo_pac_serv='" & cmb_tipo.Text & "'" &
+                            ", preco_pac_serv=" & num1 & " where cod_pac_serv=" & txt_cod_pac_serv.Text & ""
+                            rs = db.Execute(sql)
+                            carregar_pacote_serv()
+                            limpar_pac_serv()
+                            MsgBox("Pacote de Serviço Atualizado!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "ATENÇÃO")
                         Else
-                            num1 = txt_preco.Text
+                            MsgBox("Já existe um Cacote de Serviço com essas definições!" + vbNewLine &
+                               "Consulte o Pacote de Serviço com Cód: " & rs.Fields(0).Value & "", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "ATENÇÃO")
+
                         End If
 
-                        num1 = num1.Replace(".", "")
-                        num1 = num1.Replace(",", ".")
-                        sql = "update tb_pacote_servico set nome_pac_serv='" & txt_nome.Text & "', foto_pac_serv='" & img_foto.ImageLocation &
-                        "', desc_pac_serv='" & txt_descricao.Text & "', tipo_pac_serv='" & cmb_tipo.Text & "'" &
-                        ", preco_pac_serv=" & num1 & " where cod_pac_serv=" & txt_cod_pac_serv.Text & ""
-                        rs = db.Execute(sql)
-                        carregar_pacote_serv()
-                        limpar_pac_serv()
-                        MsgBox("Pacote de Serviço Atualizado!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "ATENÇÃO")
+
                     End If
                 End If
             End If
@@ -208,6 +235,7 @@
             carregar_tipo_pacote()
             carregar_tipo_quarto()
             carregar_type_login()
+            carregar_catergoria_pesquisa_pac_serv()
 
             cmb_tipo.Text = ""
             txt_cod_pac_serv.Text = ""
@@ -248,5 +276,41 @@
         If txt_preco.Text = "" Then
             txt_preco.Text = "R$ "
         End If
+    End Sub
+
+    Private Sub RegistroToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RegistroToolStripMenuItem.Click
+        Me.Hide()
+        frm_registro.Visible = True
+    End Sub
+
+    Private Sub txt_pesquisa_TextChanged(sender As Object, e As EventArgs) Handles txt_pesquisa.TextChanged
+        Try
+            If cmb_categoria.Text <> "" Then
+                If cmb_categoria.Text = "Código" Then
+                    categ = "cod_pac_serv"
+                ElseIf cmb_categoria.Text = "Nome" Then
+                    categ = "nome_pac_serv"
+                ElseIf cmb_categoria.Text = "Descrição" Then
+                    categ = "desc_pac_serv"
+                ElseIf cmb_categoria.Text = "Tipo" Then
+                    categ = "tipo_pac_serv"
+                ElseIf cmb_categoria.Text = "Preço" Then
+                    categ = "preco_pac_serv"
+                End If
+
+                sql = "select * from tb_pacote_servico where " & categ & " like '" & txt_pesquisa.Text & "%'" 'Busca pela letra inicial %
+                rs = db.Execute(sql)
+
+                With dgv_pac_serv
+                    .Rows.Clear()
+                    Do While rs.EOF = False
+                        .Rows.Add(rs.Fields(0).Value, rs.Fields(1).Value, rs.Fields(3).Value, rs.Fields(4).Value, rs.Fields(5).Value, Nothing, Nothing)
+                        rs.MoveNext()
+                    Loop
+                End With
+            End If
+        Catch ex As Exception
+            MsgBox("Erro ao carregar dados!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ATENÇÃO")
+        End Try
     End Sub
 End Class

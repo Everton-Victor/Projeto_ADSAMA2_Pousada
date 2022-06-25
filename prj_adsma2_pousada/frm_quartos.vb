@@ -19,6 +19,7 @@
             carregar_tipo_pacote()
             carregar_tipo_quarto()
             carregar_type_login()
+            carregar_catergoria_pesquisa_quarto()
 
 
 
@@ -203,6 +204,7 @@
             carregar_tipo_pacote()
             carregar_tipo_quarto()
             carregar_type_login()
+            carregar_catergoria_pesquisa_quarto()
 
             cmb_tipo.Text = ""
             If type_login = "admin" Then
@@ -236,5 +238,39 @@
         If txt_preco.Text = "" Then
             txt_preco.Text = "R$ "
         End If
+    End Sub
+
+    Private Sub txt_pesquisa_TextChanged(sender As Object, e As EventArgs) Handles txt_pesquisa.TextChanged
+        Try
+            If cmb_categoria.Text <> "" Then
+                If cmb_categoria.Text = "Número" Then
+                    categ = "num_quarto"
+                ElseIf cmb_categoria.Text = "Tipo" Then
+                    categ = "tipo_quarto"
+                ElseIf cmb_categoria.Text = "Descrição" Then
+                    categ = "desc_quarto"
+                ElseIf cmb_categoria.Text = "Preço" Then
+                    categ = "preco_quarto"
+                End If
+
+                sql = "select * from tb_quartos where " & categ & " like '" & txt_pesquisa.Text & "%'" 'Busca pela letra inicial %
+                rs = db.Execute(sql)
+
+                With dgv_quartos
+                    .Rows.Clear()
+                    Do While rs.EOF = False
+                        .Rows.Add(rs.Fields(0).Value, rs.Fields(1).Value, rs.Fields(2).Value, rs.Fields(4).Value, Nothing, Nothing)
+                        rs.MoveNext()
+                    Loop
+                End With
+            End If
+        Catch ex As Exception
+            MsgBox("Erro ao carregar dados!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ATENÇÃO")
+        End Try
+    End Sub
+
+    Private Sub RegistroToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RegistroToolStripMenuItem.Click
+        Me.Hide()
+        frm_registro.Visible = True
     End Sub
 End Class
