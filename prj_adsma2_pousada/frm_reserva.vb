@@ -78,54 +78,53 @@
     End Sub
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_reserva.CellContentClick
-        'Try
-        With dgv_reserva
+        Try
+            With dgv_reserva
                 'Editar
                 If dgv_reserva.Rows.Count <> 0 Then
                     If .CurrentRow.Cells(7).Selected Then
                         limpar_reserva()
                         aux = .CurrentRow.Cells(0).Value
-                    sql = "select * from tb_reserva where num_reserva=" & aux & " order by num_reserva asc"
-                    rs = db.Execute(sql)
+                        sql = "select * from tb_reserva where num_reserva=" & aux & " order by num_reserva asc"
+                        rs = db.Execute(sql)
 
                         If rs.EOF = False Then
                             TabControl1.SelectTab(0)
-                        txt_data_saida.Text = Convert.ToString(rs.Fields(3).Value)
-                        txt_hora_saida.Text = rs.Fields(4).Value
-                        txt_data_entrada.Text = Convert.ToString(rs.Fields(1).Value)
-                        txt_hora_entrada.Text = rs.Fields(2).Value
+                            txt_data_saida.Text = rs.Fields(3).Value
+                            txt_hora_saida.Text = rs.Fields(4).Value
+                            txt_data_entrada.Text = rs.Fields(1).Value
+                            txt_hora_entrada.Text = rs.Fields(2).Value
                             cmb_quarto.Text = rs.Fields(9).Value
-                        txt_num_reserva.Text = rs.Fields(0).Value
+                            txt_num_reserva.Text = rs.Fields(0).Value
 
-                        sql = "select * from tb_reserva where num_reserva=" & txt_num_reserva.Text & " order by num_reserva asc"
-                        rs = db.Execute(sql)
+                            sql = "select * from tb_reserva where num_reserva=" & txt_num_reserva.Text & " order by num_reserva asc"
+                            rs = db.Execute(sql)
                             If rs.EOF = False Then
                                 txt_cpf_cli.Text = rs.Fields(11).Value
                                 cmb_forma_pagamento.Text = rs.Fields(6).Value
                                 cmb_parcela.Text = rs.Fields(7).Value
-                            If rs.Fields(8).Value <> 0 Then
-                                aux = "select * from tb_pacote_servico where cod_pac_serv=" & rs.Fields(8).Value & ""
-                                rs2 = db.Execute(aux)
+                                If rs.Fields(8).Value <> 0 Then
+                                    aux = "select * from tb_pacote_servico where cod_pac_serv=" & rs.Fields(8).Value & ""
+                                    rs2 = db.Execute(aux)
 
-                                If rs2.EOF = False Then
-                                    cmb_pacote_serv.Text = rs.Fields(8).Value & " - " & rs2.Fields(1).Value
-                                End If
+                                    If rs2.EOF = False Then
+                                        cmb_pacote_serv.Text = rs.Fields(8).Value & " - " & rs2.Fields(1).Value
+                                    End If
 
-                            Else
-                                cmb_pacote_serv.SelectedIndex = 0
+                                Else
+                                    cmb_pacote_serv.SelectedIndex = 0
                                 End If
                                 txt_total.Text = rs.Fields(5).Value
                             End If
-
+                            carregar_cliente()
                             Calcula_total()
                             Calcula_parcela()
-                            carregar_cliente()
                             carregar_acompanhante()
                         End If
                     ElseIf .CurrentRow.Cells(8).Selected Then
                         aux = .CurrentRow.Cells(0).Value
                         resp = MsgBox("Deseja realmente excluir" + vbNewLine &
-                            "Reserva: " & aux & "?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "ATENÇÃO")
+                        "Reserva: " & aux & "?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "ATENÇÃO")
                         If resp = MsgBoxResult.Yes Then
                             sql = "delete * from tb_reserva where num_reserva=" & aux & ""
                             rs = db.Execute(sql)
@@ -139,15 +138,25 @@
                             sql = "delete * from tb_acompanhante where (cpf_cliente='" & .CurrentRow.Cells(3).Value & "' and num_reserva=" & aux & ")"
                             rs = db.Execute(sql)
 
+                            Calcula_total()
+                            Calcula_parcela()
+                            carregar_cliente()
                             carregar_acompanhante()
                             carregar_reserva()
+
                         End If
                     End If
+
+                    Calcula_total()
+                    Calcula_parcela()
+                    carregar_cliente()
+                    carregar_acompanhante()
+                    carregar_reserva()
                 End If
             End With
-        ' Catch ex As Exception
-        'MsgBox("Erro de processamento!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ATENÇÃO")
-        ' End Try
+        Catch ex As Exception
+            MsgBox("Erro de processamento!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ATENÇÃO")
+        End Try
     End Sub
 
     Private Sub frm_reserva_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
@@ -293,7 +302,7 @@
     End Sub
 
     Private Sub btn_cadastrar_Click(sender As Object, e As EventArgs) Handles btn_cadastrar.Click
-        Dim num, pac_serv As String
+        Dim num, pac_serv, res1, res2 As String
         Dim pos As Integer
         Try
             Calcula_total()
@@ -301,18 +310,32 @@
             If txt_cpf_cli.Text = "" Or txt_nome_cli.Text = "" Or txt_celular_cli.Text = "" Or txt_total.Text = "" Then
                 MsgBox("Preencha todos os campos!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "ATENÇÃO")
             Else
-                sql = "select * from tb_reserva where data_entrada between #" & txt_data_entrada.Text & "# and #" & txt_data_saida.Text & "# " &
-                    " and (num_quarto =" & cmb_quarto.Text & " and num_reserva <> " & cmb_quarto.Text & ") ORDER BY data_entrada"
+                sql = "select * from tb_reserva where (data_entrada between #" & txt_data_entrada.Text & "# and #" & txt_data_saida.Text & "# " &
+                    " and num_quarto =" & cmb_quarto.Text & ") and num_reserva <> " & cmb_quarto.Text & " ORDER BY data_entrada"
                 rs = db.Execute(sql)
 
                 If rs.EOF = False Then
+                    res1 = rs.Fields(0).Value
+                Else
+                    res1 = txt_num_reserva.Text
+                End If
+
+
+
+                If rs.EOF = False And res1 <> txt_num_reserva.Text Then
                     MsgBox("Já existe uma reserva nestas datas com esse quarto!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "ATENÇÃO")
                 Else
-                    sql = "select * from tb_reserva where data_saida between #" & txt_data_entrada.Text & "# and #" & txt_data_saida.Text & "# " &
-               " and (num_quarto =" & cmb_quarto.Text & " and num_reserva <> " & txt_num_reserva.Text & ") ORDER BY data_saida"
-                    rs = db.Execute(sql)
+                    aux = "select * from tb_reserva where (data_saida between #" & txt_data_entrada.Text & "# and #" & txt_data_saida.Text & "# " &
+                   " and num_quarto =" & cmb_quarto.Text & " ) and num_reserva <> " & txt_num_reserva.Text & " ORDER BY data_saida"
+                    rs2 = db.Execute(aux)
 
-                    If rs.EOF = False Then
+                    If rs2.EOF = False Then
+                        res2 = rs2.Fields(0).Value
+                    Else
+                        res2 = txt_num_reserva.Text
+                    End If
+
+                    If rs2.EOF = False And res2 <> txt_num_reserva.Text Then
                         MsgBox("Já existe uma reserva nestas datas com esse quarto!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "ATENÇÃO")
                     Else
                         If cmb_pacote_serv.Text <> "" Then

@@ -72,7 +72,7 @@
             .txt_valor_parcela.Clear()
             .cmb_cpf_acomp.Text = ""
             .cmb_cpf_acomp.Items.Clear()
-            .txt_data_entrada.Value = "20/01/2022"
+            .txt_data_entrada.Value = "20/01/2021"
             .txt_data_saida.Value = "20/06/2022"
             .cmb_pacote_serv.SelectedIndex = 0
             .txt_total.Text = ""
