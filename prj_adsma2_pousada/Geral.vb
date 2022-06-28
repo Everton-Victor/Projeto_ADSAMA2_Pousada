@@ -283,6 +283,7 @@
 
     Sub carregar_reserva()
         Try
+            Dim dataInicial, dataFinal As String
 
             sql = "select * from tb_reserva order by num_reserva desc"
             rs = db.Execute(sql)
@@ -292,12 +293,19 @@
                 Do While rs.EOF = False
                     aux = "select * from tb_checkin where num_reserva=" & rs.Fields(0).Value & ""
                     rs_aux = db.Execute(aux)
+                    dataInicial = rs.Fields(1).Value
+                    dataFinal = rs.Fields(3).Value
+
+                    dataInicial = dataInicial.Replace("00:00:00", "")
+                    dataFinal = dataFinal.Replace("00:00:00", "")
+                    dataFinal.Trim()
+                    dataInicial.Trim()
 
                     If rs_aux.EOF = True Then
                         If rs.Fields(8).Value <> 0 Then
-                            .Rows.Add(rs.Fields(0).Value, rs.Fields(9).Value, rs.Fields(8).Value, rs.Fields(11).Value, rs.Fields(1).Value, rs.Fields(3).Value, rs.Fields(10).Value, Nothing, Nothing)
+                            .Rows.Add(rs.Fields(0).Value, rs.Fields(9).Value, rs.Fields(8).Value, rs.Fields(11).Value, dataInicial, dataFinal, rs.Fields(10).Value, Nothing, Nothing)
                         Else
-                            .Rows.Add(rs.Fields(0).Value, rs.Fields(9).Value, Nothing, rs.Fields(11).Value, rs.Fields(1).Value, rs.Fields(3).Value, rs.Fields(10).Value, Nothing, Nothing)
+                            .Rows.Add(rs.Fields(0).Value, rs.Fields(9).Value, Nothing, rs.Fields(11).Value, dataInicial, dataFinal, rs.Fields(10).Value, Nothing, Nothing)
 
                         End If
                     End If

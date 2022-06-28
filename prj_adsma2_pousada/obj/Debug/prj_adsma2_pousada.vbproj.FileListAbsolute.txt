@@ -209,3 +209,4 @@ C:\Users\Zelda\Downloads\Projeto_ADSAMA2_Pousada\Projeto_ADSAMA2_Pousada\prj_ads
 C:\Users\Zelda\Downloads\Projeto_ADSAMA2_Pousada\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\obj\Debug\prj_adsma2_pousada.exe
 C:\Users\Zelda\Downloads\Projeto_ADSAMA2_Pousada\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\obj\Debug\prj_adsma2_pousada.xml
 C:\Users\Zelda\Downloads\Projeto_ADSAMA2_Pousada\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\obj\Debug\prj_adsma2_pousada.pdb
+C:\Users\Zelda\Desktop\Projeto_ADSAMA2_Pousada\prj_adsma2_pousada\obj\Debug\prj_adsma2_pousada.frm_registro.resources
