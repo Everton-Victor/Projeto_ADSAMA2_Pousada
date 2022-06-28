@@ -54,7 +54,8 @@
         frm_login.Visible = True
     End Sub
 
-    Private Sub Txt_cpf_LostFocus(sender As Object, e As EventArgs) Handles txt_cpf.LostFocus
+
+    Private Sub txt_cpf_LostFocus(sender As Object, e As EventArgs) Handles txt_cpf.LostFocus
         Try
             Dim datahoraAtual As DateTime = Now
             txt_data.Text = datahoraAtual.ToShortDateString
@@ -70,10 +71,8 @@
                     rs.MoveNext()
                 Loop
 
-                If rs.EOF = False Then
-                    If cmb_num_reserva.Items.Count <> 0 Then
-                        cmb_num_reserva.SelectedIndex = 0
-                    End If
+                If cmb_num_reserva.Items.Count <> 0 Then
+                    cmb_num_reserva.SelectedIndex = 0
 
                     sql = "select * from tb_cliente where cpf_cliente='" & txt_cpf.Text & "'"
                     rs = db.Execute(sql)
@@ -82,9 +81,8 @@
                         txt_nome.Text = rs.Fields(1).Value
                         txt_celular.Text = rs.Fields(2).Value
                     End If
-                Else
-                    MsgBox("Não existe reservas com esse CPF no Banco de dados!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ALERTA")
                 End If
+
 
             End If
 
@@ -155,13 +153,6 @@
 
     End Sub
 
-    Private Sub txt_cpf_DoubleClick(sender As Object, e As EventArgs) Handles txt_cpf.DoubleClick
-        Try
-            limpar_checkin()
-        Catch ex As Exception
-            MsgBox("Erro de processamento!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ALERTA")
-        End Try
-    End Sub
 
     Private Sub cmb_num_reserva_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_num_reserva.SelectedIndexChanged
         Try
@@ -293,4 +284,11 @@
         frm_registro.Visible = True
     End Sub
 
+    Private Sub txt_cpf_DoubleClick(sender As Object, e As EventArgs) Handles txt_cpf.DoubleClick
+        Try
+            limpar_checkin()
+        Catch ex As Exception
+            MsgBox("Erro de processamento!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ALERTA")
+        End Try
+    End Sub
 End Class

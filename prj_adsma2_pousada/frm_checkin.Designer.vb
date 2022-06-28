@@ -45,10 +45,8 @@ Partial Class frm_checkin
         Me.txt_nome_acomp = New System.Windows.Forms.TextBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.txt_celular = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txt_nome = New System.Windows.Forms.TextBox()
-        Me.txt_cpf = New System.Windows.Forms.TextBox()
         Me.btn_cadastrar = New System.Windows.Forms.Button()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripDropDownButton1 = New System.Windows.Forms.ToolStripDropDownButton()
@@ -61,6 +59,8 @@ Partial Class frm_checkin
         Me.FuncionáriosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EncerrarSessToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.txt_cpf = New System.Windows.Forms.MaskedTextBox()
+        Me.txt_celular = New System.Windows.Forms.TextBox()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -147,6 +147,7 @@ Partial Class frm_checkin
         '
         'txt_pac_serv
         '
+        Me.txt_pac_serv.Enabled = False
         Me.txt_pac_serv.Font = New System.Drawing.Font("Cambria", 13.0!)
         Me.txt_pac_serv.Location = New System.Drawing.Point(139, 134)
         Me.txt_pac_serv.Name = "txt_pac_serv"
@@ -155,6 +156,7 @@ Partial Class frm_checkin
         '
         'txt_num_quarto
         '
+        Me.txt_num_quarto.Enabled = False
         Me.txt_num_quarto.Font = New System.Drawing.Font("Cambria", 13.0!)
         Me.txt_num_quarto.Location = New System.Drawing.Point(139, 79)
         Me.txt_num_quarto.Name = "txt_num_quarto"
@@ -300,14 +302,6 @@ Partial Class frm_checkin
         Me.Label2.TabIndex = 31
         Me.Label2.Text = "Nome:"
         '
-        'txt_celular
-        '
-        Me.txt_celular.Font = New System.Drawing.Font("Cambria", 13.0!)
-        Me.txt_celular.Location = New System.Drawing.Point(98, 76)
-        Me.txt_celular.Name = "txt_celular"
-        Me.txt_celular.Size = New System.Drawing.Size(218, 28)
-        Me.txt_celular.TabIndex = 28
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -320,19 +314,12 @@ Partial Class frm_checkin
         '
         'txt_nome
         '
+        Me.txt_nome.Enabled = False
         Me.txt_nome.Font = New System.Drawing.Font("Cambria", 13.0!)
         Me.txt_nome.Location = New System.Drawing.Point(98, 31)
         Me.txt_nome.Name = "txt_nome"
         Me.txt_nome.Size = New System.Drawing.Size(218, 28)
         Me.txt_nome.TabIndex = 30
-        '
-        'txt_cpf
-        '
-        Me.txt_cpf.Font = New System.Drawing.Font("Cambria", 13.0!)
-        Me.txt_cpf.Location = New System.Drawing.Point(65, 62)
-        Me.txt_cpf.Name = "txt_cpf"
-        Me.txt_cpf.Size = New System.Drawing.Size(203, 28)
-        Me.txt_cpf.TabIndex = 95
         '
         'btn_cadastrar
         '
@@ -440,6 +427,24 @@ Partial Class frm_checkin
         Me.PictureBox1.TabIndex = 99
         Me.PictureBox1.TabStop = False
         '
+        'txt_cpf
+        '
+        Me.txt_cpf.Font = New System.Drawing.Font("Cambria", 13.0!)
+        Me.txt_cpf.Location = New System.Drawing.Point(65, 62)
+        Me.txt_cpf.Mask = "000,000,000-00"
+        Me.txt_cpf.Name = "txt_cpf"
+        Me.txt_cpf.Size = New System.Drawing.Size(146, 28)
+        Me.txt_cpf.TabIndex = 100
+        '
+        'txt_celular
+        '
+        Me.txt_celular.Enabled = False
+        Me.txt_celular.Font = New System.Drawing.Font("Cambria", 13.0!)
+        Me.txt_celular.Location = New System.Drawing.Point(98, 76)
+        Me.txt_celular.Name = "txt_celular"
+        Me.txt_celular.Size = New System.Drawing.Size(218, 28)
+        Me.txt_celular.TabIndex = 28
+        '
         'frm_checkin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -447,13 +452,13 @@ Partial Class frm_checkin
         Me.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(187, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(789, 417)
+        Me.Controls.Add(Me.txt_cpf)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.txt_num_reserva)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.txt_cpf)
         Me.Controls.Add(Me.btn_cadastrar)
         Me.Controls.Add(Me.ToolStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -497,10 +502,8 @@ Partial Class frm_checkin
     Friend WithEvents txt_nome_acomp As TextBox
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents txt_celular As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents txt_nome As TextBox
-    Friend WithEvents txt_cpf As TextBox
     Friend WithEvents btn_cadastrar As Button
     Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents ToolStripDropDownButton1 As ToolStripDropDownButton
@@ -515,4 +518,6 @@ Partial Class frm_checkin
     Friend WithEvents CheckoutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RegistroToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents txt_cpf As MaskedTextBox
+    Friend WithEvents txt_celular As TextBox
 End Class

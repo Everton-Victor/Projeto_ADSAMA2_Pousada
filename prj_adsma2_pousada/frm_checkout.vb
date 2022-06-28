@@ -68,7 +68,7 @@
         frm_login.Visible = True
     End Sub
 
-    Private Sub Txt_cpf_LostFocus(sender As Object, e As EventArgs) Handles txt_cpf.LostFocus
+    Private Sub txt_cpf_LostFocus(sender As Object, e As EventArgs) Handles txt_cpf.LostFocus
         Try
             Dim datahoraAtual As DateTime = Now
             txt_data.Text = datahoraAtual.ToShortDateString
@@ -89,14 +89,15 @@
                         Loop
                         If cmb_num_reserva.Items.Count <> 0 Then
                             cmb_num_reserva.SelectedIndex = 0
-                        End If
-                        sql = "select * from tb_cliente where cpf_cliente='" & txt_cpf.Text & "'"
-                        rs = db.Execute(sql)
+                            sql = "select * from tb_cliente where cpf_cliente='" & txt_cpf.Text & "'"
+                            rs = db.Execute(sql)
 
-                        If rs.EOF = False Then
-                            txt_nome.Text = rs.Fields(1).Value
-                            txt_celular.Text = rs.Fields(2).Value
+                            If rs.EOF = False Then
+                                txt_nome.Text = rs.Fields(1).Value
+                                txt_celular.Text = rs.Fields(2).Value
+                            End If
                         End If
+
                     Else
                         MsgBox("Esse CPF: " & txt_cpf.Text & " não realizou check-in!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ALERTA")
                     End If
@@ -180,7 +181,7 @@
 
     End Sub
 
-    Private Sub Txt_cpf_DoubleClick(sender As Object, e As EventArgs) Handles txt_cpf.DoubleClick
+    Private Sub txt_cpf_DoubleClick(sender As Object, e As EventArgs) Handles txt_cpf.DoubleClick
         Try
             limpar_checkout()
         Catch ex As Exception
@@ -305,5 +306,9 @@
     Private Sub RegistroToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RegistroToolStripMenuItem.Click
         Me.Hide()
         frm_registro.Visible = True
+    End Sub
+
+    Private Sub txt_cpf_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles txt_cpf.MaskInputRejected
+
     End Sub
 End Class

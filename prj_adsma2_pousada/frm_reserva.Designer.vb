@@ -375,7 +375,7 @@ Partial Class frm_reserva
         '
         Me.txt_celular_cli.Font = New System.Drawing.Font("Cambria", 13.0!)
         Me.txt_celular_cli.Location = New System.Drawing.Point(34, 168)
-        Me.txt_celular_cli.Mask = "(00) 99999-9999"
+        Me.txt_celular_cli.Mask = "cc"
         Me.txt_celular_cli.Name = "txt_celular_cli"
         Me.txt_celular_cli.Size = New System.Drawing.Size(285, 28)
         Me.txt_celular_cli.TabIndex = 2
