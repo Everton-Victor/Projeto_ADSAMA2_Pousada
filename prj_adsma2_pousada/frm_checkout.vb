@@ -75,36 +75,27 @@
             txt_hora.Text = datahoraAtual.ToShortTimeString
 
             If txt_cpf.Text <> "" Then
-                sql = "select num_reserva from tb_reserva where cpf_cliente='" & txt_cpf.Text & "'"
+                sql = "select * from tb_reserva where cpf_cliente='" & txt_cpf.Text & "'"
                 rs = db.Execute(sql)
+                cmb_num_reserva.Items.Clear()
 
-                If rs.EOF = False Then
-                    sql = "select * from tb_checkin where num_reserva=" & rs.Fields(0).Value & ""
+                Do While rs.EOF = False
+                    cmb_num_reserva.Items.Add(rs.Fields(0).Value)
+                    rs.MoveNext()
+                Loop
+
+                If cmb_num_reserva.Items.Count <> 0 Then
+                    cmb_num_reserva.SelectedIndex = 0
+
+                    sql = "select * from tb_cliente where cpf_cliente='" & txt_cpf.Text & "'"
                     rs = db.Execute(sql)
+
                     If rs.EOF = False Then
-                        cmb_num_reserva.Items.Clear()
-                        Do While rs.EOF = False
-                            cmb_num_reserva.Items.Add(rs.Fields(3).Value)
-                            rs.MoveNext()
-                        Loop
-                        If cmb_num_reserva.Items.Count <> 0 Then
-                            cmb_num_reserva.SelectedIndex = 0
-                            sql = "select * from tb_cliente where cpf_cliente='" & txt_cpf.Text & "'"
-                            rs = db.Execute(sql)
-
-                            If rs.EOF = False Then
-                                txt_nome.Text = rs.Fields(1).Value
-                                txt_celular.Text = rs.Fields(2).Value
-                            End If
-                        End If
-
-                    Else
-                        MsgBox("Esse CPF: " & txt_cpf.Text & " não realizou check-in!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ALERTA")
+                        txt_nome.Text = rs.Fields(1).Value
+                        txt_celular.Text = rs.Fields(2).Value
                     End If
                 End If
-
             End If
-
         Catch ex As Exception
             MsgBox("Erro de processamento!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ALERTA")
         End Try
@@ -245,24 +236,31 @@
             If txt_cpf.Text = "" Or txt_num_reserva.Text = "" Or txt_nome.Text = "" Then
                 MsgBox("Preencha todos os campos!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "ATENÇÃO")
             Else
-                sql = "select * from tb_reserva where num_reserva=" & txt_num_reserva.Text & ""
+                sql = "select * from tb_checkin where num_reserva=" & txt_num_reserva.Text & ""
                 rs = db.Execute(sql)
-
                 If rs.EOF = False Then
-                    sql = "select * from tb_checkout where num_reserva=" & txt_num_reserva.Text & ""
+                    sql = "select * from tb_reserva where num_reserva=" & txt_num_reserva.Text & ""
                     rs = db.Execute(sql)
-                    If rs.EOF = True Then
-                        sql = "insert into tb_checkout (data_checkout, hora_checkout, num_reserva) values ('" & txt_data.Text & "', '" & txt_hora.Text & "', '" & txt_num_reserva.Text & "')"
+
+                    If rs.EOF = False Then
+                        sql = "select * from tb_checkout where num_reserva=" & txt_num_reserva.Text & ""
                         rs = db.Execute(sql)
-                        MsgBox("Checkout efetuado!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "ATENÇÃO")
-                        limpar_checkout()
+                        If rs.EOF = True Then
+                            sql = "insert into tb_checkout (data_checkout, hora_checkout, num_reserva) values ('" & txt_data.Text & "', '" & txt_hora.Text & "', '" & txt_num_reserva.Text & "')"
+                            rs = db.Execute(sql)
+                            MsgBox("Checkout efetuado!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "ATENÇÃO")
+                            limpar_checkout()
+                        Else
+                            MsgBox("A Reserva Nº" & txt_num_reserva.Text & " já efetuou checkout " & vbNewLine &
+                                   "Data: " & rs.Fields(1).Value & " - Hora: " & rs.Fields(2).Value & "", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "ALERTA")
+                        End If
                     Else
-                        MsgBox("A Reserva Nº" & txt_num_reserva.Text & " já efetuou checkout " & vbNewLine &
-                               "Data: " & rs.Fields(1).Value & " - Hora: " & rs.Fields(2).Value & "", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "ALERTA")
+                        MsgBox("Essa reserva não existe na base de dados!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ALERTA")
                     End If
                 Else
-                    MsgBox("Essa reserva não existe na base de dados!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ALERTA")
+                    MsgBox("A reserva sob o Nº" & txt_num_reserva.Text & " não realizou check-in!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ALERTA")
                 End If
+
 
             End If
         Catch ex As Exception
@@ -308,7 +306,4 @@
         frm_registro.Visible = True
     End Sub
 
-    Private Sub txt_cpf_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles txt_cpf.MaskInputRejected
-
-    End Sub
 End Class

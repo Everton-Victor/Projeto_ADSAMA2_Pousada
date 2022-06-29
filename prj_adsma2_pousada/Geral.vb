@@ -285,7 +285,7 @@
         Try
             Dim dataInicial, dataFinal As String
 
-            sql = "select * from tb_reserva order by num_reserva desc"
+            sql = "select * from tb_reserva order by num_reserva asc"
             rs = db.Execute(sql)
 
             With frm_reserva.dgv_reserva
@@ -538,8 +538,8 @@
     End Sub
 
     Sub carregar_cliente()
-        Try
-            With frm_reserva
+        'Try
+        With frm_reserva
                 If .txt_cpf_cli.Text <> "" Then
                     sql = "select * from tb_cliente where cpf_cliente='" & .txt_cpf_cli.Text & "'"
                     rs = db.Execute(sql)
@@ -551,9 +551,9 @@
                 End If
             End With
 
-        Catch ex As Exception
-            MsgBox("Erro de processamento!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ATENÇÃO")
-        End Try
+        'Catch ex As Exception
+        'MsgBox("Erro de processamento!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ATENÇÃO")
+        ' End Try
     End Sub
 
     Sub Calcula_parcela()
